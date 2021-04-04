@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Methodology: Representativeness; weighting and sensitivity testing | EA survey analyses (partial)</title>
+  <meta name="description" content="EA Survey work and posts organized" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Methodology: Representativeness; weighting and sensitivity testing | EA survey analyses (partial)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="EA Survey work and posts organized" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Methodology: Representativeness; weighting and sensitivity testing | EA survey analyses (partial)" />
+  
+  <meta name="twitter:description" content="EA Survey work and posts organized" />
+  
+
+<meta name="author" content="Dr. David Reinstein, many others" />
+
+
+<meta name="date" content="2021-04-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="outline-disc.html"/>
+<link rel="next" href="demog.html"/>
+<script src="book_assets/header-attrs-2.6/header-attrs.js"></script>
+<script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- font families -->
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico|Source+Sans+Pro" rel="stylesheet">
+
+<!-- <script src="js/hideOutput.js"></script> -->
+
+<!-- Mathjax -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/default.js"></script>
+
+ <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        jax: ["input/TeX","output/CommonHTML"]
+      });
+      MathJax.Hub.processSectionDelay = 0;
+  </script>
+
+
+
+
+<script async defer src="https://hypothes.is/embed.js"></script>
+
+<!-- Folding text box javascript thing -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $folds = $(".fold");
+  $folds.wrapInner("<div class=\"fold-blck\">"); // wrap a div container around content
+  $folds.prepend("<button class=\"fold-btn\">Unfold</button>");  // add a button
+  $(".fold-blck").toggle();  // fold all blocks
+  $(".fold-btn").on("click", function() {  // add onClick event
+    $(this).text($(this).text() === "Fold" ? "Unfold" : "Fold");  // if the text equals "Fold", change it to "Unfold"or else to "Fold"
+    $(this).next(".fold-blck").toggle("linear");  // "swing" is the default easing function. This can be further customized in its speed or the overall animation itself.
+  })
+});
+</script>
+
+<!--
+<script type="text/javascript">
+
+// toggle visibility of R source blocks in R Markdown output
+function toggle_R() {
+  var x = document.getElementsByClassName('r');
+  if (x.length == 0) return;
+  function toggle_vis(o) {
+    var d = o.style.display;
+    o.style.display = (d == 'block' || d == '') ? 'none':'block';
+  }
+
+  for (i = 0; i < x.length; i++) {
+    var y = x[i];
+    if (y.tagName.toLowerCase() === 'pre') toggle_vis(y);
+  }
+
+    var elem = document.getElementById("myButton1");
+    if (elem.value === "Hide Global") elem.value = "Show Global";
+    else elem.value = "Hide Global";
+}
+
+document.write('<input onclick="toggle_R();" type="button" value="Hide Global" id="myButton1" style="position: absolute; top: 10%; right: 2%; z-index: 200"></input>')
+
+</script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148137970-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-148137970-3');
+</script>
+-->
+
+<!-- FOLDING TEXT BOXES -->
+
+<script>
+/* ========================================================================
+ * Bootstrap: transition.js v3.3.7
+ * http://getbootstrap.com/javascript/#transitions
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // ============================================================
+
+  function transitionEnd() {
+    var el = document.createElement('bootstrap')
+
+    var transEndEventNames = {
+      WebkitTransition : 'webkitTransitionEnd',
+      MozTransition    : 'transitionend',
+      OTransition      : 'oTransitionEnd otransitionend',
+      transition       : 'transitionend'
+    }
+
+    for (var name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
+      }
+    }
+
+    return false // explicit for ie8 (  ._.)
+  }
+
+  // http://blog.alexmaccaw.com/css-transitions
+  $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+  }
+
+  $(function () {
+    $.support.transition = transitionEnd()
+
+    if (!$.support.transition) return
+
+    $.event.special.bsTransitionEnd = {
+      bindType: $.support.transition.end,
+      delegateType: $.support.transition.end,
+      handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
+      }
+    }
+  })
+
+}(jQuery);
+</script>
+<script>
+/* ========================================================================
+ * Bootstrap: collapse.js v3.3.7
+ * http://getbootstrap.com/javascript/#collapse
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+/* jshint latedef: false */
+
++function ($) {
+  'use strict';
+
+  // COLLAPSE PUBLIC CLASS DEFINITION
+  // ================================
+
+  var Collapse = function (element, options) {
+    this.$element      = $(element)
+    this.options       = $.extend({}, Collapse.DEFAULTS, options)
+    this.$trigger      = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
+                           '[data-toggle="collapse"][data-target="#' + element.id + '"]')
+    this.transitioning = null
+
+    if (this.options.parent) {
+      this.$parent = this.getParent()
+    } else {
+      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
+    }
+
+    if (this.options.toggle) this.toggle()
+  }
+
+  Collapse.VERSION  = '3.3.7'
+
+  Collapse.TRANSITION_DURATION = 350
+
+  Collapse.DEFAULTS = {
+    toggle: true
+  }
+
+  Collapse.prototype.dimension = function () {
+    var hasWidth = this.$element.hasClass('width')
+    return hasWidth ? 'width' : 'height'
+  }
+
+  Collapse.prototype.show = function () {
+    if (this.transitioning || this.$element.hasClass('in')) return
+
+    var activesData
+    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
+    }
+
+    var startEvent = $.Event('show.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    if (actives && actives.length) {
+      Plugin.call(actives, 'hide')
+      activesData || actives.data('bs.collapse', null)
+    }
+
+    var dimension = this.dimension()
+
+    this.$element
+      .removeClass('collapse')
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse in')[dimension]('')
+      this.transitioning = 0
+      this.$element
+        .trigger('shown.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
+
+    this.$element
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
+  }
+
+  Collapse.prototype.hide = function () {
+    if (this.transitioning || !this.$element.hasClass('in')) return
+
+    var startEvent = $.Event('hide.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    var dimension = this.dimension()
+
+    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
+
+    this.$element
+      .addClass('collapsing')
+      .removeClass('collapse in')
+      .attr('aria-expanded', false)
+
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.transitioning = 0
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse')
+        .trigger('hidden.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    this.$element
+      [dimension](0)
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
+  }
+
+  Collapse.prototype.toggle = function () {
+    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
+
+  Collapse.prototype.getParent = function () {
+    return $(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
+
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
+
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
+
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+
+    return $(target)
+  }
+
+
+  // COLLAPSE PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.collapse')
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false
+      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.collapse
+
+  $.fn.collapse             = Plugin
+  $.fn.collapse.Constructor = Collapse
+
+
+  // COLLAPSE NO CONFLICT
+  // ====================
+
+  $.fn.collapse.noConflict = function () {
+    $.fn.collapse = old
+    return this
+  }
+
+
+  // COLLAPSE DATA-API
+  // =================
+
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+    var $this   = $(this)
+
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $this.data()
+
+    Plugin.call($target, option)
+  })
+
+}(jQuery);
+</script>
+<script>
+window.initializeCodeFolding = function(show) {
+
+  // handlers for show-all and hide all
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  // index for unique code element ids
+  var currentIndex = 1;
+
+  // select all R code blocks
+  var rCodeBlocks = $('pre.sourceCode, pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.js');
+  rCodeBlocks.each(function() {
+
+    // create a collapsable div to wrap the code in
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    // add a show code button right above
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    // update state of button on show/hide
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+</script>
+<script>
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.3.7
+ * http://getbootstrap.com/javascript/#dropdowns
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // =========================
+
+  var backdrop = '.dropdown-backdrop'
+  var toggle   = '[data-toggle="dropdown"]'
+  var Dropdown = function (element) {
+    $(element).on('click.bs.dropdown', this.toggle)
+  }
+
+  Dropdown.VERSION = '3.3.7'
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector && $(selector)
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+  function clearMenus(e) {
+    if (e && e.which === 3) return
+    $(backdrop).remove()
+    $(toggle).each(function () {
+      var $this         = $(this)
+      var $parent       = getParent($this)
+      var relatedTarget = { relatedTarget: this }
+
+      if (!$parent.hasClass('open')) return
+
+      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
+
+      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this.attr('aria-expanded', 'false')
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+    })
+  }
+
+  Dropdown.prototype.toggle = function (e) {
+    var $this = $(this)
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    clearMenus()
+
+    if (!isActive) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+        // if mobile we use a backdrop because click events don't delegate
+        $(document.createElement('div'))
+          .addClass('dropdown-backdrop')
+          .insertAfter($(this))
+          .on('click', clearMenus)
+      }
+
+      var relatedTarget = { relatedTarget: this }
+      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this
+        .trigger('focus')
+        .attr('aria-expanded', 'true')
+
+      $parent
+        .toggleClass('open')
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
+    }
+
+    return false
+  }
+
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
+
+    var $this = $(this)
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    if (!isActive && e.which != 27 || isActive && e.which == 27) {
+      if (e.which == 27) $parent.find(toggle).trigger('focus')
+      return $this.trigger('click')
+    }
+
+    var desc = ' li:not(.disabled):visible a'
+    var $items = $parent.find('.dropdown-menu' + desc)
+
+    if (!$items.length) return
+
+    var index = $items.index(e.target)
+
+    if (e.which == 38 && index > 0)                 index--         // up
+    if (e.which == 40 && index < $items.length - 1) index++         // down
+    if (!~index)                                    index = 0
+
+    $items.eq(index).trigger('focus')
+  }
+
+
+  // DROPDOWN PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.dropdown')
+
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.dropdown
+
+  $.fn.dropdown             = Plugin
+  $.fn.dropdown.Constructor = Dropdown
+
+
+  // DROPDOWN NO CONFLICT
+  // ====================
+
+  $.fn.dropdown.noConflict = function () {
+    $.fn.dropdown = old
+    return this
+  }
+
+
+  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // ===================================
+
+  $(document)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
+
+}(jQuery);
+</script>
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+.row { display: flex; }
+.collapse { display: none; }
+.in { display:block }
+.pull-right > .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "hide");
+});
+</script>
+
+
+<script>
+document.write('<div class="btn-group pull-right" style="position: absolute; top: 10%; right: 15%; z-index: 200"><button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast=""><span>Code</span> <span class="caret"></span></button><ul class="dropdown-menu" style="min-width: 50px;"><li><a id="rmd-show-all-code" href="#">Show All Code</a></li><li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li></ul></div>')
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="support/tufte_plus.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="outline-disc.html"><a href="outline-disc.html"><i class="fa fa-check"></i><b>1</b> Notes on this ‘bookdown’ relating to the EA Survey</a></li>
+<li class="chapter" data-level="2" data-path="sensitivity.html"><a href="sensitivity.html"><i class="fa fa-check"></i><b>2</b> Methodology: Representativeness; weighting and sensitivity testing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sensitivity.html"><a href="sensitivity.html#eas_challenges"><i class="fa fa-check"></i><b>2.1</b> The challenge for the EA Survey (EAS)</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="sensitivity.html"><a href="sensitivity.html#considering-academicformal-literature"><i class="fa fa-check"></i><b>2.1.1</b> Considering academic/formal literature</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="sensitivity.html"><a href="sensitivity.html#sens_checks"><i class="fa fa-check"></i><b>2.2</b> Sensitivity-checks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#why_these"><i class="fa fa-check"></i>Why these groupings?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>2.3</b> Modeling and bounding the biases</a></li>
+<li class="chapter" data-level="2.4" data-path="sensitivity.html"><a href="sensitivity.html#future-bounding"><i class="fa fa-check"></i><b>2.4</b> Other possible approaches (for future consideration)</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#re-weighting-approaches"><i class="fa fa-check"></i>Re-weighting approaches?</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#less-extreme-but-ad-hoc-sensitivity-checking"><i class="fa fa-check"></i>Less extreme (but ad-hoc) sensitivity checking</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#bayes-response"><i class="fa fa-check"></i>Bayesian modeling of outcomes in light of (distributions) of response rates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="demog.html"><a href="demog.html"><i class="fa fa-check"></i><b>3</b> Demographics: considering representativeness</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="demog.html"><a href="demog.html#see-previous-section-methods-weighting-representativeness-and-sensitivity-testing"><i class="fa fa-check"></i><b>3.0.1</b> See previous section: <span>Methods: Weighting, representativeness, and sensitivity testing</span></a></li>
+<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demography-sensitivity"><i class="fa fa-check"></i><b>3.1</b> Sensitivity checks</a></li>
+<li class="chapter" data-level="3.2" data-path="demog.html"><a href="demog.html#demog-by-ref"><i class="fa fa-check"></i><b>3.2</b> Demographics by ‘referrer’</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i><b>3.2.1</b> Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EA survey analyses (partial)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sensitivity" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Methodology: Representativeness; weighting and sensitivity testing</h1>
+<div class="marginnote">
+<p>This chapter integrates with the <a href="demog.html#demog">Demographics: considering representativeness</a> chapter The present could be released as a ‘frozen’ EA Forum post if necessary, but it will continue to be updated in the hosted Bookdown.)</p>
+</div>
+<p>Getting surveys/polls right is difficult, as recent US electoral outcomes <a href="https://www.nytimes.com/interactive/2016/09/20/upshot/the-error-the-polling-world-rarely-talks-about.html">and polling exercises</a> suggest. It hard to produce statistics that we can be confident are <em>representative</em> of a population-of-interest, particularly when:</p>
+<ol style="list-style-type: decimal">
+<li><p>there are high non-response/non-participation rates, and these rates likely vary by groups and subgroups,</p></li>
+<li><p>we are considering a hidden/rare and fluctuating population, with <a href="https://en.wikipedia.org/wiki/Coverage_error">‘coverage’</a> limitations,*</p></li>
+</ol>
+<div class="marginnote">
+<p>* We may not have have complete ‘coverage’ of relevant groups, e.g., some important parts of the EA population may not be reading the outlets that advertise the survey.</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>there are few or no <em>benchmarks</em> to target and train on (such as actual voting records); nor ‘complete enumerations’ of the population of interest.</li>
+</ol>
+<div id="eas_challenges" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> The challenge for the EA Survey (EAS)</h2>
+<p><strong>Considering representativeness of a survey with potentially substantial under-coverage, low participation rates, and a rare population</strong></p>
+<p>In measuring the demographics, psychometrics, economic status, attitudes, behaviors, preferences, etc., of <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea#fn-7uCZD36rnXqiP6D4r-2">“the global population of those who identify with Effective Altruism and/or are influenced by EA ideas”</a> we face the above trifecta.<br />
+</p>
+<p>Selection issues are endemic to surveys. If the ‘propensity to complete a survey’ is related to any individual characteristic or response (and we don’t know the exact nature of this relationship), than the measured outcomes will be biased measures of the population outcomes. It is difficult or impossible to correct for such biases without a benchmark (such as an election result, a legal national census or a survey that offers an incentive so strong that it guarantees a near-100% response rate).</p>
+<p><br />
+We may not be able to ensure that we have ‘reasonable confidence that we have a reasonably representative sample.’ Without a benchmark, how would we know?</p>
+<p>If certain groups are not being reached <em>at all</em> (e.g., those not on the internet), there is very little we can do. However, suppose the survey merely <em>under-represents</em> groups with certain (observed) characteristics; e.g., suppose ‘mods’ are less likely to notice or respond to the survey as ‘rockers.’ To recover unbiased estimates, we would simply need to weight each group by the inverse probability of sampling, i.e., weight each rocker as half as important as a mod in constructing summary statistics.</p>
+<p>But for the EAS (and many other situations), we simply don’t know the <em>extent</em> to which each group is under-responding. The best we may be able to do is to consider the sensitivity of our results to the extent of under/oversampling along observable lines. (For 2020, this is the approach we take in <a href="demog.html#demography-sensitivity">considering demographics and key outcomes</a>.)</p>
+<div id="considering-academicformal-literature" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Considering academic/formal literature</h3>
+
+<div class="note">
+I discuss this issue in a very general methodological sense <a href="https://daaronr.github.io/metrics_discussion/surveys.html#jazz-case">here (a work-in-progress)</a>, in my broad set of methodological notes, and offer some (rough) discussion of relevant academic work. I present some key points and reference below.
+</div>
+<p>I did a fairly shallow dive into the methodological literature to put our problem in the context of survey sampling methodology, and to consider approaches to similar problems.</p>
+‘Probability sampling’ has been the standard approach in survey sampling since random-digit dialing was possible.*
+<div class="marginnote">
+*This paragraph draws from the <a href="https://en.wikipedia.org/wiki/Survey_sampling">Wikipedia entry on ‘survey sampling’</a>, as well as cited and connected articles.
+</div>
+<p><em>Probability sampling</em> identifies a <em>population of interest</em> and a <em>sample frame</em> meant to capture this population. Rather than appealing to this entire population/frame, probability sampling randomly (or using stratification/clustering) samples a ‘probability share’ (e.g., 1/1000) from this frame. As only a smaller number of people are selected, you can spend more time and money/incentives, trying to make sure they respond, and track and adjust for rates of responses. Furthermore, probability sampling also allows ‘stratification,’ and oversampling of harder-to-reach groups. One can then potentially divide up (‘stratify’) that frame by observable groups, and randomly draw (sample) within each strata with a certain probability. <em>If we have an informative estimate of the TRUE shares in each strata</em> we can sample/re-weight so that the heterogeneous parameter of interest can be said to represent the average value for the true population of interest.</p>
+In contrast, the EA Survey is a ‘non-probability sample’ <span class="citation"><a href="demog.html#ref-bakerSummaryReportAAPOR2013" role="doc-biblioref">Baker et al.</a> (<a href="demog.html#ref-bakerSummaryReportAAPOR2013" role="doc-biblioref">2013</a>)</span>. We have collected survey responses from <strong>self-selected ‘convenience’ samples</strong> (‘internet surveys’) across several years.
+Our current approach may be described as a combination of ‘convenience sampling’ (‘river sampling’ and ‘opt-in’) and ‘snowball sampling.’*
+<div class="marginnote">
+<p>I have heard claims that ‘internet surveys,’ if done right, with proper adjustments, can be as or more reliable than traditional polling. However, these adjustments depend on external measures and ‘gold standards,’ such as actual electoral outcomes, and large scale repeated census enumerations.</p>
+</div>
+<p><br />
+</p>
+<p>In our context there seems to be little potential to reweight or ‘post-stratify’ to recover results that represent the EA population as a whole.</p>
+<p>Consider the Wikipedia entry on ‘convenience sampling’:</p>
+<blockquote>
+<p>Another example would be a gaming company that wants to know how one of their games is doing in the market one day after its release. Its analyst may choose to create an online survey on Facebook to rate that game.</p>
+</blockquote>
+<blockquote>
+<p><strong>Bias</strong> The results of the convenience sampling cannot be generalized to the target population because of the potential bias of the sampling technique due to under-representation of subgroups in the sample in comparison to the population of interest. <strong>The bias of the sample cannot be measured.</strong> [emphasis added] Therefore, inferences based on the convenience sampling should be made only about the sample itself. (Wikipedia, on ‘Convenience sampling,’ cites Borenstein et al, 2017)</p>
+</blockquote>
+<p><em>This entry is deeply pessimistic… for our case</em>.<br />
+</p>
+<p>We might consider alternate or additional <em>sampling</em> approaches in future EA Surveys. Selected sampling will not, by itself, do anything to lessen the problem of differential non-participation. However, it is conceivable that we might take improve our representativeness through some combination of …</p>
+<ol style="list-style-type: decimal">
+<li><p>Surveying the general (non-EA) population as part of larger representative surveys to get a sense of the overall composition of EAs (e.g., the gender ratio). However, differential non-response, to these larger surveys would again throw this in doubt. Standard corrections may not be easy: and relative non-response among EAs (e.g., male versus female EAs) may differ from the relative non-response to such surveys in other populations.</p></li>
+<li><p>Tracking, and attempting to adjust for particular rates of non-participation among groups with known compostions, and extending this, by inference, to groups with unknown composition.^*</p>
+<div class="marginnote">
+<p>E.g., suppose we knew the true gender composition of EA Global participants was 80/20 male/female, and we see a 90/10 split from EAG participants in the EAS. We might then assign a double weight to female EAG participants in the EAS, and perhaps also assign a double weight to females in other groups where we expect a similar pattern.</p>
+</div></li>
+<li><p>Additionally, taking probability samples from within known groups we expect to be ‘broadly representative of EA’ (or at least of particular interest) and offering much strong incentives to these individuals. If this lead to very-high participation rates among these probability samples, this would bring us closer to a gold-standard measure, at least for this group of interest.</p></li>
+</ol>
+<p><br />
+</p>
+<p>We might also consider “respondent-driven sampling” in combination with a careful measurement of the network structure of the EA population, and the sharing of the EAS in this network.</p>
+<p>As noted, the EAS considers a hidden/rare and fluctuating population, with <a href="https://en.wikipedia.org/wiki/Coverage_error">‘coverage’</a> limitations. <span class="citation"><a href="demog.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">Salganik and Heckathorn</a> (<a href="demog.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">2004</a>)</span> suggest using “respondent-driven sampling” (or ‘snowball sampling’ or ‘chain referral’) in such contexts, and making adjustments to recover representativeness (which will work only under particular condidtions). The process involves</p>
+<blockquote>
+<p>a small number of seeds who are the first people to participate in the study. These seeds then recruit others to participate in the study. This process of existing sample members recruiting future sample members continues until the desired sample size is reached.</p>
+</blockquote>
+<p>They note that</p>
+<blockquote>
+<p>This research is fairly well summarized by Berg (1988) when he writes, “as a rule, a snowball sample will be strongly biased toward inclusion of those who have many interrelationships with or are coupled to, a large number of individuals.” In the absence of knowledge of individual inclusion probabilities in different waves of the snowball sample, unbiased estimation is not possible.</p>
+</blockquote>
+<p>This motivates the authors’ approach, involving measuring the likelihood that an individual is reached as a function of their network, and then downweighting those individuals that are more likely to be sampled.</p>
+<p>They claim that through the process they propose, “it is possible to make unbiased estimates about hidden populations from these types of samples … asymptotically unbiased no matter how the seeds are selected.”</p>
+<p>While this approach is compelling, and may hold some potential for future EAS work, this is not feasible with the data we have now. Furthermore, it is not clear whether it would be an improvement. Relying on chain referral may increase the extent to which the EAS participants are skewed towards certain groups. Even if we take on the adjustments advocated in <span class="citation"><a href="demog.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">Salganik and Heckathorn</a> (<a href="demog.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">2004</a>)</span>, this may add more ‘bias’ in net.</p>
+<p><br />
+</p>
+Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed below.*
+<div class="marginnote">
+<p>* We also sketch and discuss some <em>alternative analytical</em> approaches, perhaps for future years, <a href="sensitivity.html#future-bounding">below</a>).</p>
+</div>
+</div>
+</div>
+<div id="sens_checks" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Sensitivity-checks</h2>
+<p>In our posts for the 2020 EA survey, we will focus (as we have, to some extent <a href="https://forum.effectivealtruism.org/posts/TuzkYANf7tmQDF2Hk/ea-survey-2017-series-distribution-and-analysis-methodology">in the past</a>) on ‘sensitivity testing.’</p>
+<p><strong>For key outcomes of interest, we will consider how our reported estimates vary …</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><a href="demog.html#demog-by-ref">by ‘referrer’</a> (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</p></li>
+<li><p>and by time-to-respond and ‘agreement to respond to future surveys.’</p></li>
+</ol>
+(In our future ‘Engagement’ posts, we will also consider this by ‘level of self-reported engagement’).*
+<div class="marginnote">
+<p>*Those less-engaged are presumably less interested in filling out the survey, and thus ‘under-represented.’ While we might imagine that the views of less-engaged EA’s are less relevant to consider, this may not always be the case, and might not track 1-1 with their lower response rates.</p>
+</div>
+<p><br />
+</p>
+<div id="why_these" class="section level3 unnumbered">
+<h3>Why these groupings?</h3>
+<ol style="list-style-type: decimal">
+<li><p>Some referrers may be promoting the EAS more than others, and EA’s who identify with certain referrers may visit them more often than EA’s in other mileu.</p></li>
+<li><p>Reasonably, ‘being less eager to do something’ may lead to procrastination, or to requiring more reminders before you do it. If so, those who took the longest to respond to the survey (at least relative to the first time they first learned about the survey) may better reflect, within each group, those ‘less likely to take the survey’ (or respond to followup surveys). A similar argument applies to those who indicated they do not want to take future surveys. Arguably, these groups are under-represented.</p></li>
+</ol>
+<em>In future…</em>**
+<div class="marginnote">
+<p>**In future we also aim to consider this by demographics and ‘clusters/vectors of demographics’ we particularly anticipate having differential response rates, in light of past survey research. Some demographics (particular considering career and family status) may face a greater time-cost, making them less likely to complete the survey, and leading to under-representation.</p>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="sensitivity.html#cb2-1" aria-hidden="true" tabindex="-1"></a>mean_don <span class="ot">&lt;-</span> <span class="fu">mean</span>(eas_20<span class="sc">$</span>donation_2019_c, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-2"><a href="sensitivity.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="sensitivity.html#cb2-3" aria-hidden="true" tabindex="-1"></a>n_shared_link <span class="ot">&lt;-</span> <span class="fu">sum</span>(eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Shared link&quot;</span>)</span>
+<span id="cb2-4"><a href="sensitivity.html#cb2-4" aria-hidden="true" tabindex="-1"></a>n_optin <span class="ot">&lt;-</span> <span class="fu">sum</span>(eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Email; opt-in from prev. EAS&quot;</span>)</span>
+<span id="cb2-5"><a href="sensitivity.html#cb2-5" aria-hidden="true" tabindex="-1"></a>male_rate_shared_link <span class="ot">&lt;-</span>  <span class="fu">mean</span>(eas_20<span class="sc">$</span>d_male[eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Shared link&quot;</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-6"><a href="sensitivity.html#cb2-6" aria-hidden="true" tabindex="-1"></a>sd_male_rate_shared_link <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(male_rate_shared_link<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>male_rate_shared_link))</span>
+<span id="cb2-7"><a href="sensitivity.html#cb2-7" aria-hidden="true" tabindex="-1"></a>male_rate_optin <span class="ot">&lt;-</span>  <span class="fu">mean</span>(eas_20<span class="sc">$</span>d_male[eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Email; opt-in from prev. EAS&quot;</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-8"><a href="sensitivity.html#cb2-8" aria-hidden="true" tabindex="-1"></a>sd_male_rate_optin <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(male_rate_optin<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>male_rate_optin))</span></code></pre></div>
+</div>
+</div>
+<div id="bound-bias-discussion" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Modeling and bounding the biases</h2>
+<p>In the <a href="demog.html#demog">sensitivity checks below</a> we report values of key demographics and other important outcomes for each of the groupings mentioned above. Taking the extreme values (minima and maxima) of the outcomes across these groupings could be seen to embody fairly extreme and ad-hoc assumptions.</p>
+<p>For example <a href="demog.html#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 58.96% male (from the ‘shared link’) and a high of 82.67% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 54.66% and an upper-CI for ‘opt-in link’ of 85.89%.</p>
+<p>These bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer. Clearly, neither the ‘opt-in link’ (the most male group) nor the ‘shared link’ (the most female group) groups are so under-represented that they should constitute the virtual entirety of the EA population. We know that, e.g., 488 completed the survey from the 80K hours link, and 247 reported a level of engagement of 3 or more. This is not a ‘drop in the bucket’: estimates of the total number of “active EA’s” range from <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea">about 4700</a> to <a href="https://forum.effectivealtruism.org/posts/S6QHRyi7joCWN9dkv/community-vs-network?commentId=G9zwPKtkcAb4nm6EH">about 13000</a>, or perhaps a few hundred thousand if we take the widest view (cf. <a href="https://80000hours.org/newsletter/">‘over 150,000 subscribers’ to the 80K hours newsletter</a>).*</p>
+<div class="marginnote">
+<p>* Also note, from the same linked post, some benchmarks:</p>
+<ul>
+<li><p>19% of GWWC members are present in 2018 survey, but we might disagree about whether all GWWC members are EEA in terms of ‘being influenced by EA thought’</p></li>
+<li><p>Informal polls of relatively heavily-engaged audiences record 30-50% response to the EAS (39% in CEA/80K/FHI Oxford offices, 40% for EA forum, 43% of Local group members, and 31-50% for specific local groups</p></li>
+</ul>
+<p>In future we might also use ‘total known numbers in particular groups’ as upper-benchmarks.</p>
+</div>
+</div>
+<div id="future-bounding" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Other possible approaches (for future consideration)</h2>
+<p>We are working to address these methodological issues more carefully, and work towards a theoretically grounded approach, both in considering the data we have, and our future survey design and implementation. Below, we present some ideas in this direction.</p>
+<div id="re-weighting-approaches" class="section level3 unnumbered">
+<h3>Re-weighting approaches?</h3>
+<p>We might consider ‘re-weighting (or ’post-stratification’) to match key demographics of some known group. For example, suppose we knew the gender and country composition of the members of the <a href="https://www.facebook.com/groups/effective.altruists/">Effective Altruism Facebook Group</a>. Under standard assumptions, reweighting the EAS results to match this <em>might</em> reduce the bias of our estimates – at least as a measure of the ‘average responses for those on EA Facebook.’ However:</p>
+<ol style="list-style-type: decimal">
+<li><p>We do not expect that the ‘EA Facebook group’ is representative of the EA movement as a whole, and</p></li>
+<li><p>The re-weighting need not reduce the bias from differential response rates, even considering the EA FB group as the sampling frame of interest. For a particular outcome, considering particular subgroup weightings… this would only be guaranteed if the ‘nonresponders within each subgroup’ had the same distribution of this outcome as the overall population within each subgroup.</p></li>
+</ol>
+</div>
+<div id="less-extreme-but-ad-hoc-sensitivity-checking" class="section level3 unnumbered">
+<h3>Less extreme (but ad-hoc) sensitivity checking</h3>
+<p>We might also consider sensitivity tests that are ‘less extreme’ than the bounds that might be implied by the tests <a href="demog.html#demography-sensitivity">below</a>. E.g., we could consider….</p>
+
+<div class="fold">
+<p><em>Some ideas</em></p>
+<p>As a first-pass at these sensitivity checks, we might report bounds under ‘somewhat less extreme’ possibilities, under ad-hoc grouping assumptions</p>
+<ul>
+<li>Each individual referrer’s response rate (among true EA’s) is Normally distributed, with mean 40% and sd 20%.</li>
+<li>The ‘response rate draws’ are not following groupings of referrers may each have</li>
+</ul>
+<p>Or drop or downweight by 50% half of the list of referrers with all combinations, report the most extreme one?</p>
+<p>Or drop any single referrer one by one and find most extreme results</p>
+<p>Try to classify these groups (or a ‘vector’ of groups and downweight along these lines)</p>
+<ul>
+<li><p>By ‘time to respond’ (how to present/test this?) or some ‘likelihood of response?’</p></li>
+<li><p>For those willing/unwilling to respond to share email for future surveys</p></li>
+<li><p>Another formal test?</p></li>
+</ul>
+<p><br />
+</p>
+<p>Consider sensitivity to downweighting</p>
+<ol style="list-style-type: decimal">
+<li>by ‘Referrer’ (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</li>
+</ol>
+<ul>
+<li><p>Each referrer/grouping with over 100 responses</p></li>
+<li><p>Ad-hoc groupings:</p>
+<ul>
+<li>80K, EA Forum, Email opt-in+shared link+Newsletter, Local Groups, Other</li>
+<li>80K, EA Organisations/link (EA Forum, EA Newsletter, opt-in from prev. EAS), Social media/rationalist/blogs (Reddit, LW, SSC, FB, memes), Personal (Groups, Shared link)</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>by level of self-reported engagement</li>
+</ol>
+<ul>
+<li>0-2, 3, 4, 5</li>
+<li>0-2, 3, 4-5</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>and by time-to-respond and ‘agreement to respond to future surveys.’</li>
+</ol>
+<ul>
+<li><p>Time to respond relative to survey start date: 4 quantiles, RR of 80%, 60%, 40%, and 20% assumed</p></li>
+<li><p>Time to respond relative to others from same referrer … quantiles and RR as above</p></li>
+<li><p>Agreed to respond to future surveys (no/EAS only/EAS and followups) (20% vs 50% vs 80% RR assumed)</p></li>
+</ul>
+</div>
+</div>
+<div id="bayes-response" class="section level3 unnumbered">
+<h3>Bayesian modeling of outcomes in light of (distributions) of response rates</h3>
+<p>Perhaps the best approach would be a model that
+- makes our beliefs over the possible response rates for different groups explicit,
+- adjusts these in light of new information,
+- summarizes our uncertainty over possible outcome values in a ‘posterior distribution.’</p>
+<p>A very rough sketch of such a ‘Bayesian model’ is folded below.</p>
+
+<div class="fold">
+<p><strong>Model components and assumptions:</strong></p>
+<p>Probability distribution over the total number of (E)EAs (does this matter?)</p>
+<p>Suppose (all 3+ engaged EAs) for each referrer are in fact EA-affiliated.</p>
+<p>Critical component: A probability distribution over the ‘true response rate’ for each (referrer) group</p>
+<p>Benchmarks for this (as reported in <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea">earlier post</a>)</p>
+<ul>
+<li><p>19% of GWWC members present in 2018 survey (but are all GWWC members EEA?)</p></li>
+<li><p>30-50% response rates of relatively heavily-engaged audiences*</p></li>
+</ul>
+<div class="marginnote">
+<p>* From an informal poll, 39% in the CEA/80K/FHI Oxford office. Comparing response numbers in the EAS with the EA Groups survey implies 40% response rates for EA forum members, 43% Local group members, and 31-50% for a set of specific local groups,</p>
+</div>
+<ul>
+<li>Total ‘members’ of specific referrers.</li>
+</ul>
+<p>At first pass, we might converge on a conservative guesstimate of:</p>
+<ul>
+<li>a normal distribution over EEA response rates for each referrer</li>
+<li>a 40 percent mean response rate (by referrer, and thus overall)</li>
+<li>A 90% CI for the response rate (of EEAs) for each referrer of 15 - 80 percent (this is totally ad-hoc)</li>
+</ul>
+<p>However, the hardest component to consider is the correlation between the response rates of sets of referrers . We might expect, e.g., the response rates of SSC and LW to be correlated.</p>
+<p>We can only partially deal with this by choosing larger groups and defining priors .grouping sets of of referrers. Thus we may need to define a prior over (e.g., if we assume multivatiate normality) the variance/covariance matrix.</p>
+<div class="marginnote">
+<p>We do have some benchmark datasets that <em>might</em> help us with this … the SSC survey, EAGx demography … calculate weights to minimize error between our surveys and others …</p>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="outline-disc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="demog.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
