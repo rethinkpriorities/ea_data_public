@@ -6,7 +6,7 @@ The actual code and data is in the [EA-data](https://github.com/rethinkprioritie
 
 No data will be shared here, for now at least.
 
-Open any html files in the root directory (in a cloned repo, not in GH) to open the 'bookdown'
+Open any html files in the [docs folder](docs) (in a cloned repo, not in GH) to open the 'bookdown'
 
 `Codebook` folder contains codebooks/descriptives of each year's EAS 
 
