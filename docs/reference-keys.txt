@@ -1,4 +1,8 @@
 tab:referrers
+tab:unnamed-chunk-13
+tab:unnamed-chunk-14
+tab:unnamed-chunk-16
+tab:unnamed-chunk-18
 outline_disc
 sensitivity
 eas_challenges
@@ -7,7 +11,5 @@ sens_checks
 bound-bias-discussion
 future-bounding
 demog
-see-previous-section-methods-weighting-representativeness-and-sensitivity-testing
 demography-sensitivity
-demog-by-ref
-demog-by-wtr_lateness
+reference-list
