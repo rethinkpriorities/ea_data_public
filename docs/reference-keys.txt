@@ -16,6 +16,8 @@ demog
 demographics-over-time
 key-questions
 age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement
+engagement-by-tenureage
+eas-engagement
 introduction
 why-do-we-care-about-engagement
 engage-measures
