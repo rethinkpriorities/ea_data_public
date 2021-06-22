@@ -1,8 +1,8 @@
-tab:unnamed-chunk-25
-tab:unnamed-chunk-26
-tab:unnamed-chunk-28
-tab:unnamed-chunk-30
-tab:unnamed-chunk-46
+tab:unnamed-chunk-12
+tab:unnamed-chunk-13
+tab:unnamed-chunk-15
+tab:unnamed-chunk-17
+tab:unnamed-chunk-33
 tab:hux-engage-na-tables
 tab:lm-engagement
 outline_disc
@@ -34,7 +34,6 @@ predictive-and-causal-modeling
 ideal-future-modeling-approach
 interpretation-robustness-further-exploration
 comparison-across-ordered-logit-models-adjusting-variable-choices-and-transformations
-further-controls-for-agetenure--age_tenure_controls
 selection-and-differential-attrition-focus-on-recent-recruits
 linear-models-of-levels-and-binary--linear_models
 engage_time
