@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Methodology: Representativeness; weighting and sensitivity testing | EA survey analyses (partial)</title>
   <meta name="description" content="EA Survey work and posts organized" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Methodology: Representativeness; weighting and sensitivity testing | EA survey analyses (partial)" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. David Reinstein, many others" />
 
 
-<meta name="date" content="2021-04-05" />
+<meta name="date" content="2021-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="outline-disc.html"/>
 <link rel="next" href="demog.html"/>
-<script src="book_assets/header-attrs-2.6/header-attrs.js"></script>
-<script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
+<script src="book_assets/header-attrs-2.8/header-attrs.js"></script>
+<script src="book_assets/jquery-3.5.1/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,8 +51,17 @@
 
 
 
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
 <link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="book_assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="book_assets/plotly-binding-4.9.3/plotly.js"></script>
+<script src="book_assets/typedarray-0.1/typedarray.min.js"></script>
+<link href="book_assets/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="book_assets/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="book_assets/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="book_assets/plotly-main-1.57.1/plotly-latest.min.js"></script>
 <!-- font families -->
 
 <link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico|Source+Sans+Pro" rel="stylesheet">
@@ -743,6 +752,7 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="support/tufte_plus.css" type="text/css" />
 </head>
 
@@ -778,15 +788,54 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="demog.html"><a href="demog.html"><i class="fa fa-check"></i><b>3</b> Demographics: considering representativeness</a>
 <ul>
 <li><a href="demog.html#see-previous-section-methods-weighting-representativeness-and-sensitivity-testing">See previous section: <span>Methods: Weighting, representativeness, and sensitivity testing</span></a></li>
-<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demography-sensitivity"><i class="fa fa-check"></i><b>3.1</b> Sensitivity checks</a>
+<li><a href="demog.html#a-simpler-correlation-matrix-approach">A simpler <strong>correlation matrix</strong> approach:</a></li>
+<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demographics-over-time"><i class="fa fa-check"></i><b>3.1</b> Demographics over time</a>
 <ul>
-<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-ref"><i class="fa fa-check"></i>Demographics by ‘referrer’</a></li>
+<li class="chapter" data-level="3.1.1" data-path="demog.html"><a href="demog.html#key-questions"><i class="fa fa-check"></i><b>3.1.1</b> Key questions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="demog.html"><a href="demog.html#age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement"><i class="fa fa-check"></i><b>3.2</b> Age first heard of EA: does it have a (causal) impact on engagement?</a>
+<ul>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i>Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#by-start-date-relative-to-others-from-same-referrer"><i class="fa fa-check"></i>By start date (relative to others from same referrer)</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#engaged-mainstream-by-moreless-survey-responsive"><i class="fa fa-check"></i>“Engaged mainstream”: By more/less survey-responsive</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="demog.html"><a href="demog.html#introduction"><i class="fa fa-check"></i><b>3.3</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="demog.html"><a href="demog.html#why-do-we-care-about-engagement"><i class="fa fa-check"></i><b>3.3.1</b> Why do we care about ‘engagement?’</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="reference-list.html"><a href="reference-list.html"><i class="fa fa-check"></i><b>4</b> Reference list</a></li>
+<li class="chapter" data-level="3.4" data-path="demog.html"><a href="demog.html#engage-measures"><i class="fa fa-check"></i><b>3.4</b> Measures of Engagement</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="demog.html"><a href="demog.html#engagement-measures-and-validation"><i class="fa fa-check"></i><b>3.4.1</b> Engagement measures and validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="demog.html"><a href="demog.html#descriptives-of-engagement-see-forum-post-link"><i class="fa fa-check"></i><b>3.5</b> Descriptives of engagement (see forum post [LINK])</a></li>
+<li class="chapter" data-level="3.6" data-path="demog.html"><a href="demog.html#descriptives-engagement-by-demographics-socio-economic-factors-attitudesbehaviors-and-paths-and-vice-versa"><i class="fa fa-check"></i><b>3.6</b> Descriptives: Engagement by Demographics, Socio-Economic factors, Attitudes/Behaviors, and Paths (and vice-versa)</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="demog.html"><a href="demog.html#self-reported-engagement-key-comparisons"><i class="fa fa-check"></i><b>3.6.1</b> Self-reported engagement: key comparisons</a></li>
+<li class="chapter" data-level="3.6.2" data-path="demog.html"><a href="demog.html#summary-charts"><i class="fa fa-check"></i><b>3.6.2</b> Summary charts</a></li>
+<li class="chapter" data-level="3.6.3" data-path="demog.html"><a href="demog.html#when-people-get-involved-in-ea-time-in-ea-age-age-when-first-involved-in-ea"><i class="fa fa-check"></i><b>3.6.3</b> When people get involved in EA/ Time in EA / Age / Age When First Involved in EA</a></li>
+<li class="chapter" data-level="3.6.4" data-path="demog.html"><a href="demog.html#gender-and-self-reported-engagement-and-group-membership---see-forum-post-link"><i class="fa fa-check"></i><b>3.6.4</b> Gender and self-reported engagement, … and group membership - see forum post [LINK]</a></li>
+<li class="chapter" data-level="3.6.5" data-path="demog.html"><a href="demog.html#race-and-and-group-membership-race-and-activities---see-forum-post"><i class="fa fa-check"></i><b>3.6.5</b> Race and and group membership; Race and activities - see forum post</a></li>
+<li class="chapter" data-level="3.6.6" data-path="demog.html"><a href="demog.html#where-people-first-heard-of-ea"><i class="fa fa-check"></i><b>3.6.6</b> Where people first heard of EA</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="demog.html"><a href="demog.html#modeling-engagement"><i class="fa fa-check"></i><b>3.7</b> Modeling engagement*</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="demog.html"><a href="demog.html#descriptive-modeling"><i class="fa fa-check"></i><b>3.7.1</b> Descriptive modeling</a></li>
+<li class="chapter" data-level="3.7.2" data-path="demog.html"><a href="demog.html#predictive-and-causal-modeling"><i class="fa fa-check"></i><b>3.7.2</b> Predictive and causal modeling</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#choices-of-variablesfeatures"><i class="fa fa-check"></i>Choices of variables/features</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#choosing-features-and-modeling-target-variables"><i class="fa fa-check"></i>Choosing features and modeling target variables</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#engage-ologit"><i class="fa fa-check"></i>Ordered logit models of self-reported engagement level</a></li>
+<li class="chapter" data-level="3.7.3" data-path="demog.html"><a href="demog.html#interpretation-robustness-further-exploration"><i class="fa fa-check"></i><b>3.7.3</b> Interpretation, robustness, further exploration</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="demog.html"><a href="demog.html#engage_time"><i class="fa fa-check"></i><b>3.8</b> Engagement: age, tenure, period and cohort effects</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="demog.html"><a href="demog.html#which-age"><i class="fa fa-check"></i><b>3.8.1</b> Engagement by tenure/age: ‘prediction for “selection at what age?”’</a></li>
+<li class="chapter" data-level="3.8.2" data-path="demog.html"><a href="demog.html#engagement-by-age-and-tenure"><i class="fa fa-check"></i><b>3.8.2</b> Engagement by age and tenure</a></li>
+<li class="chapter" data-level="3.8.3" data-path="demog.html"><a href="demog.html#engagement-by-age-first-involved-and-tenure"><i class="fa fa-check"></i><b>3.8.3</b> Engagement by ‘Age-first-involved’ and tenure</a></li>
+<li class="chapter" data-level="3.8.4" data-path="demog.html"><a href="demog.html#see-also-attrition-from-eaea-survey-by-introducer"><i class="fa fa-check"></i><b>3.8.4</b> See also: <span>Attrition from EA/EA survey by introducer</span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="demog.html"><a href="demog.html#additional-cea-request-citiesareas-by-group-engagement-and-retention-adapted"><i class="fa fa-check"></i><b>3.9</b> Additional – CEA request: cities/areas by group engagement and retention, adapted:</a></li>
+<li class="chapter" data-level="3.10" data-path="demog.html"><a href="demog.html#conclusions-and-future-work"><i class="fa fa-check"></i><b>3.10</b> Conclusions and Future work</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -832,7 +881,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 We may not be able to ensure that we have ‘reasonable confidence that we have a reasonably representative sample.’ Without a benchmark, how would we know?</p>
 <p>If certain groups are not being reached <em>at all</em> (e.g., those not on the internet), there is very little we can do. However, suppose the survey merely <em>under-represents</em> groups with certain (observed) characteristics; e.g., suppose ‘mods’ are less likely to notice or respond to the survey as ‘rockers.’ To recover unbiased estimates, we would simply need to weight each group by the inverse probability of sampling, i.e., weight each rocker as half as important as a mod in constructing summary statistics.</p>
-<p>But for the EAS (and many other situations), we simply don’t know the <em>extent</em> to which each group is under-responding. The best we may be able to do is to consider the sensitivity of our results to the extent of under/oversampling along observable lines. (For 2020, this is the approach we take in <a href="demog.html#demography-sensitivity">considering demographics and key outcomes</a>.)</p>
+<p>But for the EAS (and many other situations), we simply don’t know the <em>extent</em> to which each group is under-responding. The best we may be able to do is to consider the sensitivity of our results to the extent of under/oversampling along observable lines. (For 2020, this is the approach we take in <a href="#demography-sensitivity">considering demographics and key outcomes</a>.)</p>
 <div id="considering-academicformal-literature" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Considering academic/formal literature</h3>
 
@@ -845,7 +894,7 @@ I discuss this issue in a very general methodological sense <a href="https://daa
 *This paragraph draws from the <a href="https://en.wikipedia.org/wiki/Survey_sampling">Wikipedia entry on ‘survey sampling’</a>, as well as cited and connected articles.
 </div>
 <p><em>Probability sampling</em> identifies a <em>population of interest</em> and a <em>sample frame</em> meant to capture this population. Rather than appealing to this entire population/frame, probability sampling randomly (or using stratification/clustering) samples a ‘probability share’ (e.g., 1/1000) from this frame. As only a smaller number of people are selected, you can spend more time and money/incentives, trying to make sure they respond, and track and adjust for rates of responses. Furthermore, probability sampling also allows ‘stratification,’ and oversampling of harder-to-reach groups. One can then potentially divide up (‘stratify’) that frame by observable groups, and randomly draw (sample) within each strata with a certain probability. <em>If we have an informative estimate of the TRUE shares in each strata</em> we can sample/re-weight so that the heterogeneous parameter of interest can be said to represent the average value for the true population of interest.</p>
-In contrast, the EA Survey is a ‘non-probability sample’ <span class="citation"><a href="reference-list.html#ref-bakerSummaryReportAAPOR2013" role="doc-biblioref">Baker et al.</a> (<a href="reference-list.html#ref-bakerSummaryReportAAPOR2013" role="doc-biblioref">2013</a>)</span>. We have collected survey responses from <strong>self-selected ‘convenience’ samples</strong> (‘internet surveys’) across several years.
+In contrast, the EA Survey is a ‘non-probability sample’ <span class="citation">(<a href="#ref-bakerSummaryReportAAPOR2013" role="doc-biblioref"><strong>bakerSummaryReportAAPOR2013?</strong></a>)</span>. We have collected survey responses from <strong>self-selected ‘convenience’ samples</strong> (‘internet surveys’) across several years.
 Our current approach may be described as a combination of ‘convenience sampling’ (‘river sampling’ and ‘opt-in’) and ‘snowball sampling.’*
 <div class="marginnote">
 <p>I have heard claims that ‘internet surveys,’ if done right, with proper adjustments, can be as or more reliable than traditional polling. However, these adjustments depend on external measures and ‘gold standards,’ such as actual electoral outcomes, and large scale repeated census enumerations.</p>
@@ -874,7 +923,7 @@ Our current approach may be described as a combination of ‘convenience samplin
 <p><br />
 </p>
 <p>We might also consider “respondent-driven sampling” in combination with a careful measurement of the network structure of the EA population, and the sharing of the EAS in this network.</p>
-<p>As noted, the EAS considers a hidden/rare and fluctuating population, with <a href="https://en.wikipedia.org/wiki/Coverage_error">‘coverage’</a> limitations. <span class="citation"><a href="reference-list.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">Salganik and Heckathorn</a> (<a href="reference-list.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">2004</a>)</span> suggest using “respondent-driven sampling” (or ‘snowball sampling’ or ‘chain referral’) in such contexts, and making adjustments to recover representativeness (which will work only under particular condidtions). The process involves</p>
+<p>As noted, the EAS considers a hidden/rare and fluctuating population, with <a href="https://en.wikipedia.org/wiki/Coverage_error">‘coverage’</a> limitations. <span class="citation">(<a href="#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref"><strong>salganikSamplingEstimationHidden2004?</strong></a>)</span> suggest using “respondent-driven sampling” (or ‘snowball sampling’ or ‘chain referral’) in such contexts, and making adjustments to recover representativeness (which will work only under particular condidtions). The process involves</p>
 <blockquote>
 <p>a small number of seeds who are the first people to participate in the study. These seeds then recruit others to participate in the study. This process of existing sample members recruiting future sample members continues until the desired sample size is reached.</p>
 </blockquote>
@@ -884,7 +933,7 @@ Our current approach may be described as a combination of ‘convenience samplin
 </blockquote>
 <p>This motivates the authors’ approach, involving measuring the likelihood that an individual is reached as a function of their network, and then downweighting those individuals that are more likely to be sampled.</p>
 <p>They claim that through the process they propose, “it is possible to make unbiased estimates about hidden populations from these types of samples … asymptotically unbiased no matter how the seeds are selected.”</p>
-<p>While this approach is compelling, and may hold some potential for future EAS work, this is not feasible with the data we have now. Furthermore, it is not clear whether it would be an improvement. Relying on chain referral may increase the extent to which the EAS participants are skewed towards certain groups. Even if we take on the adjustments advocated in <span class="citation"><a href="reference-list.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">Salganik and Heckathorn</a> (<a href="reference-list.html#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref">2004</a>)</span>, this may add more ‘bias’ in net.</p>
+<p>While this approach is compelling, and may hold some potential for future EAS work, this is not feasible with the data we have now. Furthermore, it is not clear whether it would be an improvement. Relying on chain referral may increase the extent to which the EAS participants are skewed towards certain groups. Even if we take on the adjustments advocated in <span class="citation">(<a href="#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref"><strong>salganikSamplingEstimationHidden2004?</strong></a>)</span>, this may add more ‘bias’ in net.</p>
 <p><br />
 </p>
 Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed below.*
@@ -898,7 +947,7 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 <p>In our posts for the 2020 EA survey, we will focus (as we have, to some extent <a href="https://forum.effectivealtruism.org/posts/TuzkYANf7tmQDF2Hk/ea-survey-2017-series-distribution-and-analysis-methodology">in the past</a>) on ‘sensitivity testing.’</p>
 <p><strong>For key outcomes of interest, we will consider how our reported estimates vary …</strong></p>
 <ol style="list-style-type: decimal">
-<li><p><a href="demog.html#demog-by-ref">by ‘referrer’</a> (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</p></li>
+<li><p><a href="#demog-by-ref">by ‘referrer’</a> (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</p></li>
 <li><p>and by time-to-respond and ‘agreement to respond to future surveys.’</p></li>
 </ol>
 (In our future ‘Engagement’ posts, we will also consider this by ‘level of self-reported engagement’).*
@@ -930,7 +979,7 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 <div id="bound-bias-discussion" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Modeling and bounding the biases</h2>
 <p>In the <a href="demog.html#demog">sensitivity checks below</a> we report values of key demographics and other important outcomes for each of the groupings mentioned above. Taking the extreme values (minima and maxima) of the outcomes across these groupings could be seen to embody fairly extreme and ad-hoc assumptions.</p>
-<p>For example <a href="demog.html#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 58.96% male (from the ‘shared link’) and a high of 82.67% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 54.66% and an upper-CI for ‘opt-in link’ of 85.89%.</p>
+<p>For example <a href="#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 58.96% male (from the ‘shared link’) and a high of 82.67% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 54.66% and an upper-CI for ‘opt-in link’ of 85.89%.</p>
 <p>These bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer. Clearly, neither the ‘opt-in link’ (the most male group) nor the ‘shared link’ (the most female group) groups are so under-represented that they should constitute the virtual entirety of the EA population. We know that, e.g., 488 completed the survey from the 80K hours link, and 247 reported a level of engagement of 3 or more. This is not a ‘drop in the bucket’: estimates of the total number of “active EA’s” range from <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea">about 4700</a> to <a href="https://forum.effectivealtruism.org/posts/S6QHRyi7joCWN9dkv/community-vs-network?commentId=G9zwPKtkcAb4nm6EH">about 13000</a>, or perhaps a few hundred thousand if we take the widest view (cf. <a href="https://80000hours.org/newsletter/">‘over 150,000 subscribers’ to the 80K hours newsletter</a>).*</p>
 <div class="marginnote">
 <p>* Also note, from the same linked post, some benchmarks:</p>
@@ -954,7 +1003,7 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 </div>
 <div id="less-extreme-but-ad-hoc-sensitivity-checking" class="section level3 unnumbered">
 <h3>Less extreme (but ad-hoc) sensitivity checking</h3>
-<p>We might also consider sensitivity tests that are ‘less extreme’ than the bounds that might be implied by the tests <a href="demog.html#demography-sensitivity">below</a>. E.g., we could consider….</p>
+<p>We might also consider sensitivity tests that are ‘less extreme’ than the bounds that might be implied by the tests <a href="#demography-sensitivity">below</a>. E.g., we could consider….</p>
 
 <div class="fold">
 <p><em>Some ideas</em></p>
@@ -1071,6 +1120,7 @@ gitbook.start({
 "weibo": true,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
 "google": false
 },
@@ -1100,6 +1150,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
