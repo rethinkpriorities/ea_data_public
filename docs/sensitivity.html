@@ -788,18 +788,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="demog.html"><a href="demog.html"><i class="fa fa-check"></i><b>3</b> Demographics: considering representativeness</a>
 <ul>
 <li><a href="demog.html#see-previous-section-methods-weighting-representativeness-and-sensitivity-testing">See previous section: <span>Methods: Weighting, representativeness, and sensitivity testing</span></a></li>
-<li><a href="demog.html#a-simpler-correlation-matrix-approach">A simpler <strong>correlation matrix</strong> approach:</a></li>
-<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demographics-over-time"><i class="fa fa-check"></i><b>3.1</b> Demographics over time</a>
+<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demography-sensitivity"><i class="fa fa-check"></i><b>3.1</b> Sensitivity checks</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="demog.html"><a href="demog.html#key-questions"><i class="fa fa-check"></i><b>3.1.1</b> Key questions</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="demog.html"><a href="demog.html#age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement"><i class="fa fa-check"></i><b>3.2</b> Age first heard of EA: does it have a (causal) impact on engagement?</a>
-<ul>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-ref"><i class="fa fa-check"></i>Demographics by ‘referrer’</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i>Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#by-start-date-relative-to-others-from-same-referrer"><i class="fa fa-check"></i>By start date (relative to others from same referrer)</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#engaged-mainstream-by-moreless-survey-responsive"><i class="fa fa-check"></i>“Engaged mainstream”: By more/less survey-responsive</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="demog.html"><a href="demog.html#engagement-by-tenureage"><i class="fa fa-check"></i><b>3.3</b> Engagement by tenure/age</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eas-engagement.html"><a href="eas-engagement.html"><i class="fa fa-check"></i><b>4</b> Engagement</a>
 <ul>
@@ -832,7 +827,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="eas-engagement.html"><a href="eas-engagement.html#engage_time"><i class="fa fa-check"></i><b>4.6</b> Engagement: age, tenure, period and cohort effects</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="eas-engagement.html"><a href="eas-engagement.html#which-age"><i class="fa fa-check"></i><b>4.6.1</b> Engagement by tenure/age: ‘prediction for “selection at what age?”’</a></li>
+<li class="chapter" data-level="4.6.1" data-path="eas-engagement.html"><a href="eas-engagement.html#which-age"><i class="fa fa-check"></i><b>4.6.1</b> Engagement by tenure/age: ‘prediction for “outreach at what age?”’</a></li>
 <li class="chapter" data-level="4.6.2" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-and-tenure"><i class="fa fa-check"></i><b>4.6.2</b> Engagement by age and tenure</a></li>
 <li class="chapter" data-level="4.6.3" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-first-involved-and-tenure"><i class="fa fa-check"></i><b>4.6.3</b> Engagement by ‘Age-first-involved’ and tenure</a></li>
 <li class="chapter" data-level="4.6.4" data-path="eas-engagement.html"><a href="eas-engagement.html#see-also-attrition-from-eaea-survey-by-introducer"><i class="fa fa-check"></i><b>4.6.4</b> See also: <span>Attrition from EA/EA survey by introducer</span></a></li>
@@ -885,7 +880,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 We may not be able to ensure that we have ‘reasonable confidence that we have a reasonably representative sample.’ Without a benchmark, how would we know?</p>
 <p>If certain groups are not being reached <em>at all</em> (e.g., those not on the internet), there is very little we can do. However, suppose the survey merely <em>under-represents</em> groups with certain (observed) characteristics; e.g., suppose ‘mods’ are less likely to notice or respond to the survey as ‘rockers.’ To recover unbiased estimates, we would simply need to weight each group by the inverse probability of sampling, i.e., weight each rocker as half as important as a mod in constructing summary statistics.</p>
-<p>But for the EAS (and many other situations), we simply don’t know the <em>extent</em> to which each group is under-responding. The best we may be able to do is to consider the sensitivity of our results to the extent of under/oversampling along observable lines. (For 2020, this is the approach we take in <a href="#demography-sensitivity">considering demographics and key outcomes</a>.)</p>
+<p>But for the EAS (and many other situations), we simply don’t know the <em>extent</em> to which each group is under-responding. The best we may be able to do is to consider the sensitivity of our results to the extent of under/oversampling along observable lines. (For 2020, this is the approach we take in <a href="demog.html#demography-sensitivity">considering demographics and key outcomes</a>.)</p>
 <div id="considering-academicformal-literature" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Considering academic/formal literature</h3>
 
@@ -951,7 +946,7 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 <p>In our posts for the 2020 EA survey, we will focus (as we have, to some extent <a href="https://forum.effectivealtruism.org/posts/TuzkYANf7tmQDF2Hk/ea-survey-2017-series-distribution-and-analysis-methodology">in the past</a>) on ‘sensitivity testing.’</p>
 <p><strong>For key outcomes of interest, we will consider how our reported estimates vary …</strong></p>
 <ol style="list-style-type: decimal">
-<li><p><a href="#demog-by-ref">by ‘referrer’</a> (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</p></li>
+<li><p><a href="demog.html#demog-by-ref">by ‘referrer’</a> (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</p></li>
 <li><p>and by time-to-respond and ‘agreement to respond to future surveys.’</p></li>
 </ol>
 (In our future ‘Engagement’ posts, we will also consider this by ‘level of self-reported engagement’).*
@@ -983,7 +978,7 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 <div id="bound-bias-discussion" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Modeling and bounding the biases</h2>
 <p>In the <a href="demog.html#demog">sensitivity checks below</a> we report values of key demographics and other important outcomes for each of the groupings mentioned above. Taking the extreme values (minima and maxima) of the outcomes across these groupings could be seen to embody fairly extreme and ad-hoc assumptions.</p>
-<p>For example <a href="#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 58.96% male (from the ‘shared link’) and a high of 82.67% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 54.66% and an upper-CI for ‘opt-in link’ of 85.89%.</p>
+<p>For example <a href="demog.html#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 58.96% male (from the ‘shared link’) and a high of 82.67% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 54.66% and an upper-CI for ‘opt-in link’ of 85.89%.</p>
 <p>These bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer. Clearly, neither the ‘opt-in link’ (the most male group) nor the ‘shared link’ (the most female group) groups are so under-represented that they should constitute the virtual entirety of the EA population. We know that, e.g., 488 completed the survey from the 80K hours link, and 247 reported a level of engagement of 3 or more. This is not a ‘drop in the bucket’: estimates of the total number of “active EA’s” range from <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea">about 4700</a> to <a href="https://forum.effectivealtruism.org/posts/S6QHRyi7joCWN9dkv/community-vs-network?commentId=G9zwPKtkcAb4nm6EH">about 13000</a>, or perhaps a few hundred thousand if we take the widest view (cf. <a href="https://80000hours.org/newsletter/">‘over 150,000 subscribers’ to the 80K hours newsletter</a>).*</p>
 <div class="marginnote">
 <p>* Also note, from the same linked post, some benchmarks:</p>
@@ -1007,7 +1002,7 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 </div>
 <div id="less-extreme-but-ad-hoc-sensitivity-checking" class="section level3 unnumbered">
 <h3>Less extreme (but ad-hoc) sensitivity checking</h3>
-<p>We might also consider sensitivity tests that are ‘less extreme’ than the bounds that might be implied by the tests <a href="#demography-sensitivity">below</a>. E.g., we could consider….</p>
+<p>We might also consider sensitivity tests that are ‘less extreme’ than the bounds that might be implied by the tests <a href="demog.html#demography-sensitivity">below</a>. E.g., we could consider….</p>
 
 <div class="fold">
 <p><em>Some ideas</em></p>

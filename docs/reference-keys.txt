@@ -1,3 +1,4 @@
+tab:referrers
 tab:unnamed-chunk-12
 tab:unnamed-chunk-13
 tab:unnamed-chunk-15
@@ -13,10 +14,7 @@ sens_checks
 bound-bias-discussion
 future-bounding
 demog
-demographics-over-time
-key-questions
-age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement
-engagement-by-tenureage
+demography-sensitivity
 eas-engagement
 introduction
 why-do-we-care-about-engagement
@@ -35,9 +33,7 @@ descriptive-modeling
 predictive-and-causal-modeling
 ideal-future-modeling-approach
 interpretation-robustness-further-exploration
-comparison-across-ordered-logit-models-adjusting-variable-choices-and-transformations
 selection-and-differential-attrition-focus-on-recent-recruits
-linear-models-of-levels-and-binary--linear_models
 engage_time
 which-age
 engagement-by-age-and-tenure

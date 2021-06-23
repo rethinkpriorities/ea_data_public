@@ -788,18 +788,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="demog.html"><a href="demog.html"><i class="fa fa-check"></i><b>3</b> Demographics: considering representativeness</a>
 <ul>
 <li><a href="demog.html#see-previous-section-methods-weighting-representativeness-and-sensitivity-testing">See previous section: <span>Methods: Weighting, representativeness, and sensitivity testing</span></a></li>
-<li><a href="demog.html#a-simpler-correlation-matrix-approach">A simpler <strong>correlation matrix</strong> approach:</a></li>
-<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demographics-over-time"><i class="fa fa-check"></i><b>3.1</b> Demographics over time</a>
+<li class="chapter" data-level="3.1" data-path="demog.html"><a href="demog.html#demography-sensitivity"><i class="fa fa-check"></i><b>3.1</b> Sensitivity checks</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="demog.html"><a href="demog.html#key-questions"><i class="fa fa-check"></i><b>3.1.1</b> Key questions</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="demog.html"><a href="demog.html#age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement"><i class="fa fa-check"></i><b>3.2</b> Age first heard of EA: does it have a (causal) impact on engagement?</a>
-<ul>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-ref"><i class="fa fa-check"></i>Demographics by ‘referrer’</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i>Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#by-start-date-relative-to-others-from-same-referrer"><i class="fa fa-check"></i>By start date (relative to others from same referrer)</a></li>
 <li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#engaged-mainstream-by-moreless-survey-responsive"><i class="fa fa-check"></i>“Engaged mainstream”: By more/less survey-responsive</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="demog.html"><a href="demog.html#engagement-by-tenureage"><i class="fa fa-check"></i><b>3.3</b> Engagement by tenure/age</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eas-engagement.html"><a href="eas-engagement.html"><i class="fa fa-check"></i><b>4</b> Engagement</a>
 <ul>
@@ -832,7 +827,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="eas-engagement.html"><a href="eas-engagement.html#engage_time"><i class="fa fa-check"></i><b>4.6</b> Engagement: age, tenure, period and cohort effects</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="eas-engagement.html"><a href="eas-engagement.html#which-age"><i class="fa fa-check"></i><b>4.6.1</b> Engagement by tenure/age: ‘prediction for “selection at what age?”’</a></li>
+<li class="chapter" data-level="4.6.1" data-path="eas-engagement.html"><a href="eas-engagement.html#which-age"><i class="fa fa-check"></i><b>4.6.1</b> Engagement by tenure/age: ‘prediction for “outreach at what age?”’</a></li>
 <li class="chapter" data-level="4.6.2" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-and-tenure"><i class="fa fa-check"></i><b>4.6.2</b> Engagement by age and tenure</a></li>
 <li class="chapter" data-level="4.6.3" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-first-involved-and-tenure"><i class="fa fa-check"></i><b>4.6.3</b> Engagement by ‘Age-first-involved’ and tenure</a></li>
 <li class="chapter" data-level="4.6.4" data-path="eas-engagement.html"><a href="eas-engagement.html#see-also-attrition-from-eaea-survey-by-introducer"><i class="fa fa-check"></i><b>4.6.4</b> See also: <span>Attrition from EA/EA survey by introducer</span></a></li>
@@ -875,7 +870,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="demog.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#DR: usually I don&#39;t do this but perhaps it makes the code more readable?</span></span>
 <span id="cb4-2"><a href="demog.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="demog.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(eas_20)</span></code></pre></div>
-<!-- Cut from this branch: ## 2020: Considering innovations in presentation and methodology -->
 <div id="see-previous-section-methods-weighting-representativeness-and-sensitivity-testing" class="section level3 unnumbered">
 <h3>See previous section: <a href="-#sensitivity">Methods: Weighting, representativeness, and sensitivity testing</a></h3>
 <p><em>Recapping that discussion:</em></p>
@@ -891,89 +885,194 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="note">
 <p>We present this sensitivity testing below.</p>
 </div>
-<!-- Cut from this branch: ### See [Methods: interactive and dynamic formats, data sharing](-#dynamic-formats)
-
--->
-<!-- Cut from this branch: all basic and extended presentation of demographics other than the differentiation associated with 'representativeness'
-
-## Introduction
-
-
-/
-
-## Age
-## Gender
-
-
-## Race/ethnicity (and engagement)
-
-\
-
-## Sexual orientation
-
-## Employment/student-status
-
-## Career path
-
-## Childhood SES, Parents' education
-
-
-## 'Clustering': are these demographics co-related?
-
-
-### Gower distances
-
-
-
-
-\
-
-Try an alternative:
-
-```f3175f2a-e8a0-4436-be12-b33925b6d220
-31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AFoAZwBBAHoAQQBEAEUAQQBOAHcAQQAxAEEARwBZAEEATQBnAEIAaABBAEMAMABBAFoAUQBBADQAQQBHAEUAQQBNAEEAQQB0AEEARABRAEEATgBBAEEAegBBAEQAWQBBAEwAUQBCAGkAQQBHAFUAQQBNAFEAQQB5AEEAQwAwAEEAWQBnAEEAegBBAEQATQBBAE8AUQBBAHkAQQBEAFUAQQBZAGcAQQAyAEEARwBRAEEATQBnAEEAeQBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATQBnAEEAMABBAEQAQQBBAE4AdwBBAD0ACgBwAHIAZQBmAGkAeAA6AAoAcwBvAHUAcgBjAGUAOgBZAEEAQgBnAEEARwBBAEEAZQB3AEIAaQBBAEcAdwBBAGIAdwBCAGoAQQBHAHMAQQBNAGcAQQBzAEEAQwBBAEEASQBBAEIAMABBAEgAawBBAGMAQQBCAGwAQQBEADAAQQBKAHcAQgBtAEEARwA4AEEAYgBBAEIAawBBAEMAYwBBAGYAUQBBAEsAQQBBAG8AQQBTAEEAQgBwAEEARwBVAEEAYwBnAEIAaABBAEgASQBBAFkAdwBCAG8AQQBHAGsAQQBZAHcAQgBoAEEARwB3AEEASQBBAEIAagBBAEcAdwBBAGQAUQBCAHoAQQBIAFEAQQBaAFEAQgB5AEEARwBrAEEAYgBnAEIAbgBBAEQAOABBAEMAZwBBAEsAQQBBAG8AQQBZAEEAQgBnAEEARwBBAEEACgBzAHUAZgBmAGkAeAA6AA==:31b8e172-b470-440e-83d8-e6b185028602
-<p><br />
+</div>
+<div id="demography-sensitivity" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Sensitivity checks</h2>
+<p>Following <a href="sensitivity.html#eas_challenges">the previous discussion on the unique issues faced by the EA survey</a>, we present a series of sensitivity checks. (Why these groupings? See discussion <a href="sensitivity.html#why_these">above</a>.)</p>
+<div class="marginnote">
+<p>Of course, we cannot report all measures for all sub-groups and weightings in a single post. We offer only a subset of this, and we aim to offer more in the future (perhaps in a dynamic/interactive presentation.)</p>
+</div>
+<p><a href="sensitivity.html#bound-bias-discussion">As noted above</a>, these bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer and from each ‘willingness to respond’ group.<br />
 </p>
-</div>
-<div id="a-simpler-correlation-matrix-approach" class="section level3 unnumbered">
-<h3>A simpler <strong>correlation matrix</strong> approach:</h3>
-</div>
-<div id="demographics-over-time" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Demographics over time</h2>
-<div id="key-questions" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Key questions</h3>
-<div id="how-are-recruitment-patterns-changing-over-time-are-we-recruiting-more-women-or-other-under-represented-group-urg-in-recent-years" class="section level4 unnumbered">
-<h4>How are recruitment patterns changing over time? Are we recruiting more women (or other under-represented group ‘URG’) in recent years?</h4>
-</div>
-<div id="are-womenurg-more-likely-to-leave-ea-we-will-return-to-this-in-the-retention-post." class="section level4 unnumbered">
-<h4>Are Women/URG more likely to leave EA? (We will return to this in the retention post.)</h4>
-</div>
-<div id="is-the-age-composition-changing-is-ea-aging" class="section level4 unnumbered">
-<h4>Is the age-composition changing, “is EA aging?”</h4>
-</div>
-</div>
-</div>
-<div id="age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Age first heard of EA: does it have a (causal) impact on engagement?</h2>
-<p>–&gt;</p>
-<pre><code>## Sensitivity checks {#demography-sensitivity}
-
-Following [the previous discussion on the unique issues faced by the EA survey](#eas_challenges), we present a series of sensitivity checks. (Why these groupings? See discussion [above](#why_these).)
-
-::: {.marginnote}
-Of course, we cannot report all measures for all sub-groups and weightings in a single post. We offer only a subset of this, and we aim to offer more in the future (perhaps in a dynamic/interactive presentation.)
-:::
-
-[As noted above](#bound-bias-discussion), these bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer and from each &#39;willingness to respond&#39; group.\
-
-&lt;!-- Note, the selection of referrers above is hard-coded --&gt;
-
-### Demographics by &#39;referrer&#39; {-#demog-by-ref}
-
-Respondents come to this survey from a range of &#39;referrers&#39;; we can track these links. The table and bar chart below breaks this down:
-
-```f3175f2a-e8a0-4436-be12-b33925b6d220
-31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AFoAZwBBAHoAQQBEAEUAQQBOAHcAQQAxAEEARwBZAEEATQBnAEIAaABBAEMAMABBAFoAUQBBADQAQQBHAEUAQQBNAEEAQQB0AEEARABRAEEATgBBAEEAegBBAEQAWQBBAEwAUQBCAGkAQQBHAFUAQQBNAFEAQQB5AEEAQwAwAEEAWQBnAEEAegBBAEQATQBBAE8AUQBBAHkAQQBEAFUAQQBZAGcAQQAyAEEARwBRAEEATQBnAEEAeQBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATQB3AEEANQBBAEQAVQBBAE4AUQBBAD0ACgBwAHIAZQBmAGkAeAA6AAoAcwBvAHUAcgBjAGUAOgBZAEEAQgBnAEEARwBBAEEAZQB3AEIAeQBBAEMAdwBBAEkAQQBCAHkAQQBHAFUAQQBaAGcAQgBsAEEASABJAEEAYwBnAEIAbABBAEgASQBBAGMAdwBCADkAQQBBAG8AQQBZAHcAQgBoAEEASABBAEEASQBBAEEAOABBAEMAMABBAEkAQQBBAGkAQQBGAEkAQQBaAFEAQgBtAEEARwBVAEEAYwBnAEIAeQBBAEcAVQBBAGMAZwBBAGkAQQBBAG8AQQBDAGcAQQBvAEEAQQBvAEEAYwBnAEIAbABBAEcAWQBBAFoAUQBCAHkAQQBGADgAQQBkAEEAQgBoAEEARwBJAEEASQBBAEEAOABBAEMAMABBAEkAQQBCAGwAQQBHAEUAQQBjAHcAQgBmAEEARABJAEEATQBBAEEAZwBBAEMAVQBBAFAAZwBBAGwAQQBBAG8AQQBkAEEAQgBoAEEARwBJAEEAZQBRAEIAcwBBAEMAZwBBAGMAZwBCAGwAQQBHAFkAQQBaAFEAQgB5AEEASABJAEEAWgBRAEIAeQBBAEYAOABBAFkAdwBCAGgAQQBIAFEAQQBLAFEAQQBnAEEAQwBVAEEAUABnAEEAbABBAEEAbwBBAEkAQQBBAGcAQQBHAEUAQQBjAGcAQgB5AEEARwBFAEEAYgBnAEIAbgBBAEcAVQBBAEsAQQBBAHQAQQBHADQAQQBLAFEAQQBnAEEAQwBVAEEAUABnAEEAbABBAEEAbwBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQgByAEEARwBFAEEAWQBnAEIAcwBBAEcAVQBBAEsAQQBCAGoAQQBHAEUAQQBjAEEAQgAwAEEARwBrAEEAYgB3AEIAdQBBAEQAMABBAFkAdwBCAGgAQQBIAEEAQQBLAFEAQQBnAEEAQwBVAEEAUABnAEEAbABBAEEAbwBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQgByAEEARwBFAEEAWQBnAEIAcwBBAEcAVQBBAFgAdwBCAHoAQQBIAFEAQQBlAFEAQgBzAEEARwBrAEEAYgBnAEIAbgBBAEMAZwBBAGIAQQBCAGgAQQBIAFEAQQBaAFEAQgA0AEEARgA4AEEAYgB3AEIAdwBBAEgAUQBBAGEAUQBCAHYAQQBHADQAQQBjAHcAQQBnAEEARAAwAEEASQBBAEEAaQBBAEgATQBBAFkAdwBCAGgAQQBHAHcAQQBaAFEAQgBmAEEARwBRAEEAYgB3AEIAMwBBAEcANABBAEkAZwBBAHAAQQBBAG8AQQBLAFEAQQBLAEEAQQBvAEEAYgBBAEIAcABBAEcASQBBAGMAZwBCAGgAQQBIAEkAQQBlAFEAQQBvAEEASABZAEEAYQBRAEIAeQBBAEcAawBBAFoAQQBCAHAAQQBIAE0AQQBLAFEAQQBLAEEAQQBvAEEAQwBnAEEAbwBBAEEAbwBBAGMAZwBCAGwAQQBHAFkAQQBaAFEAQgB5AEEASABJAEEAWgBRAEIAeQBBAEYAOABBAFkAZwBCAGgAQQBIAEkAQQBJAEEAQQA4AEEAQwAwAEEASQBBAEIAbABBAEcARQBBAGMAdwBCAGYAQQBEAEkAQQBNAEEAQQBnAEEAQwBVAEEAUABnAEEAbABBAEEAbwBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQgBtAEEARwBrAEEAYgBBAEIAMABBAEcAVQBBAGMAZwBBAG8AQQBIAEkAQQBaAFEAQgBtAEEARwBVAEEAYwBnAEIAeQBBAEcAVQBBAGMAZwBCAGYAQQBHAE0AQQBZAFEAQgAwAEEAQwBFAEEAUABRAEEAaQBBAEUAOABBAGQAQQBCAG8AQQBHAFUAQQBjAGcAQQBpAEEAQwBrAEEASQBBAEEAbABBAEQANABBAEoAUQBBAEsAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEAYgBRAEIAMQBBAEgAUQBBAFkAUQBCADAAQQBHAFUAQQBLAEEAQQBLAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBIAEkAQQBaAFEAQgBtAEEARwBVAEEAYwBnAEIAeQBBAEcAVQBBAGMAZwBCAGYAQQBIAE0AQQBkAFEAQgBpAEEAQwBBAEEAUABRAEEAZwBBAEcATQBBAFkAUQBCAHoAQQBHAFUAQQBYAHcAQgAzAEEARwBnAEEAWgBRAEIAdQBBAEMAZwBBAEMAZwBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEIAegBBAEgAUQBBAGMAZwBCAGYAQQBHAFEAQQBaAFEAQgAwAEEARwBVAEEAWQB3AEIAMABBAEMAZwBBAGMAZwBCAGwAQQBHAFkAQQBaAFEAQgB5AEEASABJAEEAWgBRAEIAeQBBAEMAdwBBAEkAQQBBAGkAQQBFAGMAQQBjAGcAQgB2AEEASABVAEEAYwBBAEIAegBBAEMASQBBAEsAUQBBAGcAQQBIADQAQQBJAEEAQgBoAEEASABNAEEATABnAEIAbQBBAEcARQBBAFkAdwBCADAAQQBHADgAQQBjAGcAQQBvAEEASABJAEEAWgBRAEIAbQBBAEcAVQBBAGMAZwBCAHkAQQBHAFUAQQBjAGcAQQBwAEEAQwB3AEEAQwBnAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQgB6AEEASABRAEEAYwBnAEIAZgBBAEcAUQBBAFoAUQBCADAAQQBHAFUAQQBZAHcAQgAwAEEAQwBnAEEAYwBnAEIAbABBAEcAWQBBAFoAUQBCAHkAQQBIAEkAQQBaAFEAQgB5AEEAQwB3AEEASQBBAEEAaQBBAEcAUQBBAFkAUQBCAHUAQQBHAHMAQQBaAFEAQgBoAEEARwAwAEEAWgBRAEIAdABBAEcAVQBBAGMAdwBCADgAQQBFAFUAQQBRAFEAQQBnAEEARQBZAEEAUQBnAEIAOABBAEUATQBBAFIAUQBCAEIAQQBDAEEAQQBSAGcAQgBDAEEASAB3AEEAUwBBAEIAaABBAEcANABBAFoAdwBCAHYAQQBIAFUAQQBkAEEAQgB6AEEAQwBJAEEASwBRAEEAZwBBAEgANABBAEkAQQBCAGgAQQBIAE0AQQBMAGcAQgBtAEEARwBFAEEAWQB3AEIAMABBAEcAOABBAGMAZwBBAG8AQQBIAEkAQQBaAFEAQgBtAEEARwBVAEEAYwBnAEIAeQBBAEcAVQBBAGMAZwBBAHAAQQBDAHcAQQBDAGcAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBCAHoAQQBIAFEAQQBjAGcAQgBmAEEARwBRAEEAWgBRAEIAMABBAEcAVQBBAFkAdwBCADAAQQBDAGcAQQBjAGcAQgBsAEEARwBZAEEAWgBRAEIAeQBBAEgASQBBAFoAUQBCAHkAQQBDAHcAQQBJAEEAQQBpAEEARQB3AEEAWgBRAEIAegBBAEgATQBBAEkAQQBCAFgAQQBIAEkAQQBiAHcAQgB1AEEARwBjAEEAZgBBAEIAVABBAEcAdwBBAFkAUQBCADAAQQBHAFUAQQBJAGcAQQBwAEEAQwBBAEEAZgBnAEEAZwBBAEcARQBBAGMAdwBBAHUAQQBHAFkAQQBZAFEAQgBqAEEASABRAEEAYgB3AEIAeQBBAEMAZwBBAGMAZwBCAGwAQQBHAFkAQQBaAFEAQgB5AEEASABJAEEAWgBRAEIAeQBBAEMAawBBAEwAQQBBAEsAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEYAUQBBAFUAZwBCAFYAQQBFAFUAQQBJAEEAQgArAEEAQwBBAEEAWQBRAEIAegBBAEMANABBAFoAZwBCAGgAQQBHAE0AQQBkAEEAQgB2AEEASABJAEEASwBBAEEAaQBBAEMASQBBAEsAUQBBAHAAQQBDAHcAQQBDAGcAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAHAAQQBDAEEAQQBKAFEAQQArAEEAQwBVAEEAQwBnAEEAZwBBAEMAQQBBAFoAdwBCAG4AQQBIAEEAQQBiAEEAQgB2AEEASABRAEEASwBBAEEAcABBAEMAQQBBAEsAdwBBAEsAQQBDAEEAQQBZAFEAQgBsAEEASABNAEEASwBBAEIANABBAEMAQQBBAFAAUQBBAGcAQQBHAFkAQQBiAHcAQgB5AEEARwBNAEEAWQBRAEIAMABBAEgATQBBAE8AZwBBADYAQQBHAFkAQQBZAHcAQgAwAEEARgA4AEEAYQBRAEIAdQBBAEcAWQBBAGMAZwBCAGwAQQBIAEUAQQBLAEEAQgB5AEEARwBVAEEAWgBnAEIAbABBAEgASQBBAGMAZwBCAGwAQQBIAEkAQQBYAHcAQgBqAEEARwBFAEEAZABBAEEAcABBAEMAdwBBAEkAQQBCAG0AQQBHAGsAQQBiAEEAQgBzAEEAQwBBAEEAUABRAEEAZwBBAEgASQBBAFoAUQBCAG0AQQBHAFUAQQBjAGcAQgB5AEEARwBVAEEAYwBnAEIAZgBBAEgATQBBAGQAUQBCAGkAQQBDAGsAQQBJAEEAQQByAEEAQQBvAEEASQBBAEIAbgBBAEcAVQBBAGIAdwBCAHQAQQBGADgAQQBZAGcAQgBoAEEASABJAEEASwBBAEIAegBBAEgAUQBBAFkAUQBCADAAQQBEADAAQQBJAGcAQgBqAEEARwA4AEEAZABRAEIAdQBBAEgAUQBBAEkAZwBBAHAAQQBDAEEAQQBLAHcAQQBLAEEASABNAEEAWQB3AEIAaABBAEcAdwBBAFoAUQBCAGYAQQBHAFkAQQBhAFEAQgBzAEEARwB3AEEAWAB3AEIAbwBBAEgAVQBBAFoAUQBBAG8AQQBDAGsAQQBJAEEAQQByAEEAQQBvAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBHAE0AQQBiAHcAQgB2AEEASABJAEEAWgBBAEIAZgBBAEcAWQBBAGIAQQBCAHAAQQBIAEEAQQBLAEEAQQBwAEEAQwBBAEEASwB3AEEASwBBAEMAQQBBAFoAdwBCAG4AQQBIAFEAQQBhAEEAQgBsAEEARwAwAEEAWgBRAEIAegBBAEQAbwBBAE8AZwBCADAAQQBHAGcAQQBaAFEAQgB0AEEARwBVAEEAWAB3AEIAbQBBAEcAawBBAGQAZwBCAGwAQQBIAFEAQQBhAEEAQgBwAEEASABJAEEAZABBAEIANQBBAEcAVQBBAGEAUQBCAG4AQQBHAGcAQQBkAEEAQQBvAEEAQwBrAEEASQBBAEEAcgBBAEEAbwBBAEkAQQBBAGcAQQBIAE0AQQBZAHcAQgBoAEEARwB3AEEAWgBRAEIAZgBBAEgAZwBBAFgAdwBCAGsAQQBHAGsAQQBjAHcAQgBqAEEASABJAEEAWgBRAEIAMABBAEcAVQBBAEsAQQBCAHMAQQBHAEUAQQBZAGcAQgBsAEEARwB3AEEAYwB3AEEAOQBBAEcATQBBAEsAQQBBAGkAQQBFAHcAQQBaAFEAQgB6AEEASABNAEEASQBBAEIAWABBAEgASQBBAGIAdwBCAHUAQQBHAGMAQQBJAEEAQgB2AEEASABJAEEASQBBAEIAVABBAEcAdwBBAFkAUQBCADAAQQBHAFUAQQBVAHcAQgAwAEEARwBFAEEAYwBnAEIARABBAEcAOABBAFoAQQBCAGwAQQBIAGcAQQBMAFEAQgBTAEEARwBVAEEAWgBBAEIAawBBAEcAawBBAGQAQQBBAGkAQQBEADAAQQBJAGcAQgBNAEEARwBVAEEAYwB3AEIAegBBAEYAYwBBAGMAZwBCAHYAQQBHADQAQQBaAHcAQQB2AEEARgBNAEEAVQB3AEIARABBAEMAMABBAFUAZwBCAGwAQQBHAFEAQQBaAEEAQgBwAEEASABRAEEASQBnAEEAcwBBAEEAbwBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGkAQQBFAFUAQQBiAFEAQgBoAEEARwBrAEEAYgBBAEEANwBBAEMAQQBBAGIAdwBCAHcAQQBIAFEAQQBMAFEAQgBwAEEARwA0AEEASQBBAEIAbQBBAEgASQBBAGIAdwBCAHQAQQBDAEEAQQBjAEEAQgB5AEEARwBVAEEAZABnAEEAdQBBAEMAQQBBAFIAUQBCAEIAQQBGAE0AQQBJAGcAQQA5AEEAQwBJAEEAUgBRAEIAdABBAEcARQBBAGEAUQBCAHMAQQBEAHMAQQBJAEEAQgB2AEEASABBAEEAZABBAEEAdABBAEcAawBBAGIAZwBBAGcAQQBIAEEAQQBjAGcAQgBsAEEASABZAEEATABnAEEAZwBBAEYATQBBAFUAdwBCAEQAQQBDAEkAQQBLAFEAQQBwAEEAQwBzAEEAQwBnAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBHAGMAQQBkAFEAQgBwAEEARwBRAEEAWgBRAEIAegBBAEMAZwBBAFoAZwBCAHAAQQBHAHcAQQBiAEEAQQA5AEEARwBjAEEAZABRAEIAcABBAEcAUQBBAFoAUQBCAGYAQQBHAHcAQQBaAFEAQgBuAEEARwBVAEEAYgBnAEIAawBBAEMAZwBBAGQAQQBCAHAAQQBIAFEAQQBiAEEAQgBsAEEARAAwAEEAVABnAEIAVgBBAEUAdwBBAFQAQQBBAHAAQQBDAGsAQQBJAEEAQQByAEEAQQBvAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBCADAAQQBHAGcAQQBaAFEAQgB0AEEARwBVAEEASwBBAEIAcwBBAEcAVQBBAFoAdwBCAGwAQQBHADQAQQBaAEEAQQB1AEEASABBAEEAYgB3AEIAegBBAEcAawBBAGQAQQBCAHAAQQBHADgAQQBiAGcAQQBnAEEARAAwAEEASQBBAEEAaQBBAEcASQBBAGIAdwBCADAAQQBIAFEAQQBiAHcAQgB0AEEAQwBJAEEASwBRAEEASwBBAEMAawBBAEMAZwBBAEsAQQBHAEEAQQBZAEEAQgBnAEEAQQA9AD0ACgBzAHUAZgBmAGkAeAA6AA==:31b8e172-b470-440e-83d8-e6b185028602</code></pre>
+<!-- Note, the selection of referrers above is hard-coded -->
+<div id="demog-by-ref" class="section level3 unnumbered">
+<h3>Demographics by ‘referrer’</h3>
+<p>Respondents come to this survey from a range of ‘referrers’; we can track these links. The table and bar chart below breaks this down:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="demog.html#cb5-1" aria-hidden="true" tabindex="-1"></a>cap <span class="ot">&lt;-</span> <span class="st">&quot;Referrer&quot;</span></span>
+<span id="cb5-2"><a href="demog.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="demog.html#cb5-3" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb5-4"><a href="demog.html#cb5-4" aria-hidden="true" tabindex="-1"></a>refer_tab <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="demog.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tabyl</span>(referrer_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="demog.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>n) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="demog.html#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>(<span class="at">caption=</span>cap) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="demog.html#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">latex_options =</span> <span class="st">&quot;scale_down&quot;</span>)</span>
+<span id="cb5-9"><a href="demog.html#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:referrers">Table 3.1: </span>Referrer
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+referrer_cat
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+80K hours
+</td>
+<td style="text-align:right;">
+488
+</td>
+<td style="text-align:right;">
+0.23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EA Forum
+</td>
+<td style="text-align:right;">
+427
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Groups (local)
+</td>
+<td style="text-align:right;">
+334
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Email; opt-in from prev. EAS
+</td>
+<td style="text-align:right;">
+227
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EA Newsletter
+</td>
+<td style="text-align:right;">
+220
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Shared link
+</td>
+<td style="text-align:right;">
+215
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Less Wrong or SlateStarCodex-Reddit
+</td>
+<td style="text-align:right;">
+98
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Social media (FB/memes)
+</td>
+<td style="text-align:right;">
+62
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Giving What We Can
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Reddit
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="demog.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb6-2"><a href="demog.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="demog.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="demog.html#cb6-4" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb6-5"><a href="demog.html#cb6-5" aria-hidden="true" tabindex="-1"></a>referrer_bar <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="demog.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="demog.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb6-8"><a href="demog.html#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">referrer_sub =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-9"><a href="demog.html#cb6-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(referrer, <span class="st">&quot;Groups&quot;</span>) <span class="sc">~</span> <span class="fu">as.factor</span>(referrer),</span>
+<span id="cb6-10"><a href="demog.html#cb6-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(referrer, <span class="st">&quot;dankeamemes|EA FB|CEA FB|Hangouts&quot;</span>) <span class="sc">~</span> <span class="fu">as.factor</span>(referrer),</span>
+<span id="cb6-11"><a href="demog.html#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(referrer, <span class="st">&quot;Less Wrong|Slate&quot;</span>) <span class="sc">~</span> <span class="fu">as.factor</span>(referrer),</span>
+<span id="cb6-12"><a href="demog.html#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="fu">as.factor</span>(<span class="st">&quot;&quot;</span>)),</span>
+<span id="cb6-13"><a href="demog.html#cb6-13" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-14"><a href="demog.html#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-15"><a href="demog.html#cb6-15" aria-hidden="true" tabindex="-1"></a> <span class="fu">aes</span>(<span class="at">x =</span> forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(referrer_cat), <span class="at">fill =</span> referrer_sub) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="demog.html#cb6-16" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="demog.html#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_hue</span>() <span class="sc">+</span></span>
+<span id="cb6-18"><a href="demog.html#cb6-18" aria-hidden="true" tabindex="-1"></a>     <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb6-19"><a href="demog.html#cb6-19" aria-hidden="true" tabindex="-1"></a> ggthemes<span class="sc">::</span><span class="fu">theme_fivethirtyeight</span>() <span class="sc">+</span></span>
+<span id="cb6-20"><a href="demog.html#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Less Wrong or SlateStarCodex-Reddit&quot;</span><span class="ot">=</span><span class="st">&quot;LessWrong/SSC-Reddit&quot;</span>,</span>
+<span id="cb6-21"><a href="demog.html#cb6-21" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Email; opt-in from prev. EAS&quot;</span><span class="ot">=</span><span class="st">&quot;Email; opt-in prev. SSC&quot;</span>))<span class="sc">+</span></span>
+<span id="cb6-22"><a href="demog.html#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="cn">NULL</span>)) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="demog.html#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb6-24"><a href="demog.html#cb6-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="ea_survey_work_files/figure-html/referrers-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <!--
 something like this for 'top referrers over time'?
 biomedicalrevenue %>%
@@ -994,42 +1093,42 @@ biomedicalrevenue %>%
 <p><br />
 </p>
 <p>Below, we report <strong>‘engagement by referrer’</strong> (with non-responses dropped, and 4 ‘other referrers’ dropped), i.e., ‘how engaged are those coming from each referrer.’ This depiction also shows the relative magnitudes of each grouping and subgrouping, allowing us to consider ‘where the action is.’</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="demog.html#cb6-1" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb6-2"><a href="demog.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  engage_by_ref <span class="ot">&lt;-</span></span>
-<span id="cb6-3"><a href="demog.html#cb6-3" aria-hidden="true" tabindex="-1"></a>    eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="demog.html#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="demog.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(engagement)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="demog.html#cb6-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb6-7"><a href="demog.html#cb6-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">aes</span>(<span class="at">x =</span> forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(referrer_cat), <span class="at">fill =</span> engagement) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="demog.html#cb6-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb6-9"><a href="demog.html#cb6-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb6-10"><a href="demog.html#cb6-10" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_fill_brewer</span>() <span class="sc">+</span></span>
-<span id="cb6-11"><a href="demog.html#cb6-11" aria-hidden="true" tabindex="-1"></a> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-12"><a href="demog.html#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">&quot;Self reported EA engagement level&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="demog.html#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Engagement by Referrer (2020)&quot;</span>,  <span class="at">x =</span> <span class="st">&quot;Referrer&quot;</span>)</span>
-<span id="cb6-14"><a href="demog.html#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="demog.html#cb6-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="demog.html#cb7-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb7-2"><a href="demog.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  engage_by_ref <span class="ot">&lt;-</span></span>
+<span id="cb7-3"><a href="demog.html#cb7-3" aria-hidden="true" tabindex="-1"></a>    eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="demog.html#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="demog.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(engagement)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="demog.html#cb7-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-7"><a href="demog.html#cb7-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">aes</span>(<span class="at">x =</span> forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(referrer_cat), <span class="at">fill =</span> engagement) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="demog.html#cb7-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb7-9"><a href="demog.html#cb7-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb7-10"><a href="demog.html#cb7-10" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_fill_brewer</span>() <span class="sc">+</span></span>
+<span id="cb7-11"><a href="demog.html#cb7-11" aria-hidden="true" tabindex="-1"></a> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-12"><a href="demog.html#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">&quot;Self reported EA engagement level&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="demog.html#cb7-13" aria-hidden="true" tabindex="-1"></a>       <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Engagement by Referrer (2020)&quot;</span>,  <span class="at">x =</span> <span class="st">&quot;Referrer&quot;</span>)</span>
+<span id="cb7-14"><a href="demog.html#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="demog.html#cb7-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="ea_survey_work_files/figure-html/unnamed-chunk-10-1.png" width="80%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="demog.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#TODO: add an &#39;overall&#39; bar to this; put NA&#39;s as &#39;zeroes&#39;, i.e., the bar to the left.</span></span>
-<span id="cb7-2"><a href="demog.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#TODO: try to preserve colors for each org (or for engagement?) across graphs -- see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/ &#39;use and reuse pallettes&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="demog.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#TODO: add an &#39;overall&#39; bar to this; put NA&#39;s as &#39;zeroes&#39;, i.e., the bar to the left.</span></span>
+<span id="cb8-2"><a href="demog.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#TODO: try to preserve colors for each org (or for engagement?) across graphs -- see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/ &#39;use and reuse pallettes&#39;</span></span></code></pre></div>
 <p><br />
 </p>
 <p>Next we consider <strong>referrer by engagement</strong>; i.e., the ‘referrer composition’ and size of each engagment group.</p>
 <!-- echo in engagement chapter?) -->
 <p>(Again, a few ‘other referrers’ are dropped.)</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="demog.html#cb8-1" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb8-2"><a href="demog.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  ref_by_engage <span class="ot">&lt;-</span></span>
-<span id="cb8-3"><a href="demog.html#cb8-3" aria-hidden="true" tabindex="-1"></a>    eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="demog.html#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="demog.html#cb8-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb8-6"><a href="demog.html#cb8-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">aes</span>(engagement, <span class="at">fill =</span> referrer_cat) <span class="sc">+</span></span>
-<span id="cb8-7"><a href="demog.html#cb8-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb8-8"><a href="demog.html#cb8-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb8-9"><a href="demog.html#cb8-9" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_fill_hue</span>() <span class="sc">+</span></span>
-<span id="cb8-10"><a href="demog.html#cb8-10" aria-hidden="true" tabindex="-1"></a> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb8-11"><a href="demog.html#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">&quot;Referrer (groupings)&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb8-12"><a href="demog.html#cb8-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Referrer by Engagment (2020)&quot;</span>,  <span class="at">x =</span> <span class="st">&quot;Self-reported level of engagement&quot;</span>)</span>
-<span id="cb8-13"><a href="demog.html#cb8-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="demog.html#cb9-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb9-2"><a href="demog.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  ref_by_engage <span class="ot">&lt;-</span></span>
+<span id="cb9-3"><a href="demog.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="demog.html#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="demog.html#cb9-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="demog.html#cb9-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">aes</span>(engagement, <span class="at">fill =</span> referrer_cat) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="demog.html#cb9-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb9-8"><a href="demog.html#cb9-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb9-9"><a href="demog.html#cb9-9" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_fill_hue</span>() <span class="sc">+</span></span>
+<span id="cb9-10"><a href="demog.html#cb9-10" aria-hidden="true" tabindex="-1"></a> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a href="demog.html#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">&quot;Referrer (groupings)&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="demog.html#cb9-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Referrer by Engagment (2020)&quot;</span>,  <span class="at">x =</span> <span class="st">&quot;Self-reported level of engagement&quot;</span>)</span>
+<span id="cb9-13"><a href="demog.html#cb9-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="ea_survey_work_files/figure-html/unnamed-chunk-11-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p><br />
 </p>
@@ -1037,49 +1136,49 @@ biomedicalrevenue %>%
 <div id="characteristics-by-referrer---table" class="section level4 unnumbered">
 <h4>Characteristics by referrer - table</h4>
 <p>(Note: 13 ‘other referrers’ are dropped.)</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="demog.html#cb9-1" aria-hidden="true" tabindex="-1"></a>label_list <span class="ot">&lt;-</span> <span class="fu">list</span>(age_approx <span class="sc">~</span> <span class="st">&quot;Age&quot;</span>,</span>
-<span id="cb9-2"><a href="demog.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                   d_male <span class="sc">~</span> <span class="st">&quot;Male&quot;</span>,</span>
-<span id="cb9-3"><a href="demog.html#cb9-3" aria-hidden="true" tabindex="-1"></a>                   d_student <span class="sc">~</span> <span class="st">&quot;Student&quot;</span>,</span>
-<span id="cb9-4"><a href="demog.html#cb9-4" aria-hidden="true" tabindex="-1"></a>                   race_white <span class="sc">~</span> <span class="st">&quot;White (ethnicity)&quot;</span>,</span>
-<span id="cb9-5"><a href="demog.html#cb9-5" aria-hidden="true" tabindex="-1"></a>                  d_live_usa <span class="sc">~</span> <span class="st">&quot;USA-based&quot;</span>,</span>
-<span id="cb9-6"><a href="demog.html#cb9-6" aria-hidden="true" tabindex="-1"></a>                  income_k_c <span class="sc">~</span> <span class="st">&quot;Income in $1000&quot;</span>,</span>
-<span id="cb9-7"><a href="demog.html#cb9-7" aria-hidden="true" tabindex="-1"></a>                  career_academia <span class="sc">~</span> <span class="st">&quot;Academic current career&quot;</span>,</span>
-<span id="cb9-8"><a href="demog.html#cb9-8" aria-hidden="true" tabindex="-1"></a>                  mn_priority_lt_rating <span class="sc">~</span> <span class="st">&quot;Mean prioritization LT (1-5)&quot;</span>,</span>
-<span id="cb9-9"><a href="demog.html#cb9-9" aria-hidden="true" tabindex="-1"></a>                  lt_top_priority <span class="sc">~</span> <span class="st">&quot;LT cause(s) highest&quot;</span>,</span>
-<span id="cb9-10"><a href="demog.html#cb9-10" aria-hidden="true" tabindex="-1"></a>                  animal_top_priority <span class="sc">~</span> <span class="st">&quot;Animal welfare highest&quot;</span>,</span>
-<span id="cb9-11"><a href="demog.html#cb9-11" aria-hidden="true" tabindex="-1"></a>                  don_share_inc_19_imp <span class="sc">~</span> <span class="st">&quot;Donation as share of income, with imputation&quot;</span>,</span>
-<span id="cb9-12"><a href="demog.html#cb9-12" aria-hidden="true" tabindex="-1"></a>                  engagement_num <span class="sc">~</span> <span class="st">&quot;Engagement (1-5 scale)&quot;</span></span>
-<span id="cb9-13"><a href="demog.html#cb9-13" aria-hidden="true" tabindex="-1"></a>                  )</span>
-<span id="cb9-14"><a href="demog.html#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="demog.html#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="demog.html#cb9-16" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb9-17"><a href="demog.html#cb9-17" aria-hidden="true" tabindex="-1"></a>  demo_tab_ref <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb9-18"><a href="demog.html#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-19"><a href="demog.html#cb9-19" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mutate</span>(<span class="at">referrer_cat =</span> <span class="fu">as.factor</span>(referrer_cat),</span>
-<span id="cb9-20"><a href="demog.html#cb9-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">referrer_cat=</span> <span class="fu">fct_drop</span>(referrer_cat),</span>
-<span id="cb9-21"><a href="demog.html#cb9-21" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-22"><a href="demog.html#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), referrer_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb9-23"><a href="demog.html#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
-<span id="cb9-24"><a href="demog.html#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> referrer_cat,</span>
-<span id="cb9-25"><a href="demog.html#cb9-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
-<span id="cb9-26"><a href="demog.html#cb9-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
-<span id="cb9-27"><a href="demog.html#cb9-27" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{p10}-{p90}&quot;</span>,</span>
-<span id="cb9-28"><a href="demog.html#cb9-28" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
-<span id="cb9-29"><a href="demog.html#cb9-29" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
-<span id="cb9-30"><a href="demog.html#cb9-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
-<span id="cb9-31"><a href="demog.html#cb9-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
-<span id="cb9-32"><a href="demog.html#cb9-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
-<span id="cb9-33"><a href="demog.html#cb9-33" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-34"><a href="demog.html#cb9-34" aria-hidden="true" tabindex="-1"></a> <span class="fu">modify_footnote</span>(</span>
-<span id="cb9-35"><a href="demog.html#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">update =</span> <span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">&quot;* &#39;Age&#39; imputed as current year minus birth-year; a few &#39;other referrer&#39; responses dropped; &#39;Mean prioritization LT&#39; averages priority assigned to X-risk, AI risks, Biosecurity, Nuclear, and broad-LT-ism&#39;; &#39;LT causes highest&#39; indicates that one of these causes was among those the individual ranked most-highly. (Same for &#39;Animal welfare highest&#39;)&quot;</span></span>
-<span id="cb9-36"><a href="demog.html#cb9-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-37"><a href="demog.html#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
-<span id="cb9-38"><a href="demog.html#cb9-38" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="demog.html#cb10-1" aria-hidden="true" tabindex="-1"></a>label_list <span class="ot">&lt;-</span> <span class="fu">list</span>(age_approx <span class="sc">~</span> <span class="st">&quot;Age&quot;</span>,</span>
+<span id="cb10-2"><a href="demog.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                   d_male <span class="sc">~</span> <span class="st">&quot;Male&quot;</span>,</span>
+<span id="cb10-3"><a href="demog.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                   d_student <span class="sc">~</span> <span class="st">&quot;Student&quot;</span>,</span>
+<span id="cb10-4"><a href="demog.html#cb10-4" aria-hidden="true" tabindex="-1"></a>                   race_white <span class="sc">~</span> <span class="st">&quot;White (ethnicity)&quot;</span>,</span>
+<span id="cb10-5"><a href="demog.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                  d_live_usa <span class="sc">~</span> <span class="st">&quot;USA-based&quot;</span>,</span>
+<span id="cb10-6"><a href="demog.html#cb10-6" aria-hidden="true" tabindex="-1"></a>                  income_k_c <span class="sc">~</span> <span class="st">&quot;Income in $1000&quot;</span>,</span>
+<span id="cb10-7"><a href="demog.html#cb10-7" aria-hidden="true" tabindex="-1"></a>                  career_academia <span class="sc">~</span> <span class="st">&quot;Academic current career&quot;</span>,</span>
+<span id="cb10-8"><a href="demog.html#cb10-8" aria-hidden="true" tabindex="-1"></a>                  mn_priority_lt_rating <span class="sc">~</span> <span class="st">&quot;Mean prioritization LT (1-5)&quot;</span>,</span>
+<span id="cb10-9"><a href="demog.html#cb10-9" aria-hidden="true" tabindex="-1"></a>                  lt_top_priority <span class="sc">~</span> <span class="st">&quot;LT cause(s) highest&quot;</span>,</span>
+<span id="cb10-10"><a href="demog.html#cb10-10" aria-hidden="true" tabindex="-1"></a>                  animal_top_priority <span class="sc">~</span> <span class="st">&quot;Animal welfare highest&quot;</span>,</span>
+<span id="cb10-11"><a href="demog.html#cb10-11" aria-hidden="true" tabindex="-1"></a>                  don_share_inc_19_imp <span class="sc">~</span> <span class="st">&quot;Donation as share of income, with imputation&quot;</span>,</span>
+<span id="cb10-12"><a href="demog.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                  engagement_num <span class="sc">~</span> <span class="st">&quot;Engagement (1-5 scale)&quot;</span></span>
+<span id="cb10-13"><a href="demog.html#cb10-13" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb10-14"><a href="demog.html#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="demog.html#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="demog.html#cb10-16" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb10-17"><a href="demog.html#cb10-17" aria-hidden="true" tabindex="-1"></a>  demo_tab_ref <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb10-18"><a href="demog.html#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-19"><a href="demog.html#cb10-19" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mutate</span>(<span class="at">referrer_cat =</span> <span class="fu">as.factor</span>(referrer_cat),</span>
+<span id="cb10-20"><a href="demog.html#cb10-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">referrer_cat=</span> <span class="fu">fct_drop</span>(referrer_cat),</span>
+<span id="cb10-21"><a href="demog.html#cb10-21" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-22"><a href="demog.html#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), referrer_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb10-23"><a href="demog.html#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
+<span id="cb10-24"><a href="demog.html#cb10-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> referrer_cat,</span>
+<span id="cb10-25"><a href="demog.html#cb10-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
+<span id="cb10-26"><a href="demog.html#cb10-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
+<span id="cb10-27"><a href="demog.html#cb10-27" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{p10}-{p90}&quot;</span>,</span>
+<span id="cb10-28"><a href="demog.html#cb10-28" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
+<span id="cb10-29"><a href="demog.html#cb10-29" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
+<span id="cb10-30"><a href="demog.html#cb10-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
+<span id="cb10-31"><a href="demog.html#cb10-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
+<span id="cb10-32"><a href="demog.html#cb10-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
+<span id="cb10-33"><a href="demog.html#cb10-33" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-34"><a href="demog.html#cb10-34" aria-hidden="true" tabindex="-1"></a> <span class="fu">modify_footnote</span>(</span>
+<span id="cb10-35"><a href="demog.html#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">update =</span> <span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">&quot;* &#39;Age&#39; imputed as current year minus birth-year; a few &#39;other referrer&#39; responses dropped; &#39;Mean prioritization LT&#39; averages priority assigned to X-risk, AI risks, Biosecurity, Nuclear, and broad-LT-ism&#39;; &#39;LT causes highest&#39; indicates that one of these causes was among those the individual ranked most-highly. (Same for &#39;Animal welfare highest&#39;)&quot;</span></span>
+<span id="cb10-36"><a href="demog.html#cb10-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-37"><a href="demog.html#cb10-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
+<span id="cb10-38"><a href="demog.html#cb10-38" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#uxxeqbotgu .gt_table {
+#vawqlwixff .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1104,7 +1203,7 @@ biomedicalrevenue %>%
   border-left-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_heading {
+#vawqlwixff .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1116,7 +1215,7 @@ biomedicalrevenue %>%
   border-right-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_title {
+#vawqlwixff .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1126,7 +1225,7 @@ biomedicalrevenue %>%
   border-bottom-width: 0;
 }
 
-#uxxeqbotgu .gt_subtitle {
+#vawqlwixff .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1136,13 +1235,13 @@ biomedicalrevenue %>%
   border-top-width: 0;
 }
 
-#uxxeqbotgu .gt_bottom_border {
+#vawqlwixff .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_col_headings {
+#vawqlwixff .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1157,7 +1256,7 @@ biomedicalrevenue %>%
   border-right-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_col_heading {
+#vawqlwixff .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1177,7 +1276,7 @@ biomedicalrevenue %>%
   overflow-x: hidden;
 }
 
-#uxxeqbotgu .gt_column_spanner_outer {
+#vawqlwixff .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1189,15 +1288,15 @@ biomedicalrevenue %>%
   padding-right: 4px;
 }
 
-#uxxeqbotgu .gt_column_spanner_outer:first-child {
+#vawqlwixff .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uxxeqbotgu .gt_column_spanner_outer:last-child {
+#vawqlwixff .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uxxeqbotgu .gt_column_spanner {
+#vawqlwixff .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1209,7 +1308,7 @@ biomedicalrevenue %>%
   width: 100%;
 }
 
-#uxxeqbotgu .gt_group_heading {
+#vawqlwixff .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1231,7 +1330,7 @@ biomedicalrevenue %>%
   vertical-align: middle;
 }
 
-#uxxeqbotgu .gt_empty_group_heading {
+#vawqlwixff .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1246,15 +1345,15 @@ biomedicalrevenue %>%
   vertical-align: middle;
 }
 
-#uxxeqbotgu .gt_from_md > :first-child {
+#vawqlwixff .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uxxeqbotgu .gt_from_md > :last-child {
+#vawqlwixff .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uxxeqbotgu .gt_row {
+#vawqlwixff .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1273,7 +1372,7 @@ biomedicalrevenue %>%
   overflow-x: hidden;
 }
 
-#uxxeqbotgu .gt_stub {
+#vawqlwixff .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1285,7 +1384,7 @@ biomedicalrevenue %>%
   padding-left: 12px;
 }
 
-#uxxeqbotgu .gt_summary_row {
+#vawqlwixff .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1295,7 +1394,7 @@ biomedicalrevenue %>%
   padding-right: 5px;
 }
 
-#uxxeqbotgu .gt_first_summary_row {
+#vawqlwixff .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1305,7 +1404,7 @@ biomedicalrevenue %>%
   border-top-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_grand_summary_row {
+#vawqlwixff .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1315,7 +1414,7 @@ biomedicalrevenue %>%
   padding-right: 5px;
 }
 
-#uxxeqbotgu .gt_first_grand_summary_row {
+#vawqlwixff .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1325,11 +1424,11 @@ biomedicalrevenue %>%
   border-top-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_striped {
+#vawqlwixff .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uxxeqbotgu .gt_table_body {
+#vawqlwixff .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1338,7 +1437,7 @@ biomedicalrevenue %>%
   border-bottom-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_footnotes {
+#vawqlwixff .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1352,13 +1451,13 @@ biomedicalrevenue %>%
   border-right-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_footnote {
+#vawqlwixff .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#uxxeqbotgu .gt_sourcenotes {
+#vawqlwixff .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1372,46 +1471,46 @@ biomedicalrevenue %>%
   border-right-color: #D3D3D3;
 }
 
-#uxxeqbotgu .gt_sourcenote {
+#vawqlwixff .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#uxxeqbotgu .gt_left {
+#vawqlwixff .gt_left {
   text-align: left;
 }
 
-#uxxeqbotgu .gt_center {
+#vawqlwixff .gt_center {
   text-align: center;
 }
 
-#uxxeqbotgu .gt_right {
+#vawqlwixff .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uxxeqbotgu .gt_font_normal {
+#vawqlwixff .gt_font_normal {
   font-weight: normal;
 }
 
-#uxxeqbotgu .gt_font_bold {
+#vawqlwixff .gt_font_bold {
   font-weight: bold;
 }
 
-#uxxeqbotgu .gt_font_italic {
+#vawqlwixff .gt_font_italic {
   font-style: italic;
 }
 
-#uxxeqbotgu .gt_super {
+#vawqlwixff .gt_super {
   font-size: 65%;
 }
 
-#uxxeqbotgu .gt_footnote_marks {
+#vawqlwixff .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="uxxeqbotgu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="vawqlwixff" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1864,53 +1963,53 @@ biomedicalrevenue %>%
     </tr>
   </tfoot>
 </table></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="demog.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#work on putting in standard errors -- not succesful</span></span>
-<span id="cb10-2"><a href="demog.html#cb10-2" aria-hidden="true" tabindex="-1"></a>tbl_se_work <span class="ot">&lt;-</span></span>
-<span id="cb10-3"><a href="demog.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  demo_tab_ref<span class="sc">$</span>meta_data <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="demog.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(summary_type, var_label, df_stats) <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="demog.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(df_stats) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-6"><a href="demog.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-7"><a href="demog.html#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="fu">case_when</span>(</span>
-<span id="cb10-8"><a href="demog.html#cb10-8" aria-hidden="true" tabindex="-1"></a>      summary_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;categorical&quot;</span>, <span class="st">&quot;dichotomous&quot;</span>) <span class="sc">~</span> (<span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> N_nonmiss)),</span>
-<span id="cb10-9"><a href="demog.html#cb10-9" aria-hidden="true" tabindex="-1"></a>      summary_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;continuous2&quot;</span>) <span class="sc">~</span> (sd <span class="sc">/</span> <span class="fu">sqrt</span>(N_nonmiss))</span>
-<span id="cb10-10"><a href="demog.html#cb10-10" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb10-11"><a href="demog.html#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">coalesce</span>(variable_levels, var_label),</span>
-<span id="cb10-12"><a href="demog.html#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_type =</span> <span class="fu">ifelse</span>(summary_type <span class="sc">==</span> <span class="st">&quot;dichotomous&quot;</span>, <span class="st">&quot;label&quot;</span>, <span class="st">&quot;level&quot;</span>)</span>
-<span id="cb10-13"><a href="demog.html#cb10-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-14"><a href="demog.html#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(variable, row_type, label, se) </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="demog.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#work on putting in standard errors -- not succesful</span></span>
+<span id="cb11-2"><a href="demog.html#cb11-2" aria-hidden="true" tabindex="-1"></a>tbl_se_work <span class="ot">&lt;-</span></span>
+<span id="cb11-3"><a href="demog.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  demo_tab_ref<span class="sc">$</span>meta_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="demog.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(summary_type, var_label, df_stats) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="demog.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(df_stats) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="demog.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-7"><a href="demog.html#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="fu">case_when</span>(</span>
+<span id="cb11-8"><a href="demog.html#cb11-8" aria-hidden="true" tabindex="-1"></a>      summary_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;categorical&quot;</span>, <span class="st">&quot;dichotomous&quot;</span>) <span class="sc">~</span> (<span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> N_nonmiss)),</span>
+<span id="cb11-9"><a href="demog.html#cb11-9" aria-hidden="true" tabindex="-1"></a>      summary_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;continuous2&quot;</span>) <span class="sc">~</span> (sd <span class="sc">/</span> <span class="fu">sqrt</span>(N_nonmiss))</span>
+<span id="cb11-10"><a href="demog.html#cb11-10" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb11-11"><a href="demog.html#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">coalesce</span>(variable_levels, var_label),</span>
+<span id="cb11-12"><a href="demog.html#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_type =</span> <span class="fu">ifelse</span>(summary_type <span class="sc">==</span> <span class="st">&quot;dichotomous&quot;</span>, <span class="st">&quot;label&quot;</span>, <span class="st">&quot;level&quot;</span>)</span>
+<span id="cb11-13"><a href="demog.html#cb11-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-14"><a href="demog.html#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(variable, row_type, label, se)</span></code></pre></div>
 <p>As noted previously I do not show the standard error or confidence intervals in these tables because I do not want to suggest “testing for differences in outcome” by these splits; we are focusing on sensitivity testing. Nonetheless, I present estimated standard errors below, to put the differences in context.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="demog.html#cb11-1" aria-hidden="true" tabindex="-1"></a>transpose_ok <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
-<span id="cb11-2"><a href="demog.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="demog.html#cb11-3" aria-hidden="true" tabindex="-1"></a>     t <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="demog.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_to_names</span>(<span class="at">row_number =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-5"><a href="demog.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">format=</span><span class="st">&#39;html&#39;</span>, </span>
-<span id="cb11-6"><a href="demog.html#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits=</span><span class="dv">2</span>, </span>
-<span id="cb11-7"><a href="demog.html#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">row.names=</span><span class="cn">TRUE</span>, </span>
-<span id="cb11-8"><a href="demog.html#cb11-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">align=</span><span class="st">&#39;cccccc&#39;</span>, </span>
-<span id="cb11-9"><a href="demog.html#cb11-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">escape =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb11-10"><a href="demog.html#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Standard errors of means; for smallest and largest groups&quot;</span>)   </span>
-<span id="cb11-11"><a href="demog.html#cb11-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-12"><a href="demog.html#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="demog.html#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="demog.html#cb11-14" aria-hidden="true" tabindex="-1"></a>hi_low_groups <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
-<span id="cb11-15"><a href="demog.html#cb11-15" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
-<span id="cb11-16"><a href="demog.html#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-17"><a href="demog.html#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb11-18"><a href="demog.html#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count<span class="sc">==</span><span class="fu">min</span>(count) <span class="sc">|</span> count<span class="sc">==</span><span class="fu">max</span>(count)) <span class="sc">%&gt;%</span>   </span>
-<span id="cb11-19"><a href="demog.html#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>count)  }</span>
-<span id="cb11-20"><a href="demog.html#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-21"><a href="demog.html#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-22"><a href="demog.html#cb11-22" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb11-23"><a href="demog.html#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), referrer_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb11-24"><a href="demog.html#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-25"><a href="demog.html#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(referrer_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb11-26"><a href="demog.html#cb11-26" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
-<span id="cb11-27"><a href="demog.html#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(referrer_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb11-28"><a href="demog.html#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-29"><a href="demog.html#cb11-29" aria-hidden="true" tabindex="-1"></a>  transpose_ok</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="demog.html#cb12-1" aria-hidden="true" tabindex="-1"></a>transpose_ok <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb12-2"><a href="demog.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="demog.html#cb12-3" aria-hidden="true" tabindex="-1"></a>     t <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="demog.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">row_to_names</span>(<span class="at">row_number =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="demog.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">format=</span><span class="st">&#39;html&#39;</span>,</span>
+<span id="cb12-6"><a href="demog.html#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits=</span><span class="dv">2</span>,</span>
+<span id="cb12-7"><a href="demog.html#cb12-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">row.names=</span><span class="cn">TRUE</span>,</span>
+<span id="cb12-8"><a href="demog.html#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">align=</span><span class="st">&#39;cccccc&#39;</span>,</span>
+<span id="cb12-9"><a href="demog.html#cb12-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-10"><a href="demog.html#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Standard errors of means; for smallest and largest groups&quot;</span>)</span>
+<span id="cb12-11"><a href="demog.html#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-12"><a href="demog.html#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="demog.html#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="demog.html#cb12-14" aria-hidden="true" tabindex="-1"></a>hi_low_groups <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb12-15"><a href="demog.html#cb12-15" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb12-16"><a href="demog.html#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb12-17"><a href="demog.html#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="demog.html#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count<span class="sc">==</span><span class="fu">min</span>(count) <span class="sc">|</span> count<span class="sc">==</span><span class="fu">max</span>(count)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-19"><a href="demog.html#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>count)  }</span>
+<span id="cb12-20"><a href="demog.html#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="demog.html#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="demog.html#cb12-22" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb12-23"><a href="demog.html#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), referrer_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb12-24"><a href="demog.html#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(referrer_cat<span class="sc">!=</span><span class="st">&quot;Other&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-25"><a href="demog.html#cb12-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(referrer_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb12-26"><a href="demog.html#cb12-26" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
+<span id="cb12-27"><a href="demog.html#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(referrer_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb12-28"><a href="demog.html#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb12-29"><a href="demog.html#cb12-29" aria-hidden="true" tabindex="-1"></a>  transpose_ok</span></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-12">Table 3.1: </span>Standard errors of means; for smallest and largest groups
+<span id="tab:unnamed-chunk-12">Table 3.2: </span>Standard errors of means; for smallest and largest groups
 </caption>
 <thead>
 <tr>
@@ -2104,6 +2203,7 @@ don_share_inc_19_imp_se
 <p>Considering attitudes and behaviors, those referred from rationalist groups are the least engaged on average, while those from EA-Forum are the most-engaged. Similar patterns hold for the response to (absolute, not relative) prioritization of the aggregated long-term cause categories. LW/SSC also appear less likely to prioritize animal welfare, while those coming from Social Media (Dank EA Memes, EA FB, CEA FB, and Hangouts) tend to prioritize this more. Median donations as share of (imputed-where-missing) income is fairly constant around 2% across most referrers at around 2%, although it appears substantially higher for email-opt-ins and GWWC-referrals, and potentially somewhat lower for the rationalist groups. <!-- HC --></p>
 <p>What does this tell us about the sensitivity of our results to under- or over-representation of particular referrers?. Some results are not particularly sensitive – for example,“EA’s tend to be young” across all groups of referrers.</p>
 </div>
+</div>
 <div id="demog-by-wtr_lateness" class="section level3 unnumbered">
 <h3>Demographics by willingness-to-respond to future surveys and by lateness of response</h3>
 <p>We repeat the previous summary statistics by ‘willingness to respond in future,’ divided into</p>
@@ -2116,31 +2216,31 @@ don_share_inc_19_imp_se
 <p>While this breakdown may not be of direct interest, but it is relevant to our sensitivity-checking. As discussed, those least willing to respond to future studies may be more representative of under-sampled populations in the current survey. However, in future, we may perhaps avoid using this as a measure for adjusting the importance weights of each response, as it could be prone to manipulation. E.g., those who wished their survey responses to be ‘taken more seriously’ would then have an incentive to respond negatively to these questions.</p>
 <p>Note that we leave out the 10th and quantiles to save space here; these proved to be fairly similar across groups.</p>
 </div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="demog.html#cb12-1" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb12-2"><a href="demog.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  demo_tab_wtr <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="demog.html#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mutate</span>(<span class="at">survey_willing =</span> <span class="fu">as.factor</span>(survey_willing),</span>
-<span id="cb12-4"><a href="demog.html#cb12-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">survey_willing=</span> <span class="fu">fct_rev</span>(survey_willing)</span>
-<span id="cb12-5"><a href="demog.html#cb12-5" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">%&gt;%</span></span>
-<span id="cb12-6"><a href="demog.html#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), survey_willing) <span class="sc">%&gt;%</span></span>
-<span id="cb12-7"><a href="demog.html#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
-<span id="cb12-8"><a href="demog.html#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> survey_willing,</span>
-<span id="cb12-9"><a href="demog.html#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
-<span id="cb12-10"><a href="demog.html#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
-<span id="cb12-11"><a href="demog.html#cb12-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
-<span id="cb12-12"><a href="demog.html#cb12-12" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
-<span id="cb12-13"><a href="demog.html#cb12-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
-<span id="cb12-14"><a href="demog.html#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
-<span id="cb12-15"><a href="demog.html#cb12-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
-<span id="cb12-16"><a href="demog.html#cb12-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb12-17"><a href="demog.html#cb12-17" aria-hidden="true" tabindex="-1"></a> <span class="fu">modify_footnote</span>(</span>
-<span id="cb12-18"><a href="demog.html#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">update =</span> <span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">&quot;&#39;Prioritize LT&#39; averages priority assigned to X-risk, AI risks, Biosecurity, Nuclear, and broad-LT-ism&#39;&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-19"><a href="demog.html#cb12-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
-<span id="cb12-20"><a href="demog.html#cb12-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="demog.html#cb13-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb13-2"><a href="demog.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  demo_tab_wtr <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="demog.html#cb13-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">mutate</span>(<span class="at">survey_willing =</span> <span class="fu">as.factor</span>(survey_willing),</span>
+<span id="cb13-4"><a href="demog.html#cb13-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">survey_willing=</span> <span class="fu">fct_rev</span>(survey_willing)</span>
+<span id="cb13-5"><a href="demog.html#cb13-5" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="demog.html#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), survey_willing) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="demog.html#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
+<span id="cb13-8"><a href="demog.html#cb13-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> survey_willing,</span>
+<span id="cb13-9"><a href="demog.html#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
+<span id="cb13-10"><a href="demog.html#cb13-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
+<span id="cb13-11"><a href="demog.html#cb13-11" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
+<span id="cb13-12"><a href="demog.html#cb13-12" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
+<span id="cb13-13"><a href="demog.html#cb13-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
+<span id="cb13-14"><a href="demog.html#cb13-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
+<span id="cb13-15"><a href="demog.html#cb13-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
+<span id="cb13-16"><a href="demog.html#cb13-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-17"><a href="demog.html#cb13-17" aria-hidden="true" tabindex="-1"></a> <span class="fu">modify_footnote</span>(</span>
+<span id="cb13-18"><a href="demog.html#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">update =</span> <span class="fu">all_stat_cols</span>() <span class="sc">~</span> <span class="st">&quot;&#39;Prioritize LT&#39; averages priority assigned to X-risk, AI risks, Biosecurity, Nuclear, and broad-LT-ism&#39;&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-19"><a href="demog.html#cb13-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
+<span id="cb13-20"><a href="demog.html#cb13-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yzuncqehpg .gt_table {
+#mdtgfnvpoi .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2165,7 +2265,7 @@ don_share_inc_19_imp_se
   border-left-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_heading {
+#mdtgfnvpoi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2177,7 +2277,7 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_title {
+#mdtgfnvpoi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2187,7 +2287,7 @@ don_share_inc_19_imp_se
   border-bottom-width: 0;
 }
 
-#yzuncqehpg .gt_subtitle {
+#mdtgfnvpoi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2197,13 +2297,13 @@ don_share_inc_19_imp_se
   border-top-width: 0;
 }
 
-#yzuncqehpg .gt_bottom_border {
+#mdtgfnvpoi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_col_headings {
+#mdtgfnvpoi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2218,7 +2318,7 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_col_heading {
+#mdtgfnvpoi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2238,7 +2338,7 @@ don_share_inc_19_imp_se
   overflow-x: hidden;
 }
 
-#yzuncqehpg .gt_column_spanner_outer {
+#mdtgfnvpoi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2250,15 +2350,15 @@ don_share_inc_19_imp_se
   padding-right: 4px;
 }
 
-#yzuncqehpg .gt_column_spanner_outer:first-child {
+#mdtgfnvpoi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yzuncqehpg .gt_column_spanner_outer:last-child {
+#mdtgfnvpoi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yzuncqehpg .gt_column_spanner {
+#mdtgfnvpoi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2270,7 +2370,7 @@ don_share_inc_19_imp_se
   width: 100%;
 }
 
-#yzuncqehpg .gt_group_heading {
+#mdtgfnvpoi .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2292,7 +2392,7 @@ don_share_inc_19_imp_se
   vertical-align: middle;
 }
 
-#yzuncqehpg .gt_empty_group_heading {
+#mdtgfnvpoi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2307,15 +2407,15 @@ don_share_inc_19_imp_se
   vertical-align: middle;
 }
 
-#yzuncqehpg .gt_from_md > :first-child {
+#mdtgfnvpoi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yzuncqehpg .gt_from_md > :last-child {
+#mdtgfnvpoi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yzuncqehpg .gt_row {
+#mdtgfnvpoi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2334,7 +2434,7 @@ don_share_inc_19_imp_se
   overflow-x: hidden;
 }
 
-#yzuncqehpg .gt_stub {
+#mdtgfnvpoi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2346,7 +2446,7 @@ don_share_inc_19_imp_se
   padding-left: 12px;
 }
 
-#yzuncqehpg .gt_summary_row {
+#mdtgfnvpoi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2356,7 +2456,7 @@ don_share_inc_19_imp_se
   padding-right: 5px;
 }
 
-#yzuncqehpg .gt_first_summary_row {
+#mdtgfnvpoi .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2366,7 +2466,7 @@ don_share_inc_19_imp_se
   border-top-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_grand_summary_row {
+#mdtgfnvpoi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2376,7 +2476,7 @@ don_share_inc_19_imp_se
   padding-right: 5px;
 }
 
-#yzuncqehpg .gt_first_grand_summary_row {
+#mdtgfnvpoi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2386,11 +2486,11 @@ don_share_inc_19_imp_se
   border-top-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_striped {
+#mdtgfnvpoi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yzuncqehpg .gt_table_body {
+#mdtgfnvpoi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2399,7 +2499,7 @@ don_share_inc_19_imp_se
   border-bottom-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_footnotes {
+#mdtgfnvpoi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2413,13 +2513,13 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_footnote {
+#mdtgfnvpoi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#yzuncqehpg .gt_sourcenotes {
+#mdtgfnvpoi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2433,46 +2533,46 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yzuncqehpg .gt_sourcenote {
+#mdtgfnvpoi .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#yzuncqehpg .gt_left {
+#mdtgfnvpoi .gt_left {
   text-align: left;
 }
 
-#yzuncqehpg .gt_center {
+#mdtgfnvpoi .gt_center {
   text-align: center;
 }
 
-#yzuncqehpg .gt_right {
+#mdtgfnvpoi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yzuncqehpg .gt_font_normal {
+#mdtgfnvpoi .gt_font_normal {
   font-weight: normal;
 }
 
-#yzuncqehpg .gt_font_bold {
+#mdtgfnvpoi .gt_font_bold {
   font-weight: bold;
 }
 
-#yzuncqehpg .gt_font_italic {
+#mdtgfnvpoi .gt_font_italic {
   font-style: italic;
 }
 
-#yzuncqehpg .gt_super {
+#mdtgfnvpoi .gt_super {
   font-size: 65%;
 }
 
-#yzuncqehpg .gt_footnote_marks {
+#mdtgfnvpoi .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="yzuncqehpg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="mdtgfnvpoi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -2690,19 +2790,19 @@ don_share_inc_19_imp_se
 <p><br />
 </p>
 <p>Again, presenting standard errors below to put these differences in context:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="demog.html#cb13-1" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="demog.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">survey_willing =</span> <span class="fu">as.factor</span>(survey_willing),</span>
-<span id="cb13-3"><a href="demog.html#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">survey_willing=</span> <span class="fu">fct_rev</span>(survey_willing)</span>
-<span id="cb13-4"><a href="demog.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-5"><a href="demog.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), survey_willing) <span class="sc">%&gt;%</span></span>
-<span id="cb13-6"><a href="demog.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(survey_willing) <span class="sc">%&gt;%</span></span>
-<span id="cb13-7"><a href="demog.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
-<span id="cb13-8"><a href="demog.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(survey_willing) <span class="sc">%&gt;%</span></span>
-<span id="cb13-9"><a href="demog.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-10"><a href="demog.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  transpose_ok</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="demog.html#cb14-1" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="demog.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">survey_willing =</span> <span class="fu">as.factor</span>(survey_willing),</span>
+<span id="cb14-3"><a href="demog.html#cb14-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">survey_willing=</span> <span class="fu">fct_rev</span>(survey_willing)</span>
+<span id="cb14-4"><a href="demog.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="demog.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), survey_willing) <span class="sc">%&gt;%</span></span>
+<span id="cb14-6"><a href="demog.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(survey_willing) <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a href="demog.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
+<span id="cb14-8"><a href="demog.html#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(survey_willing) <span class="sc">%&gt;%</span></span>
+<span id="cb14-9"><a href="demog.html#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb14-10"><a href="demog.html#cb14-10" aria-hidden="true" tabindex="-1"></a>  transpose_ok</span></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-13">Table 3.2: </span>Standard errors of means; for smallest and largest groups
+<span id="tab:unnamed-chunk-13">Table 3.3: </span>Standard errors of means; for smallest and largest groups
 </caption>
 <thead>
 <tr>
@@ -2860,28 +2960,28 @@ don_share_inc_19_imp_se
 <div class="marginnote">
 <p>* However, the middle groups are the largest: this is because of ties: large groups come in from a referrer on the same day, probably the day the survey is announced. We did not disaggregate this by times-of-day. Thus, to some extent this could also be picking up the effects of different time zones; e.g., if it is announced late in the (Chicago) evening, EAs in Germany are unlikely to respond until the next day</p>
 </div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="demog.html#cb14-1" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb14-2"><a href="demog.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  demo_tab_timing <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="demog.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
-<span id="cb14-4"><a href="demog.html#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
-<span id="cb14-5"><a href="demog.html#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> start_date_qtl_by_referrer,</span>
-<span id="cb14-6"><a href="demog.html#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
-<span id="cb14-7"><a href="demog.html#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
-<span id="cb14-8"><a href="demog.html#cb14-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
-<span id="cb14-9"><a href="demog.html#cb14-9" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
-<span id="cb14-10"><a href="demog.html#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
-<span id="cb14-11"><a href="demog.html#cb14-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
-<span id="cb14-12"><a href="demog.html#cb14-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
-<span id="cb14-13"><a href="demog.html#cb14-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb14-14"><a href="demog.html#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">modify_spanning_header</span>(<span class="fu">c</span>(<span class="st">&quot;stat_1&quot;</span>, <span class="st">&quot;stat_2&quot;</span>, <span class="st">&quot;stat_3&quot;</span>, <span class="st">&quot;stat_4&quot;</span>) <span class="sc">~</span> <span class="st">&quot;**Start date vs. others from same referrer**&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb14-15"><a href="demog.html#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="demog.html#cb14-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
-<span id="cb14-17"><a href="demog.html#cb14-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="demog.html#cb15-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb15-2"><a href="demog.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  demo_tab_timing <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="demog.html#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="demog.html#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
+<span id="cb15-5"><a href="demog.html#cb15-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> start_date_qtl_by_referrer,</span>
+<span id="cb15-6"><a href="demog.html#cb15-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
+<span id="cb15-7"><a href="demog.html#cb15-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
+<span id="cb15-8"><a href="demog.html#cb15-8" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
+<span id="cb15-9"><a href="demog.html#cb15-9" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
+<span id="cb15-10"><a href="demog.html#cb15-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
+<span id="cb15-11"><a href="demog.html#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
+<span id="cb15-12"><a href="demog.html#cb15-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
+<span id="cb15-13"><a href="demog.html#cb15-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-14"><a href="demog.html#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">modify_spanning_header</span>(<span class="fu">c</span>(<span class="st">&quot;stat_1&quot;</span>, <span class="st">&quot;stat_2&quot;</span>, <span class="st">&quot;stat_3&quot;</span>, <span class="st">&quot;stat_4&quot;</span>) <span class="sc">~</span> <span class="st">&quot;**Start date vs. others from same referrer**&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-15"><a href="demog.html#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="demog.html#cb15-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
+<span id="cb15-17"><a href="demog.html#cb15-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qcdrbyjsqt .gt_table {
+#unsbldfkgo .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2906,7 +3006,7 @@ don_share_inc_19_imp_se
   border-left-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_heading {
+#unsbldfkgo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2918,7 +3018,7 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_title {
+#unsbldfkgo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2928,7 +3028,7 @@ don_share_inc_19_imp_se
   border-bottom-width: 0;
 }
 
-#qcdrbyjsqt .gt_subtitle {
+#unsbldfkgo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2938,13 +3038,13 @@ don_share_inc_19_imp_se
   border-top-width: 0;
 }
 
-#qcdrbyjsqt .gt_bottom_border {
+#unsbldfkgo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_col_headings {
+#unsbldfkgo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2959,7 +3059,7 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_col_heading {
+#unsbldfkgo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2979,7 +3079,7 @@ don_share_inc_19_imp_se
   overflow-x: hidden;
 }
 
-#qcdrbyjsqt .gt_column_spanner_outer {
+#unsbldfkgo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2991,15 +3091,15 @@ don_share_inc_19_imp_se
   padding-right: 4px;
 }
 
-#qcdrbyjsqt .gt_column_spanner_outer:first-child {
+#unsbldfkgo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qcdrbyjsqt .gt_column_spanner_outer:last-child {
+#unsbldfkgo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qcdrbyjsqt .gt_column_spanner {
+#unsbldfkgo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3011,7 +3111,7 @@ don_share_inc_19_imp_se
   width: 100%;
 }
 
-#qcdrbyjsqt .gt_group_heading {
+#unsbldfkgo .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3033,7 +3133,7 @@ don_share_inc_19_imp_se
   vertical-align: middle;
 }
 
-#qcdrbyjsqt .gt_empty_group_heading {
+#unsbldfkgo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3048,15 +3148,15 @@ don_share_inc_19_imp_se
   vertical-align: middle;
 }
 
-#qcdrbyjsqt .gt_from_md > :first-child {
+#unsbldfkgo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qcdrbyjsqt .gt_from_md > :last-child {
+#unsbldfkgo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qcdrbyjsqt .gt_row {
+#unsbldfkgo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3075,7 +3175,7 @@ don_share_inc_19_imp_se
   overflow-x: hidden;
 }
 
-#qcdrbyjsqt .gt_stub {
+#unsbldfkgo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3087,7 +3187,7 @@ don_share_inc_19_imp_se
   padding-left: 12px;
 }
 
-#qcdrbyjsqt .gt_summary_row {
+#unsbldfkgo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3097,7 +3197,7 @@ don_share_inc_19_imp_se
   padding-right: 5px;
 }
 
-#qcdrbyjsqt .gt_first_summary_row {
+#unsbldfkgo .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3107,7 +3207,7 @@ don_share_inc_19_imp_se
   border-top-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_grand_summary_row {
+#unsbldfkgo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3117,7 +3217,7 @@ don_share_inc_19_imp_se
   padding-right: 5px;
 }
 
-#qcdrbyjsqt .gt_first_grand_summary_row {
+#unsbldfkgo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3127,11 +3227,11 @@ don_share_inc_19_imp_se
   border-top-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_striped {
+#unsbldfkgo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qcdrbyjsqt .gt_table_body {
+#unsbldfkgo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3140,7 +3240,7 @@ don_share_inc_19_imp_se
   border-bottom-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_footnotes {
+#unsbldfkgo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3154,13 +3254,13 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_footnote {
+#unsbldfkgo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#qcdrbyjsqt .gt_sourcenotes {
+#unsbldfkgo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3174,46 +3274,46 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#qcdrbyjsqt .gt_sourcenote {
+#unsbldfkgo .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#qcdrbyjsqt .gt_left {
+#unsbldfkgo .gt_left {
   text-align: left;
 }
 
-#qcdrbyjsqt .gt_center {
+#unsbldfkgo .gt_center {
   text-align: center;
 }
 
-#qcdrbyjsqt .gt_right {
+#unsbldfkgo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qcdrbyjsqt .gt_font_normal {
+#unsbldfkgo .gt_font_normal {
   font-weight: normal;
 }
 
-#qcdrbyjsqt .gt_font_bold {
+#unsbldfkgo .gt_font_bold {
   font-weight: bold;
 }
 
-#qcdrbyjsqt .gt_font_italic {
+#unsbldfkgo .gt_font_italic {
   font-style: italic;
 }
 
-#qcdrbyjsqt .gt_super {
+#unsbldfkgo .gt_super {
   font-size: 65%;
 }
 
-#qcdrbyjsqt .gt_footnote_marks {
+#unsbldfkgo .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="qcdrbyjsqt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="unsbldfkgo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -3449,16 +3549,16 @@ don_share_inc_19_imp_se
 </table></div>
 <p>Looking across the response quartiles relative to others coming from the same referrers, we don’t see any striking differences in age, gender, student-status, (white) ethnicity, income, LT-prioritization, or donations. Those responding latest are slightly less likely to be US-based (perhaps because of time-difference issues). Those responding earliest tend to be the most engaged (unsurprisingly). There also seems to be some positive relationship between promptness and prioritizing animal welfare.</p>
 <p>Again, presenting standard errors below to put these differences in context:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="demog.html#cb15-1" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="demog.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="demog.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="demog.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="demog.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
-<span id="cb15-6"><a href="demog.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span></span>
-<span id="cb15-7"><a href="demog.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  transpose_ok</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="demog.html#cb16-1" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="demog.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="demog.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="demog.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="demog.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(start_date_qtl_by_referrer) <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="demog.html#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb16-7"><a href="demog.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  transpose_ok</span></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-15">Table 3.3: </span>Standard errors of means; for smallest and largest groups
+<span id="tab:unnamed-chunk-15">Table 3.4: </span>Standard errors of means; for smallest and largest groups
 </caption>
 <thead>
 <tr>
@@ -3627,49 +3727,49 @@ don_share_inc_19_imp_se
 <ul>
 <li>did not agree to get emailed to respond to future EAS surveys.</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="demog.html#cb16-1" aria-hidden="true" tabindex="-1"></a>engaged_resp_df <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="demog.html#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(engagement_num<span class="sc">&gt;=</span><span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="demog.html#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(num_actions<span class="sc">&gt;=</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="demog.html#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(member_none<span class="sc">!=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-5"><a href="demog.html#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb16-6"><a href="demog.html#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">less_willing =</span> <span class="fu">case_when</span>(</span>
-<span id="cb16-7"><a href="demog.html#cb16-7" aria-hidden="true" tabindex="-1"></a>        start_date_quantiles<span class="sc">==</span><span class="st">&quot;(80%, 100%]&quot;</span> <span class="sc">&amp;</span> referrer_cat3<span class="sc">==</span><span class="st">&quot;Forum/Opt-in/Shared/Newsletter&quot;</span> <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
-<span id="cb16-8"><a href="demog.html#cb16-8" aria-hidden="true" tabindex="-1"></a>        start_date_quantiles<span class="sc">==</span><span class="st">&quot;(80%, 100%]&quot;</span> <span class="sc">&amp;</span> referrer_cat3<span class="sc">!=</span><span class="st">&quot;Forum/Opt-in/Shared/Newsletter&quot;</span> <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
-<span id="cb16-9"><a href="demog.html#cb16-9" aria-hidden="true" tabindex="-1"></a>        survey_willing<span class="sc">==</span><span class="st">&quot;No next EAS&quot;</span> <span class="sc">~</span><span class="cn">TRUE</span>,</span>
-<span id="cb16-10"><a href="demog.html#cb16-10" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">FALSE</span></span>
-<span id="cb16-11"><a href="demog.html#cb16-11" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb16-12"><a href="demog.html#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">inside_referrer=</span> referrer_cat3<span class="sc">==</span><span class="st">&quot;Forum/Opt-in/Shared/Newsletter&quot;</span>,</span>
-<span id="cb16-13"><a href="demog.html#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">willing_x_insider =</span> <span class="fu">case_when</span>(</span>
-<span id="cb16-14"><a href="demog.html#cb16-14" aria-hidden="true" tabindex="-1"></a>        less_willing <span class="sc">&amp;</span> inside_referrer <span class="sc">~</span>  <span class="st">&quot;less willing, inside ref&quot;</span>,</span>
-<span id="cb16-15"><a href="demog.html#cb16-15" aria-hidden="true" tabindex="-1"></a>        less_willing <span class="sc">&amp;</span> <span class="sc">!</span>inside_referrer <span class="sc">~</span>  <span class="st">&quot;less willing, outside&quot;</span>,</span>
-<span id="cb16-16"><a href="demog.html#cb16-16" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>less_willing <span class="sc">&amp;</span> inside_referrer <span class="sc">~</span>  <span class="st">&quot;more willing, inside ref&quot;</span>,</span>
-<span id="cb16-17"><a href="demog.html#cb16-17" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>less_willing <span class="sc">&amp;</span> <span class="sc">!</span>inside_referrer <span class="sc">~</span>  <span class="st">&quot;more willing, outside&quot;</span>,</span>
-<span id="cb16-18"><a href="demog.html#cb16-18" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb16-19"><a href="demog.html#cb16-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-20"><a href="demog.html#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), willing_x_insider, <span class="sc">-</span>engagement_num)</span>
-<span id="cb16-21"><a href="demog.html#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-22"><a href="demog.html#cb16-22" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb16-23"><a href="demog.html#cb16-23" aria-hidden="true" tabindex="-1"></a>  demo_tab_engaged_responsive <span class="ot">&lt;-</span> engaged_resp_df <span class="sc">%&gt;%</span></span>
-<span id="cb16-24"><a href="demog.html#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
-<span id="cb16-25"><a href="demog.html#cb16-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> willing_x_insider,</span>
-<span id="cb16-26"><a href="demog.html#cb16-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
-<span id="cb16-27"><a href="demog.html#cb16-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
-<span id="cb16-28"><a href="demog.html#cb16-28" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
-<span id="cb16-29"><a href="demog.html#cb16-29" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
-<span id="cb16-30"><a href="demog.html#cb16-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>],</span>
-<span id="cb16-31"><a href="demog.html#cb16-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
-<span id="cb16-32"><a href="demog.html#cb16-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
-<span id="cb16-33"><a href="demog.html#cb16-33" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-34"><a href="demog.html#cb16-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">modify_spanning_header</span>(<span class="fu">c</span>(<span class="st">&quot;stat_1&quot;</span>, <span class="st">&quot;stat_2&quot;</span>,<span class="st">&quot;stat_3&quot;</span>, <span class="st">&quot;stat_4&quot;</span> ) <span class="sc">~</span> <span class="st">&quot;**Willingness measure x &#39;inside&#39; vs &#39;outside&#39; referrers**&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-35"><a href="demog.html#cb16-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">modify_footnote</span>( <span class="at">update =</span> <span class="fu">all_stat_cols</span>() <span class="sc">~</span></span>
-<span id="cb16-36"><a href="demog.html#cb16-36" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;&#39;Inside&#39; referrers: Forum/Opt-in/Shared link/Newsletter; Willingness measure described above&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-37"><a href="demog.html#cb16-37" aria-hidden="true" tabindex="-1"></a>   <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
-<span id="cb16-38"><a href="demog.html#cb16-38" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="demog.html#cb17-1" aria-hidden="true" tabindex="-1"></a>engaged_resp_df <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="demog.html#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(engagement_num<span class="sc">&gt;=</span><span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="demog.html#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(num_actions<span class="sc">&gt;=</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="demog.html#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(member_none<span class="sc">!=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-5"><a href="demog.html#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb17-6"><a href="demog.html#cb17-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">less_willing =</span> <span class="fu">case_when</span>(</span>
+<span id="cb17-7"><a href="demog.html#cb17-7" aria-hidden="true" tabindex="-1"></a>        start_date_quantiles<span class="sc">==</span><span class="st">&quot;(80%, 100%]&quot;</span> <span class="sc">&amp;</span> referrer_cat3<span class="sc">==</span><span class="st">&quot;Forum/Opt-in/Shared/Newsletter&quot;</span> <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
+<span id="cb17-8"><a href="demog.html#cb17-8" aria-hidden="true" tabindex="-1"></a>        start_date_quantiles<span class="sc">==</span><span class="st">&quot;(80%, 100%]&quot;</span> <span class="sc">&amp;</span> referrer_cat3<span class="sc">!=</span><span class="st">&quot;Forum/Opt-in/Shared/Newsletter&quot;</span> <span class="sc">~</span> <span class="cn">TRUE</span>,</span>
+<span id="cb17-9"><a href="demog.html#cb17-9" aria-hidden="true" tabindex="-1"></a>        survey_willing<span class="sc">==</span><span class="st">&quot;No next EAS&quot;</span> <span class="sc">~</span><span class="cn">TRUE</span>,</span>
+<span id="cb17-10"><a href="demog.html#cb17-10" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">FALSE</span></span>
+<span id="cb17-11"><a href="demog.html#cb17-11" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb17-12"><a href="demog.html#cb17-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">inside_referrer=</span> referrer_cat3<span class="sc">==</span><span class="st">&quot;Forum/Opt-in/Shared/Newsletter&quot;</span>,</span>
+<span id="cb17-13"><a href="demog.html#cb17-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">willing_x_insider =</span> <span class="fu">case_when</span>(</span>
+<span id="cb17-14"><a href="demog.html#cb17-14" aria-hidden="true" tabindex="-1"></a>        less_willing <span class="sc">&amp;</span> inside_referrer <span class="sc">~</span>  <span class="st">&quot;less willing, inside ref&quot;</span>,</span>
+<span id="cb17-15"><a href="demog.html#cb17-15" aria-hidden="true" tabindex="-1"></a>        less_willing <span class="sc">&amp;</span> <span class="sc">!</span>inside_referrer <span class="sc">~</span>  <span class="st">&quot;less willing, outside&quot;</span>,</span>
+<span id="cb17-16"><a href="demog.html#cb17-16" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>less_willing <span class="sc">&amp;</span> inside_referrer <span class="sc">~</span>  <span class="st">&quot;more willing, inside ref&quot;</span>,</span>
+<span id="cb17-17"><a href="demog.html#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>less_willing <span class="sc">&amp;</span> <span class="sc">!</span>inside_referrer <span class="sc">~</span>  <span class="st">&quot;more willing, outside&quot;</span>,</span>
+<span id="cb17-18"><a href="demog.html#cb17-18" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb17-19"><a href="demog.html#cb17-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-20"><a href="demog.html#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="fu">all_of</span>(key_outcomes), willing_x_insider, <span class="sc">-</span>engagement_num)</span>
+<span id="cb17-21"><a href="demog.html#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="demog.html#cb17-22" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb17-23"><a href="demog.html#cb17-23" aria-hidden="true" tabindex="-1"></a>  demo_tab_engaged_responsive <span class="ot">&lt;-</span> engaged_resp_df <span class="sc">%&gt;%</span></span>
+<span id="cb17-24"><a href="demog.html#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
+<span id="cb17-25"><a href="demog.html#cb17-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> willing_x_insider,</span>
+<span id="cb17-26"><a href="demog.html#cb17-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), mn_priority_lt_rating, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
+<span id="cb17-27"><a href="demog.html#cb17-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>,</span>
+<span id="cb17-28"><a href="demog.html#cb17-28" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">&quot;{mean} ({sd})&quot;</span>),</span>
+<span id="cb17-29"><a href="demog.html#cb17-29" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
+<span id="cb17-30"><a href="demog.html#cb17-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>],</span>
+<span id="cb17-31"><a href="demog.html#cb17-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
+<span id="cb17-32"><a href="demog.html#cb17-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
+<span id="cb17-33"><a href="demog.html#cb17-33" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-34"><a href="demog.html#cb17-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">modify_spanning_header</span>(<span class="fu">c</span>(<span class="st">&quot;stat_1&quot;</span>, <span class="st">&quot;stat_2&quot;</span>,<span class="st">&quot;stat_3&quot;</span>, <span class="st">&quot;stat_4&quot;</span> ) <span class="sc">~</span> <span class="st">&quot;**Willingness measure x &#39;inside&#39; vs &#39;outside&#39; referrers**&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-35"><a href="demog.html#cb17-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">modify_footnote</span>( <span class="at">update =</span> <span class="fu">all_stat_cols</span>() <span class="sc">~</span></span>
+<span id="cb17-36"><a href="demog.html#cb17-36" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;&#39;Inside&#39; referrers: Forum/Opt-in/Shared link/Newsletter; Willingness measure described above&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-37"><a href="demog.html#cb17-37" aria-hidden="true" tabindex="-1"></a>   <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span> <span class="fu">add_n</span>() <span class="sc">%&gt;%</span> <span class="fu">add_overall</span>()</span>
+<span id="cb17-38"><a href="demog.html#cb17-38" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yxshescziu .gt_table {
+#gmpjetgabx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3694,7 +3794,7 @@ don_share_inc_19_imp_se
   border-left-color: #D3D3D3;
 }
 
-#yxshescziu .gt_heading {
+#gmpjetgabx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3706,7 +3806,7 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yxshescziu .gt_title {
+#gmpjetgabx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3716,7 +3816,7 @@ don_share_inc_19_imp_se
   border-bottom-width: 0;
 }
 
-#yxshescziu .gt_subtitle {
+#gmpjetgabx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3726,13 +3826,13 @@ don_share_inc_19_imp_se
   border-top-width: 0;
 }
 
-#yxshescziu .gt_bottom_border {
+#gmpjetgabx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yxshescziu .gt_col_headings {
+#gmpjetgabx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3747,7 +3847,7 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yxshescziu .gt_col_heading {
+#gmpjetgabx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3767,7 +3867,7 @@ don_share_inc_19_imp_se
   overflow-x: hidden;
 }
 
-#yxshescziu .gt_column_spanner_outer {
+#gmpjetgabx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3779,15 +3879,15 @@ don_share_inc_19_imp_se
   padding-right: 4px;
 }
 
-#yxshescziu .gt_column_spanner_outer:first-child {
+#gmpjetgabx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yxshescziu .gt_column_spanner_outer:last-child {
+#gmpjetgabx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yxshescziu .gt_column_spanner {
+#gmpjetgabx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3799,7 +3899,7 @@ don_share_inc_19_imp_se
   width: 100%;
 }
 
-#yxshescziu .gt_group_heading {
+#gmpjetgabx .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3821,7 +3921,7 @@ don_share_inc_19_imp_se
   vertical-align: middle;
 }
 
-#yxshescziu .gt_empty_group_heading {
+#gmpjetgabx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3836,15 +3936,15 @@ don_share_inc_19_imp_se
   vertical-align: middle;
 }
 
-#yxshescziu .gt_from_md > :first-child {
+#gmpjetgabx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yxshescziu .gt_from_md > :last-child {
+#gmpjetgabx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yxshescziu .gt_row {
+#gmpjetgabx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3863,7 +3963,7 @@ don_share_inc_19_imp_se
   overflow-x: hidden;
 }
 
-#yxshescziu .gt_stub {
+#gmpjetgabx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3875,7 +3975,7 @@ don_share_inc_19_imp_se
   padding-left: 12px;
 }
 
-#yxshescziu .gt_summary_row {
+#gmpjetgabx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3885,7 +3985,7 @@ don_share_inc_19_imp_se
   padding-right: 5px;
 }
 
-#yxshescziu .gt_first_summary_row {
+#gmpjetgabx .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3895,7 +3995,7 @@ don_share_inc_19_imp_se
   border-top-color: #D3D3D3;
 }
 
-#yxshescziu .gt_grand_summary_row {
+#gmpjetgabx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3905,7 +4005,7 @@ don_share_inc_19_imp_se
   padding-right: 5px;
 }
 
-#yxshescziu .gt_first_grand_summary_row {
+#gmpjetgabx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3915,11 +4015,11 @@ don_share_inc_19_imp_se
   border-top-color: #D3D3D3;
 }
 
-#yxshescziu .gt_striped {
+#gmpjetgabx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yxshescziu .gt_table_body {
+#gmpjetgabx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3928,7 +4028,7 @@ don_share_inc_19_imp_se
   border-bottom-color: #D3D3D3;
 }
 
-#yxshescziu .gt_footnotes {
+#gmpjetgabx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3942,13 +4042,13 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yxshescziu .gt_footnote {
+#gmpjetgabx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#yxshescziu .gt_sourcenotes {
+#gmpjetgabx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3962,46 +4062,46 @@ don_share_inc_19_imp_se
   border-right-color: #D3D3D3;
 }
 
-#yxshescziu .gt_sourcenote {
+#gmpjetgabx .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#yxshescziu .gt_left {
+#gmpjetgabx .gt_left {
   text-align: left;
 }
 
-#yxshescziu .gt_center {
+#gmpjetgabx .gt_center {
   text-align: center;
 }
 
-#yxshescziu .gt_right {
+#gmpjetgabx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yxshescziu .gt_font_normal {
+#gmpjetgabx .gt_font_normal {
   font-weight: normal;
 }
 
-#yxshescziu .gt_font_bold {
+#gmpjetgabx .gt_font_bold {
   font-weight: bold;
 }
 
-#yxshescziu .gt_font_italic {
+#gmpjetgabx .gt_font_italic {
   font-style: italic;
 }
 
-#yxshescziu .gt_super {
+#gmpjetgabx .gt_super {
   font-size: 65%;
 }
 
-#yxshescziu .gt_footnote_marks {
+#gmpjetgabx .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="yxshescziu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="gmpjetgabx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -4217,15 +4317,15 @@ don_share_inc_19_imp_se
   </tfoot>
 </table></div>
 <p>Again, presenting standard errors below to put these differences in context:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="demog.html#cb17-1" aria-hidden="true" tabindex="-1"></a>engaged_resp_df <span class="sc">%&gt;%</span></span>
-<span id="cb17-2"><a href="demog.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(willing_x_insider) <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a href="demog.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
-<span id="cb17-4"><a href="demog.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(willing_x_insider) <span class="sc">%&gt;%</span></span>
-<span id="cb17-5"><a href="demog.html#cb17-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span></span>
-<span id="cb17-6"><a href="demog.html#cb17-6" aria-hidden="true" tabindex="-1"></a>   transpose_ok</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="demog.html#cb18-1" aria-hidden="true" tabindex="-1"></a>engaged_resp_df <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="demog.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(willing_x_insider) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="demog.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  hi_low_groups <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="demog.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(willing_x_insider) <span class="sc">%&gt;%</span></span>
+<span id="cb18-5"><a href="demog.html#cb18-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="fu">list</span>(<span class="at">se =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb18-6"><a href="demog.html#cb18-6" aria-hidden="true" tabindex="-1"></a>   transpose_ok</span></code></pre></div>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-17">Table 3.4: </span>Standard errors of means; for smallest and largest groups
+<span id="tab:unnamed-chunk-17">Table 3.5: </span>Standard errors of means; for smallest and largest groups
 </caption>
 <thead>
 <tr>
@@ -4363,62 +4463,8 @@ don_share_inc_19_imp_se
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div id="engagement-by-tenureage" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Engagement by tenure/age</h2>
-<p>Fairly extreme bounds</p>
-<p>We hope to focus on slightly-less conservative and more reasonable bounds for our ‘sensitivity testing’ going forward (as we did, to some extent <a href="https://forum.effectivealtruism.org/posts/TuzkYANf7tmQDF2Hk/ea-survey-2017-series-distribution-and-analysis-methodology">in the past</a>).</p>
-<p>However, for now, given our time constraints, we report fairly extreme bounds in the tables below. These ‘rather extreme’ bounds allow/assume:</p>
-<ul>
-<li>A smaller-end estimate of the size of the entire EA movement (the 4700 referred to above)</li>
-<li>For the ‘most under-represented grouping,’ the response rates are 20%, while for all other groups, response rates are 60% (with some adjustments noted below)</li>
-<li>The ‘groupings’ are defined below, using fairly ad-hoc intuitive criteria</li>
-</ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="demog.html#cb18-1" aria-hidden="true" tabindex="-1"></a>ea_pop_size <span class="ot">&lt;-</span> <span class="dv">4700</span> <span class="co">#not sure if this will be used</span></span>
-<span id="cb18-2"><a href="demog.html#cb18-2" aria-hidden="true" tabindex="-1"></a>rr_low <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb18-3"><a href="demog.html#cb18-3" aria-hidden="true" tabindex="-1"></a>rr_hi <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
-<span id="cb18-4"><a href="demog.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="demog.html#cb18-5" aria-hidden="true" tabindex="-1"></a>key_est <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;median&quot;</span>) <span class="co">#not sure I&#39;ll use this vector</span></span>
-<span id="cb18-6"><a href="demog.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="demog.html#cb18-7" aria-hidden="true" tabindex="-1"></a>groups_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;referrer_min100&quot;</span>, <span class="st">&quot;referrer_cat2&quot;</span>, <span class="st">&quot;referrer_cat3&quot;</span>)</span>
-<span id="cb18-8"><a href="demog.html#cb18-8" aria-hidden="true" tabindex="-1"></a>groups_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;engage_cats_1&quot;</span>, <span class="st">&quot;engage_cats_2&quot;</span>)</span>
-<span id="cb18-9"><a href="demog.html#cb18-9" aria-hidden="true" tabindex="-1"></a>groups_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;start_date_quantiles&quot;</span>, <span class="st">&quot;start_date_thirds_by_referrer&quot;</span>)</span>
-<span id="cb18-10"><a href="demog.html#cb18-10" aria-hidden="true" tabindex="-1"></a>groups_4 <span class="ot">&lt;-</span> <span class="st">&quot;survey_willing&quot;</span></span>
-<span id="cb18-11"><a href="demog.html#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-12"><a href="demog.html#cb18-12" aria-hidden="true" tabindex="-1"></a>groups_all <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(groups_1, groups_2, groups_3, groups_4))</span></code></pre></div>
-<p>We (aim to) discuss these methodological issues further, and work towards a theoretically grounded approach. (See discussion <a href="sensitivity.html#sensitivity">here</a> also <a href="https://docs.google.com/document/d/1_z7OcUvhqY3NvdKBfmQhcq_u6cr_zgEt5eqpiaJr3fk/edit#">Gdoc here</a>).</p>
-<p><strong>Implementation</strong></p>
-<ul>
-<li><p>Across each of all of the groupings in referrer_min100, referrer_cat2, referrer_cat3, engage_cats_1, engage_cats_2, start_date_quantiles, start_date_thirds_by_referrer, survey_willing</p></li>
-<li><p>Construct matrix of bounds of mean, median of each of age_approx, d_male, d_student, race_white, d_live_usa, income_k_c, career_academia, engagement_num, mn_priority_lt_rating, lt_top_priority, animal_top_priority, don_share_inc_19_imp</p>
-<ul>
-<li>given the extreme assumptions on over/undersampling described above, including response rate bounds of 0.2 and 0.6</li>
-</ul></li>
-<li><p>Report and plot these extrema by group categories and overall</p></li>
-</ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="demog.html#cb19-1" aria-hidden="true" tabindex="-1"></a>rr_bounding_data <span class="ot">&lt;-</span> eas_20 <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="demog.html#cb19-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">select</span>(<span class="fu">all_of</span>(groups_all), key_outcomes) <span class="sc">%&gt;%</span></span>
-<span id="cb19-3"><a href="demog.html#cb19-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mutate_at</span>(groups_all, <span class="sc">~</span><span class="fu">as.factor</span>(.x)) <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="demog.html#cb19-4" aria-hidden="true" tabindex="-1"></a>          <span class="fu">mutate_at</span>(groups_all, <span class="sc">~</span><span class="fu">fct_drop</span>(.x)</span>
-<span id="cb19-5"><a href="demog.html#cb19-5" aria-hidden="true" tabindex="-1"></a>                    )</span>
-<span id="cb19-6"><a href="demog.html#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="demog.html#cb19-7" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb19-8"><a href="demog.html#cb19-8" aria-hidden="true" tabindex="-1"></a>  demo_by_engage <span class="ot">&lt;-</span> rr_bounding_data <span class="sc">%&gt;%</span></span>
-<span id="cb19-9"><a href="demog.html#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tbl_summary</span>(</span>
-<span id="cb19-10"><a href="demog.html#cb19-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">by =</span> engage_cats_1,</span>
-<span id="cb19-11"><a href="demog.html#cb19-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">all_continuous</span>(), engagement_num, don_share_inc_19_imp) <span class="sc">~</span> <span class="st">&quot;continuous2&quot;</span>,</span>
-<span id="cb19-12"><a href="demog.html#cb19-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">statistic =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="st">&quot;{median}&quot;</span>, <span class="st">&quot;{mean}&quot;</span>),</span>
-<span id="cb19-13"><a href="demog.html#cb19-13" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">all_dichotomous</span>() <span class="sc">~</span> <span class="st">&quot;{p}%&quot;</span>),</span>
-<span id="cb19-14"><a href="demog.html#cb19-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> label_list,</span>
-<span id="cb19-15"><a href="demog.html#cb19-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">missing =</span> <span class="fu">c</span>(<span class="st">&quot;no&quot;</span>),</span>
-<span id="cb19-16"><a href="demog.html#cb19-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits =</span> <span class="fu">list</span>(engagement_num <span class="sc">~</span> <span class="dv">1</span>, mn_priority_lt_rating <span class="sc">~</span><span class="dv">1</span>)</span>
-<span id="cb19-17"><a href="demog.html#cb19-17" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb19-18"><a href="demog.html#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold_labels</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb19-19"><a href="demog.html#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_n</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb19-20"><a href="demog.html#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_overall</span>()</span>
-<span id="cb19-21"><a href="demog.html#cb19-21" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 
+</div>
 </div>
 </div>
             </section>
