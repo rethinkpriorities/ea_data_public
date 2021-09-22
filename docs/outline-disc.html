@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. David Reinstein, many others" />
 
 
-<meta name="date" content="2021-06-22" />
+<meta name="date" content="2021-09-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 
 <link rel="next" href="sensitivity.html"/>
-<script src="book_assets/header-attrs-2.8/header-attrs.js"></script>
+<script src="book_assets/header-attrs-2.8.6/header-attrs.js"></script>
 <script src="book_assets/jquery-3.5.1/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -752,6 +752,28 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="support/tufte_plus.css" type="text/css" />
 </head>
@@ -773,12 +795,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="sensitivity.html"><a href="sensitivity.html#considering-academicformal-literature"><i class="fa fa-check"></i><b>2.1.1</b> Considering academic/formal literature</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="sensitivity.html"><a href="sensitivity.html#sens_checks"><i class="fa fa-check"></i><b>2.2</b> Sensitivity-checks</a>
-<ul>
-<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#why_these"><i class="fa fa-check"></i>Why these groupings?</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>2.3</b> Modeling and bounding the biases</a></li>
-<li class="chapter" data-level="2.4" data-path="sensitivity.html"><a href="sensitivity.html#future-bounding"><i class="fa fa-check"></i><b>2.4</b> Other possible approaches (for future consideration)</a>
+<li class="chapter" data-level="2.2" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>2.2</b> Modeling and bounding the biases</a></li>
+<li class="chapter" data-level="2.3" data-path="sensitivity.html"><a href="sensitivity.html#future-bounding"><i class="fa fa-check"></i><b>2.3</b> Other possible approaches (for future consideration)</a>
 <ul>
 <li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#re-weighting-approaches"><i class="fa fa-check"></i>Re-weighting approaches?</a></li>
 <li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#less-extreme-but-ad-hoc-sensitivity-checking"><i class="fa fa-check"></i>Less extreme (but ad-hoc) sensitivity checking</a></li>
@@ -819,7 +837,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="eas-engagement.html"><a href="eas-engagement.html#modeling-engagement"><i class="fa fa-check"></i><b>4.5</b> Modeling engagement*</a>
 <ul>
 <li class="chapter" data-level="4.5.1" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptive-modeling"><i class="fa fa-check"></i><b>4.5.1</b> Descriptive modeling</a></li>
-<li class="chapter" data-level="4.5.2" data-path="eas-engagement.html"><a href="eas-engagement.html#predictive-and-causal-modeling"><i class="fa fa-check"></i><b>4.5.2</b> Predictive and causal modeling</a></li>
+<li class="chapter" data-level="4.5.2" data-path="eas-engagement.html"><a href="eas-engagement.html#eng-pred-cause"><i class="fa fa-check"></i><b>4.5.2</b> Predictive and causal modeling</a></li>
 <li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choices-of-variablesfeatures"><i class="fa fa-check"></i>Choices of variables/features</a></li>
 <li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choosing-features-and-modeling-target-variables"><i class="fa fa-check"></i>Choosing features and modeling target variables</a></li>
 <li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#engage-ologit"><i class="fa fa-check"></i>Ordered logit models of self-reported engagement level</a></li>
@@ -834,6 +852,57 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="eas-engagement.html"><a href="eas-engagement.html#additional-cea-request-citiesareas-by-group-engagement-and-retention-adapted"><i class="fa fa-check"></i><b>4.7</b> Additional – CEA request: cities/areas by group engagement and retention, adapted:</a></li>
 <li class="chapter" data-level="4.8" data-path="eas-engagement.html"><a href="eas-engagement.html#conclusions-and-future-work"><i class="fa fa-check"></i><b>4.8</b> Conclusions and Future work</a></li>
+<li class="chapter" data-level="4.9" data-path="eas-engagement.html"><a href="eas-engagement.html#after-post-followupsfurther-work"><i class="fa fa-check"></i><b>4.9</b> After-post followups/further work</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="eas-engagement.html"><a href="eas-engagement.html#does-engagement-in-ea-make-people-more-long-termist"><i class="fa fa-check"></i><b>4.9.1</b> Does engagement in EA make people more long-termist?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="eas-donations.html"><a href="eas-donations.html"><i class="fa fa-check"></i><b>5</b> Donation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="eas-engagement.html"><a href="eas-engagement.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction and summary</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="eas-donations.html"><a href="eas-donations.html#sum-results"><i class="fa fa-check"></i><b>5.1.1</b> Summary (some key results and numbers)</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#toc"><i class="fa fa-check"></i>Why does the EA Survey ask about donations? What does it tell us? What is the “theory of change” for how learning about donation behavior will improve outcomes?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#total_mag"><i class="fa fa-check"></i>Total EA donations, magnitudes in context</a></li>
+<li class="chapter" data-level="5.2" data-path="eas-donations.html"><a href="eas-donations.html#career-etg"><i class="fa fa-check"></i><b>5.2</b> Career paths: Earning-to-give</a></li>
+<li class="chapter" data-level="5.3" data-path="eas-donations.html"><a href="eas-donations.html#descriptives"><i class="fa fa-check"></i><b>5.3</b> Donation totals: descriptives</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#overall-donations-totals-by-groups"><i class="fa fa-check"></i>Overall donations, totals by groups</a></li>
+<li class="chapter" data-level="5.3.1" data-path="eas-donations.html"><a href="eas-donations.html#donshares"><i class="fa fa-check"></i><b>5.3.1</b> Donation (shares) versus income and GWWC pledge</a></li>
+<li class="chapter" data-level="5.3.2" data-path="eas-donations.html"><a href="eas-donations.html#emp-student"><i class="fa fa-check"></i><b>5.3.2</b> Employment and student status</a></li>
+<li class="chapter" data-level="5.3.3" data-path="eas-donations.html"><a href="eas-donations.html#don-by-country"><i class="fa fa-check"></i><b>5.3.3</b> Donations by country</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#donations-age-and-years-in-ea"><i class="fa fa-check"></i>Donations, age and years in EA</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#by-referrer"><i class="fa fa-check"></i>By referrer</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="eas-donations.html"><a href="eas-donations.html#donation-and-income-trends-in-ea"><i class="fa fa-check"></i><b>5.4</b> Donation and income for recent years</a></li>
+<li class="chapter" data-level="5.5" data-path="eas-donations.html"><a href="eas-donations.html#which-charities"><i class="fa fa-check"></i><b>5.5</b> Which charities (causes and categories) are EAs donating to?</a></li>
+<li class="chapter" data-level="5.6" data-path="eas-donations.html"><a href="eas-donations.html#plan-actual"><i class="fa fa-check"></i><b>5.6</b> Donations: plans and aspirations versus actual (reported) donations</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#planned-vs.-actual-individuals-present-in-both-surveys"><i class="fa fa-check"></i>2019 Planned vs. actual: Individuals present in both surveys</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#plan-actual-all"><i class="fa fa-check"></i>Planned vs. actual: All respondents (across relevant years)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="eas-donations.html"><a href="eas-donations.html#next-year"><i class="fa fa-check"></i><b>5.7</b> Donations versus <em>next year’s</em> plans</a></li>
+<li class="chapter" data-level="5.8" data-path="eas-donations.html"><a href="eas-donations.html#modeling"><i class="fa fa-check"></i><b>5.8</b> Model of EA donation behavior</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#modeling-questions-and-approaches"><i class="fa fa-check"></i>Modeling ‘questions’ and approaches:</a></li>
+<li class="chapter" data-level="5.8.1" data-path="eas-donations.html"><a href="eas-donations.html#descriptive"><i class="fa fa-check"></i><b>5.8.1</b> Descriptive (and causally-suggestive) models</a></li>
+<li class="chapter" data-level="5.8.2" data-path="eas-donations.html"><a href="eas-donations.html#predictive-models"><i class="fa fa-check"></i><b>5.8.2</b> Predictive models</a></li>
+<li class="chapter" data-level="5.8.3" data-path="eas-donations.html"><a href="eas-donations.html#summary-of-modeling-results-see-the-introduction"><i class="fa fa-check"></i><b>5.8.3</b> Summary of modeling results – see <span>the introduction</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="eas-donations.html"><a href="eas-donations.html#robust-appendix"><i class="fa fa-check"></i><b>5.9</b> Appendix: Extra analysis and robustness checks</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#don_eng"><i class="fa fa-check"></i>Donations by engagement level</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#don_inc_by_student"><i class="fa fa-check"></i>Donations and income by student/employment status</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#don_share_by_tenure_facet_referrer"><i class="fa fa-check"></i>Donation as share of income by tenure, ‘faceted’ by referrer to survey*</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#additional-donations-and-income-by-whether-a-longtermist-cause-is-top-priority"><i class="fa fa-check"></i>Additional: Donations and income by whether a Longtermist cause is top priority</a></li>
+<li class="chapter" data-level="5.9.1" data-path="eas-donations.html"><a href="eas-donations.html#plan-don-by-year"><i class="fa fa-check"></i><b>5.9.1</b> Planned donation by year, comparison tests</a></li>
+<li class="chapter" data-level="5.9.2" data-path="eas-donations.html"><a href="eas-donations.html#donations-by-income-earning-to-give-career-status"><i class="fa fa-check"></i><b>5.9.2</b> Donations by income ‘earning-to-give’ career status</a></li>
+<li class="chapter" data-level="5.9.3" data-path="eas-donations.html"><a href="eas-donations.html#usa-don"><i class="fa fa-check"></i><b>5.9.3</b> Donation shares by income (by US-residence, 2019)</a></li>
+<li class="chapter" data-level="5.9.4" data-path="eas-donations.html"><a href="eas-donations.html#nonresponse"><i class="fa fa-check"></i><b>5.9.4</b> Models: nonresponse coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="eas-donations.html"><a href="eas-donations.html#discussion-workspace"><i class="fa fa-check"></i><b>5.10</b> Discussion workspace</a></li>
+<li class="chapter" data-level="5.11" data-path="eas-donations.html"><a href="eas-donations.html#classification_model_disc"><i class="fa fa-check"></i><b>5.11</b> Loose discussion: classification models and precision/recall stuff</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
@@ -858,7 +927,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">EA survey analyses (partial)</h1>
 <p class="author"><em>Dr. David Reinstein, many others</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-06-22</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-09-22</em></p>
 </div>
 <div id="outline_disc" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Notes on this ‘bookdown’ relating to the EA Survey</h1>
@@ -1015,7 +1084,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
+"collapse": "none",
 "scroll_highlight": true
 }
 });

@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. David Reinstein, many others" />
 
 
-<meta name="date" content="2021-06-22" />
+<meta name="date" content="2021-09-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="outline-disc.html"/>
 <link rel="next" href="demog.html"/>
-<script src="book_assets/header-attrs-2.8/header-attrs.js"></script>
+<script src="book_assets/header-attrs-2.8.6/header-attrs.js"></script>
 <script src="book_assets/jquery-3.5.1/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -752,6 +752,28 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="support/tufte_plus.css" type="text/css" />
 </head>
@@ -773,12 +795,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="sensitivity.html"><a href="sensitivity.html#considering-academicformal-literature"><i class="fa fa-check"></i><b>2.1.1</b> Considering academic/formal literature</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="sensitivity.html"><a href="sensitivity.html#sens_checks"><i class="fa fa-check"></i><b>2.2</b> Sensitivity-checks</a>
-<ul>
-<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#why_these"><i class="fa fa-check"></i>Why these groupings?</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>2.3</b> Modeling and bounding the biases</a></li>
-<li class="chapter" data-level="2.4" data-path="sensitivity.html"><a href="sensitivity.html#future-bounding"><i class="fa fa-check"></i><b>2.4</b> Other possible approaches (for future consideration)</a>
+<li class="chapter" data-level="2.2" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>2.2</b> Modeling and bounding the biases</a></li>
+<li class="chapter" data-level="2.3" data-path="sensitivity.html"><a href="sensitivity.html#future-bounding"><i class="fa fa-check"></i><b>2.3</b> Other possible approaches (for future consideration)</a>
 <ul>
 <li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#re-weighting-approaches"><i class="fa fa-check"></i>Re-weighting approaches?</a></li>
 <li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#less-extreme-but-ad-hoc-sensitivity-checking"><i class="fa fa-check"></i>Less extreme (but ad-hoc) sensitivity checking</a></li>
@@ -819,7 +837,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="eas-engagement.html"><a href="eas-engagement.html#modeling-engagement"><i class="fa fa-check"></i><b>4.5</b> Modeling engagement*</a>
 <ul>
 <li class="chapter" data-level="4.5.1" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptive-modeling"><i class="fa fa-check"></i><b>4.5.1</b> Descriptive modeling</a></li>
-<li class="chapter" data-level="4.5.2" data-path="eas-engagement.html"><a href="eas-engagement.html#predictive-and-causal-modeling"><i class="fa fa-check"></i><b>4.5.2</b> Predictive and causal modeling</a></li>
+<li class="chapter" data-level="4.5.2" data-path="eas-engagement.html"><a href="eas-engagement.html#eng-pred-cause"><i class="fa fa-check"></i><b>4.5.2</b> Predictive and causal modeling</a></li>
 <li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choices-of-variablesfeatures"><i class="fa fa-check"></i>Choices of variables/features</a></li>
 <li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choosing-features-and-modeling-target-variables"><i class="fa fa-check"></i>Choosing features and modeling target variables</a></li>
 <li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#engage-ologit"><i class="fa fa-check"></i>Ordered logit models of self-reported engagement level</a></li>
@@ -834,6 +852,57 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="eas-engagement.html"><a href="eas-engagement.html#additional-cea-request-citiesareas-by-group-engagement-and-retention-adapted"><i class="fa fa-check"></i><b>4.7</b> Additional – CEA request: cities/areas by group engagement and retention, adapted:</a></li>
 <li class="chapter" data-level="4.8" data-path="eas-engagement.html"><a href="eas-engagement.html#conclusions-and-future-work"><i class="fa fa-check"></i><b>4.8</b> Conclusions and Future work</a></li>
+<li class="chapter" data-level="4.9" data-path="eas-engagement.html"><a href="eas-engagement.html#after-post-followupsfurther-work"><i class="fa fa-check"></i><b>4.9</b> After-post followups/further work</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="eas-engagement.html"><a href="eas-engagement.html#does-engagement-in-ea-make-people-more-long-termist"><i class="fa fa-check"></i><b>4.9.1</b> Does engagement in EA make people more long-termist?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="eas-donations.html"><a href="eas-donations.html"><i class="fa fa-check"></i><b>5</b> Donation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="eas-engagement.html"><a href="eas-engagement.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction and summary</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="eas-donations.html"><a href="eas-donations.html#sum-results"><i class="fa fa-check"></i><b>5.1.1</b> Summary (some key results and numbers)</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#toc"><i class="fa fa-check"></i>Why does the EA Survey ask about donations? What does it tell us? What is the “theory of change” for how learning about donation behavior will improve outcomes?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#total_mag"><i class="fa fa-check"></i>Total EA donations, magnitudes in context</a></li>
+<li class="chapter" data-level="5.2" data-path="eas-donations.html"><a href="eas-donations.html#career-etg"><i class="fa fa-check"></i><b>5.2</b> Career paths: Earning-to-give</a></li>
+<li class="chapter" data-level="5.3" data-path="eas-donations.html"><a href="eas-donations.html#descriptives"><i class="fa fa-check"></i><b>5.3</b> Donation totals: descriptives</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#overall-donations-totals-by-groups"><i class="fa fa-check"></i>Overall donations, totals by groups</a></li>
+<li class="chapter" data-level="5.3.1" data-path="eas-donations.html"><a href="eas-donations.html#donshares"><i class="fa fa-check"></i><b>5.3.1</b> Donation (shares) versus income and GWWC pledge</a></li>
+<li class="chapter" data-level="5.3.2" data-path="eas-donations.html"><a href="eas-donations.html#emp-student"><i class="fa fa-check"></i><b>5.3.2</b> Employment and student status</a></li>
+<li class="chapter" data-level="5.3.3" data-path="eas-donations.html"><a href="eas-donations.html#don-by-country"><i class="fa fa-check"></i><b>5.3.3</b> Donations by country</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#donations-age-and-years-in-ea"><i class="fa fa-check"></i>Donations, age and years in EA</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#by-referrer"><i class="fa fa-check"></i>By referrer</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="eas-donations.html"><a href="eas-donations.html#donation-and-income-trends-in-ea"><i class="fa fa-check"></i><b>5.4</b> Donation and income for recent years</a></li>
+<li class="chapter" data-level="5.5" data-path="eas-donations.html"><a href="eas-donations.html#which-charities"><i class="fa fa-check"></i><b>5.5</b> Which charities (causes and categories) are EAs donating to?</a></li>
+<li class="chapter" data-level="5.6" data-path="eas-donations.html"><a href="eas-donations.html#plan-actual"><i class="fa fa-check"></i><b>5.6</b> Donations: plans and aspirations versus actual (reported) donations</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#planned-vs.-actual-individuals-present-in-both-surveys"><i class="fa fa-check"></i>2019 Planned vs. actual: Individuals present in both surveys</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#plan-actual-all"><i class="fa fa-check"></i>Planned vs. actual: All respondents (across relevant years)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="eas-donations.html"><a href="eas-donations.html#next-year"><i class="fa fa-check"></i><b>5.7</b> Donations versus <em>next year’s</em> plans</a></li>
+<li class="chapter" data-level="5.8" data-path="eas-donations.html"><a href="eas-donations.html#modeling"><i class="fa fa-check"></i><b>5.8</b> Model of EA donation behavior</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#modeling-questions-and-approaches"><i class="fa fa-check"></i>Modeling ‘questions’ and approaches:</a></li>
+<li class="chapter" data-level="5.8.1" data-path="eas-donations.html"><a href="eas-donations.html#descriptive"><i class="fa fa-check"></i><b>5.8.1</b> Descriptive (and causally-suggestive) models</a></li>
+<li class="chapter" data-level="5.8.2" data-path="eas-donations.html"><a href="eas-donations.html#predictive-models"><i class="fa fa-check"></i><b>5.8.2</b> Predictive models</a></li>
+<li class="chapter" data-level="5.8.3" data-path="eas-donations.html"><a href="eas-donations.html#summary-of-modeling-results-see-the-introduction"><i class="fa fa-check"></i><b>5.8.3</b> Summary of modeling results – see <span>the introduction</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="eas-donations.html"><a href="eas-donations.html#robust-appendix"><i class="fa fa-check"></i><b>5.9</b> Appendix: Extra analysis and robustness checks</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#don_eng"><i class="fa fa-check"></i>Donations by engagement level</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#don_inc_by_student"><i class="fa fa-check"></i>Donations and income by student/employment status</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#don_share_by_tenure_facet_referrer"><i class="fa fa-check"></i>Donation as share of income by tenure, ‘faceted’ by referrer to survey*</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#additional-donations-and-income-by-whether-a-longtermist-cause-is-top-priority"><i class="fa fa-check"></i>Additional: Donations and income by whether a Longtermist cause is top priority</a></li>
+<li class="chapter" data-level="5.9.1" data-path="eas-donations.html"><a href="eas-donations.html#plan-don-by-year"><i class="fa fa-check"></i><b>5.9.1</b> Planned donation by year, comparison tests</a></li>
+<li class="chapter" data-level="5.9.2" data-path="eas-donations.html"><a href="eas-donations.html#donations-by-income-earning-to-give-career-status"><i class="fa fa-check"></i><b>5.9.2</b> Donations by income ‘earning-to-give’ career status</a></li>
+<li class="chapter" data-level="5.9.3" data-path="eas-donations.html"><a href="eas-donations.html#usa-don"><i class="fa fa-check"></i><b>5.9.3</b> Donation shares by income (by US-residence, 2019)</a></li>
+<li class="chapter" data-level="5.9.4" data-path="eas-donations.html"><a href="eas-donations.html#nonresponse"><i class="fa fa-check"></i><b>5.9.4</b> Models: nonresponse coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="eas-donations.html"><a href="eas-donations.html#discussion-workspace"><i class="fa fa-check"></i><b>5.10</b> Discussion workspace</a></li>
+<li class="chapter" data-level="5.11" data-path="eas-donations.html"><a href="eas-donations.html#classification_model_disc"><i class="fa fa-check"></i><b>5.11</b> Loose discussion: classification models and precision/recall stuff</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
@@ -885,101 +954,127 @@ We may not be able to ensure that we have ‘reasonable confidence that we have 
 <h3><span class="header-section-number">2.1.1</span> Considering academic/formal literature</h3>
 
 <div class="note">
-I discuss this issue in a very general methodological sense <a href="https://daaronr.github.io/metrics_discussion/surveys.html#jazz-case">here (a work-in-progress)</a>, in my broad set of methodological notes, and offer some (rough) discussion of relevant academic work. I present some key points and reference below.
+<p>I discuss this issue in a very general methodological sense <a href="https://daaronr.github.io/metrics_discussion/surveys.html#jazz-case">here (a work-in-progress)</a>, in my broad set of methodological notes, and offer some (rough) discussion of relevant academic work. I present some key points and references below.</p>
 </div>
-<p>I did a fairly shallow dive into the methodological literature to put our problem in the context of survey sampling methodology, and to consider approaches to similar problems.</p>
-‘Probability sampling’ has been the standard approach in survey sampling since random-digit dialing was possible.*
-<div class="marginnote">
-*This paragraph draws from the <a href="https://en.wikipedia.org/wiki/Survey_sampling">Wikipedia entry on ‘survey sampling’</a>, as well as cited and connected articles.
+<pre><code>
+
+I did a fairly shallow dive into the methodological literature to put our problem in the context of survey sampling methodology, and to consider approaches to similar problems.
+
+
+&#39;Probability sampling’ has been the standard approach in survey sampling since random-digit dialing was possible.\*
+&lt;div class=&quot;marginnote&quot;&gt;
+\*This paragraph draws from the  [Wikipedia entry on &#39;survey sampling&#39;](https://en.wikipedia.org/wiki/Survey_sampling), as well as cited and connected articles. &lt;/div&gt;
+*Probability sampling* identifies a *population of interest* and a *sample frame* meant to capture this population. Rather than appealing to this entire population/frame, probability sampling randomly (or using stratification/clustering) samples a &#39;probability share&#39; (e.g., 1/1000) from this frame. As only a smaller number of people are selected,  you can spend more time and money/incentives, trying to make sure they respond, and track and adjust for rates of responses. Furthermore,  probability sampling also allows ‘stratification’, and oversampling of harder-to-reach groups.  One can then potentially divide up (‘stratify’) that frame by observable groups, and randomly draw (sample) within each strata with a certain probability.  *If we have an informative estimate of the TRUE shares in each strata* we can sample/re-weight so that the heterogeneous parameter of interest can be said to represent the average value for the true population of interest.
+
+In contrast, the  EA Survey is a &#39;non-probability sample&#39; @bakerSummaryReportAAPOR2013. We have collected survey responses from  **self-selected &#39;convenience&#39; samples** (&#39;internet surveys&#39;) across several years.
+Our current approach may be described as a combination of &#39;convenience sampling&#39; (&#39;river sampling&#39; and &#39;opt-in&#39;) and &#39;snowball sampling&#39;.\*
+&lt;div class=&quot;marginnote&quot;&gt;
+I have heard claims that &#39;internet surveys&#39;, if done right, with proper adjustments, can be as or more reliable than traditional polling. However, these adjustments depend on external measures and &#39;gold standards&#39;, such as actual electoral outcomes, and large scale repeated census enumerations.
+&lt;/div&gt;
+
+
+\
+
+In our context there seems to be little potential to reweight or &#39;post-stratify&#39; to recover results that represent the EA population as a whole.
+
+Consider the Wikipedia entry on &#39;convenience sampling&#39;:
+
+&gt; Another example would be a gaming company that wants to know how one of their games is doing in the market one day after its release. Its analyst may choose to create an online survey on Facebook to rate that game.
+
+&gt; **Bias** The results of the convenience sampling cannot be generalized to the target population because of the potential bias of the sampling technique due to under-representation of subgroups in the sample in comparison to the population of interest. **The bias of the sample cannot be measured.** [emphasis added] Therefore, inferences based on the convenience sampling should be made only about the sample itself. (Wikipedia, on &#39;Convenience sampling&#39;, cites Borenstein et al, 2017)
+
+
+*This entry is deeply pessimistic... for our case*.
+\
+
+
+We might consider alternate or additional *sampling* approaches in future EA Surveys. Selected sampling will not, by itself, do anything to lessen the problem of differential non-participation. However, it is conceivable that we might take improve our representativeness through some combination of ...
+
+1. Surveying the general (non-EA) population as part of larger representative surveys to get a sense of the overall composition of EAs (e.g., the gender ratio). However, differential non-response, to these larger surveys would again throw this in doubt. Standard corrections may not be easy: and relative non-response among EAs (e.g., male versus female EAs) may differ from the relative non-response to such surveys in other populations.
+
+2. Tracking, and attempting to adjust for particular rates of non-participation among groups with known compostions, and extending this, by inference, to groups with unknown composition.^\*
+&lt;div class=&quot;marginnote&quot;&gt;
+E.g., suppose we knew the true gender composition of EA Global participants was 80/20 male/female, and we see a 90/10 split from EAG participants in the EAS. We might then assign a double weight to female EAG participants in the EAS, and perhaps also assign a double weight to females in other groups where we expect a similar pattern.
+&lt;/div&gt;
+
+3. Additionally, taking probability samples from within known groups we expect to be &#39;broadly representative of EA&#39; (or at least of particular interest) and offering much strong incentives to these individuals. If this lead to very-high participation rates among these probability samples, this would bring us closer to a gold-standard measure, at least for this group of interest.
+
+\
+
+
+We might also consider &quot;respondent-driven sampling&quot; in combination with a careful measurement of the network structure of the EA population, and the sharing of the EAS in this network.
+
+As noted, the EAS considers a hidden/rare and fluctuating population, with [&#39;coverage&#39;](https://en.wikipedia.org/wiki/Coverage_error) limitations. @salganikSamplingEstimationHidden2004 suggest using &quot;respondent-driven sampling&quot; (or &#39;snowball sampling&#39; or &#39;chain referral&#39;) in such contexts, and making adjustments to recover representativeness (which will work only under particular condidtions). The process involves
+
+&gt;  a small number of seeds who are the first people to participate in the study. These seeds then recruit others to participate in the study. This process of existing sample members recruiting future sample members continues until the desired sample size is reached.
+
+They note that
+
+&gt;  This research is fairly well summarized by Berg (1988) when he writes, &quot;as a rule, a snowball sample will be strongly biased toward inclusion of those who have many interrelationships with or are coupled to, a large number of individuals.&quot; In the absence of knowledge of individual inclusion probabilities in different waves of the snowball sample, unbiased estimation is not possible.
+
+This motivates the authors&#39; approach, involving measuring  the likelihood that an individual is reached as a function of their network, and then downweighting those individuals that are more likely to be sampled.
+
+They claim  that through the process they propose, &quot;it is possible to make unbiased estimates about hidden populations from these types of samples ... asymptotically unbiased no matter how the seeds are selected&quot;.
+
+While this approach is compelling, and may hold some potential for future EAS work, this is not feasible with the data we have now. Furthermore, it is not clear whether it would be an improvement. Relying on chain referral may increase the extent to which the EAS participants are skewed towards certain groups. Even if we  take on the adjustments advocated in @salganikSamplingEstimationHidden2004, this may add more &#39;bias&#39; in net.
+
+\
+
+Given the data we have, we thus focus on &#39;sensitivity-testing&#39;, as discussed below.\*
+&lt;div class=&quot;marginnote&quot;&gt;
+\* We also sketch and discuss some *alternative analytical* approaches, perhaps for future years, [below](#future-bounding)).
+&lt;/div&gt;
+
+## Sensitivity-checks {#sens_checks}
+
+In our posts for the 2020 EA survey, we will focus (as we have, to some extent [in the past](https://forum.effectivealtruism.org/posts/TuzkYANf7tmQDF2Hk/ea-survey-2017-series-distribution-and-analysis-methodology)) on &#39;sensitivity testing&#39;.
+
+**For key outcomes of interest, we will consider how our reported estimates vary ...**
+
+1. [by &#39;referrer&#39;](#demog-by-ref) (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (&#39;large pool&#39; vs &#39;small pool&#39;, level of EA-alignment, etc.)
+
+2. and by time-to-respond and &#39;agreement to respond to future surveys&#39;.
+
+
+(In our future &#39;Engagement&#39; posts, we will also consider this by &#39;level of self-reported engagement&#39;).\*
+&lt;div class=&quot;marginnote&quot;&gt;
+\*Those less-engaged are presumably less interested in filling out the survey, and thus &#39;under-represented&#39;. While we might imagine that the views of less-engaged EA&#39;s are less relevant to consider, this may not always be the case, and might not track 1-1 with their lower response rates.
+&lt;/div&gt;
+
+
+\
+
+### Why these groupings? {-#why_these}
+
+1.  Some referrers may be promoting the EAS more than others, and EA&#39;s who identify with certain referrers may visit them more often than EA&#39;s in other mileu.
+
+
+2.  Reasonably, &#39;being less eager to do something&#39; may lead to procrastination, or to requiring more reminders before you do it. If so, those who took the longest to respond to the survey (at least relative to the first time they first learned about the survey) may better reflect, within each group, those &#39;less likely to take the survey&#39; (or respond to followup surveys).  A similar argument applies to those who indicated they do not want to take future surveys. Arguably, these groups are under-represented.
+
+*In future...*\*\*
+&lt;div class=&quot;marginnote&quot;&gt;
+\*\*In future we also aim to consider this by demographics and &#39;clusters/vectors of demographics&#39; we particularly anticipate having differential response rates, in light of past survey research. Some demographics (particular considering career and family status) may face a greater time-cost, making them less likely to complete the survey, and leading to under-representation.
+&lt;/div&gt;
+
+
+
+
+```r
+mean_don &lt;- mean(eas_20$donation_2019_c, na.rm=TRUE)
+
+n_shared_link &lt;- sum(eas_20$referrer==&quot;Shared link&quot;)
+n_optin &lt;- sum(eas_20$referrer==&quot;Email; opt-in from prev. EAS&quot;)
+male_rate_shared_link &lt;-  mean(eas_20$d_male[eas_20$referrer==&quot;Shared link&quot;], na.rm=TRUE)
+sd_male_rate_shared_link &lt;- sqrt(male_rate_shared_link*(1-male_rate_shared_link))
+male_rate_optin &lt;-  mean(eas_20$d_male[eas_20$referrer==&quot;Email; opt-in from prev. EAS&quot;], na.rm=TRUE)
+sd_male_rate_optin &lt;- sqrt(male_rate_optin*(1-male_rate_optin))</code></pre>
 </div>
-<p><em>Probability sampling</em> identifies a <em>population of interest</em> and a <em>sample frame</em> meant to capture this population. Rather than appealing to this entire population/frame, probability sampling randomly (or using stratification/clustering) samples a ‘probability share’ (e.g., 1/1000) from this frame. As only a smaller number of people are selected, you can spend more time and money/incentives, trying to make sure they respond, and track and adjust for rates of responses. Furthermore, probability sampling also allows ‘stratification,’ and oversampling of harder-to-reach groups. One can then potentially divide up (‘stratify’) that frame by observable groups, and randomly draw (sample) within each strata with a certain probability. <em>If we have an informative estimate of the TRUE shares in each strata</em> we can sample/re-weight so that the heterogeneous parameter of interest can be said to represent the average value for the true population of interest.</p>
-In contrast, the EA Survey is a ‘non-probability sample’ <span class="citation">(<a href="#ref-bakerSummaryReportAAPOR2013" role="doc-biblioref"><strong>bakerSummaryReportAAPOR2013?</strong></a>)</span>. We have collected survey responses from <strong>self-selected ‘convenience’ samples</strong> (‘internet surveys’) across several years.
-Our current approach may be described as a combination of ‘convenience sampling’ (‘river sampling’ and ‘opt-in’) and ‘snowball sampling.’*
-<div class="marginnote">
-<p>I have heard claims that ‘internet surveys,’ if done right, with proper adjustments, can be as or more reliable than traditional polling. However, these adjustments depend on external measures and ‘gold standards,’ such as actual electoral outcomes, and large scale repeated census enumerations.</p>
 </div>
-<p><br />
-</p>
-<p>In our context there seems to be little potential to reweight or ‘post-stratify’ to recover results that represent the EA population as a whole.</p>
-<p>Consider the Wikipedia entry on ‘convenience sampling’:</p>
-<blockquote>
-<p>Another example would be a gaming company that wants to know how one of their games is doing in the market one day after its release. Its analyst may choose to create an online survey on Facebook to rate that game.</p>
-</blockquote>
-<blockquote>
-<p><strong>Bias</strong> The results of the convenience sampling cannot be generalized to the target population because of the potential bias of the sampling technique due to under-representation of subgroups in the sample in comparison to the population of interest. <strong>The bias of the sample cannot be measured.</strong> [emphasis added] Therefore, inferences based on the convenience sampling should be made only about the sample itself. (Wikipedia, on ‘Convenience sampling,’ cites Borenstein et al, 2017)</p>
-</blockquote>
-<p><em>This entry is deeply pessimistic… for our case</em>.<br />
-</p>
-<p>We might consider alternate or additional <em>sampling</em> approaches in future EA Surveys. Selected sampling will not, by itself, do anything to lessen the problem of differential non-participation. However, it is conceivable that we might take improve our representativeness through some combination of …</p>
-<ol style="list-style-type: decimal">
-<li><p>Surveying the general (non-EA) population as part of larger representative surveys to get a sense of the overall composition of EAs (e.g., the gender ratio). However, differential non-response, to these larger surveys would again throw this in doubt. Standard corrections may not be easy: and relative non-response among EAs (e.g., male versus female EAs) may differ from the relative non-response to such surveys in other populations.</p></li>
-<li><p>Tracking, and attempting to adjust for particular rates of non-participation among groups with known compostions, and extending this, by inference, to groups with unknown composition.^*</p>
-<div class="marginnote">
-<p>E.g., suppose we knew the true gender composition of EA Global participants was 80/20 male/female, and we see a 90/10 split from EAG participants in the EAS. We might then assign a double weight to female EAG participants in the EAS, and perhaps also assign a double weight to females in other groups where we expect a similar pattern.</p>
-</div></li>
-<li><p>Additionally, taking probability samples from within known groups we expect to be ‘broadly representative of EA’ (or at least of particular interest) and offering much strong incentives to these individuals. If this lead to very-high participation rates among these probability samples, this would bring us closer to a gold-standard measure, at least for this group of interest.</p></li>
-</ol>
-<p><br />
-</p>
-<p>We might also consider “respondent-driven sampling” in combination with a careful measurement of the network structure of the EA population, and the sharing of the EAS in this network.</p>
-<p>As noted, the EAS considers a hidden/rare and fluctuating population, with <a href="https://en.wikipedia.org/wiki/Coverage_error">‘coverage’</a> limitations. <span class="citation">(<a href="#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref"><strong>salganikSamplingEstimationHidden2004?</strong></a>)</span> suggest using “respondent-driven sampling” (or ‘snowball sampling’ or ‘chain referral’) in such contexts, and making adjustments to recover representativeness (which will work only under particular condidtions). The process involves</p>
-<blockquote>
-<p>a small number of seeds who are the first people to participate in the study. These seeds then recruit others to participate in the study. This process of existing sample members recruiting future sample members continues until the desired sample size is reached.</p>
-</blockquote>
-<p>They note that</p>
-<blockquote>
-<p>This research is fairly well summarized by Berg (1988) when he writes, “as a rule, a snowball sample will be strongly biased toward inclusion of those who have many interrelationships with or are coupled to, a large number of individuals.” In the absence of knowledge of individual inclusion probabilities in different waves of the snowball sample, unbiased estimation is not possible.</p>
-</blockquote>
-<p>This motivates the authors’ approach, involving measuring the likelihood that an individual is reached as a function of their network, and then downweighting those individuals that are more likely to be sampled.</p>
-<p>They claim that through the process they propose, “it is possible to make unbiased estimates about hidden populations from these types of samples … asymptotically unbiased no matter how the seeds are selected.”</p>
-<p>While this approach is compelling, and may hold some potential for future EAS work, this is not feasible with the data we have now. Furthermore, it is not clear whether it would be an improvement. Relying on chain referral may increase the extent to which the EAS participants are skewed towards certain groups. Even if we take on the adjustments advocated in <span class="citation">(<a href="#ref-salganikSamplingEstimationHidden2004" role="doc-biblioref"><strong>salganikSamplingEstimationHidden2004?</strong></a>)</span>, this may add more ‘bias’ in net.</p>
-<p><br />
-</p>
-Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed below.*
-<div class="marginnote">
-<p>* We also sketch and discuss some <em>alternative analytical</em> approaches, perhaps for future years, <a href="sensitivity.html#future-bounding">below</a>).</p>
-</div>
-</div>
-</div>
-<div id="sens_checks" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Sensitivity-checks</h2>
-<p>In our posts for the 2020 EA survey, we will focus (as we have, to some extent <a href="https://forum.effectivealtruism.org/posts/TuzkYANf7tmQDF2Hk/ea-survey-2017-series-distribution-and-analysis-methodology">in the past</a>) on ‘sensitivity testing.’</p>
-<p><strong>For key outcomes of interest, we will consider how our reported estimates vary …</strong></p>
-<ol style="list-style-type: decimal">
-<li><p><a href="demog.html#demog-by-ref">by ‘referrer’</a> (the link that brought the respondent to the EAS), varying the weights assigned to referrers with different characteristics (‘large pool’ vs ‘small pool,’ level of EA-alignment, etc.)</p></li>
-<li><p>and by time-to-respond and ‘agreement to respond to future surveys.’</p></li>
-</ol>
-(In our future ‘Engagement’ posts, we will also consider this by ‘level of self-reported engagement’).*
-<div class="marginnote">
-<p>*Those less-engaged are presumably less interested in filling out the survey, and thus ‘under-represented.’ While we might imagine that the views of less-engaged EA’s are less relevant to consider, this may not always be the case, and might not track 1-1 with their lower response rates.</p>
-</div>
-<p><br />
-</p>
-<div id="why_these" class="section level3 unnumbered">
-<h3>Why these groupings?</h3>
-<ol style="list-style-type: decimal">
-<li><p>Some referrers may be promoting the EAS more than others, and EA’s who identify with certain referrers may visit them more often than EA’s in other mileu.</p></li>
-<li><p>Reasonably, ‘being less eager to do something’ may lead to procrastination, or to requiring more reminders before you do it. If so, those who took the longest to respond to the survey (at least relative to the first time they first learned about the survey) may better reflect, within each group, those ‘less likely to take the survey’ (or respond to followup surveys). A similar argument applies to those who indicated they do not want to take future surveys. Arguably, these groups are under-represented.</p></li>
-</ol>
-<em>In future…</em>**
-<div class="marginnote">
-<p>**In future we also aim to consider this by demographics and ‘clusters/vectors of demographics’ we particularly anticipate having differential response rates, in light of past survey research. Some demographics (particular considering career and family status) may face a greater time-cost, making them less likely to complete the survey, and leading to under-representation.</p>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="sensitivity.html#cb2-1" aria-hidden="true" tabindex="-1"></a>mean_don <span class="ot">&lt;-</span> <span class="fu">mean</span>(eas_20<span class="sc">$</span>donation_2019_c, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb2-2"><a href="sensitivity.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="sensitivity.html#cb2-3" aria-hidden="true" tabindex="-1"></a>n_shared_link <span class="ot">&lt;-</span> <span class="fu">sum</span>(eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Shared link&quot;</span>)</span>
-<span id="cb2-4"><a href="sensitivity.html#cb2-4" aria-hidden="true" tabindex="-1"></a>n_optin <span class="ot">&lt;-</span> <span class="fu">sum</span>(eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Email; opt-in from prev. EAS&quot;</span>)</span>
-<span id="cb2-5"><a href="sensitivity.html#cb2-5" aria-hidden="true" tabindex="-1"></a>male_rate_shared_link <span class="ot">&lt;-</span>  <span class="fu">mean</span>(eas_20<span class="sc">$</span>d_male[eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Shared link&quot;</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb2-6"><a href="sensitivity.html#cb2-6" aria-hidden="true" tabindex="-1"></a>sd_male_rate_shared_link <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(male_rate_shared_link<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>male_rate_shared_link))</span>
-<span id="cb2-7"><a href="sensitivity.html#cb2-7" aria-hidden="true" tabindex="-1"></a>male_rate_optin <span class="ot">&lt;-</span>  <span class="fu">mean</span>(eas_20<span class="sc">$</span>d_male[eas_20<span class="sc">$</span>referrer<span class="sc">==</span><span class="st">&quot;Email; opt-in from prev. EAS&quot;</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb2-8"><a href="sensitivity.html#cb2-8" aria-hidden="true" tabindex="-1"></a>sd_male_rate_optin <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(male_rate_optin<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>male_rate_optin))</span></code></pre></div>
-</div>
-</div>
-<div id="bound-bias-discussion" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Modeling and bounding the biases</h2>
+<div id="bound-bias-discussion" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Modeling and bounding the biases</h2>
 <p>In the <a href="demog.html#demog">sensitivity checks below</a> we report values of key demographics and other important outcomes for each of the groupings mentioned above. Taking the extreme values (minima and maxima) of the outcomes across these groupings could be seen to embody fairly extreme and ad-hoc assumptions.</p>
-<p>For example <a href="demog.html#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 58.96% male (from the ‘shared link’) and a high of 82.67% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 54.66% and an upper-CI for ‘opt-in link’ of 85.89%.</p>
-<p>These bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer. Clearly, neither the ‘opt-in link’ (the most male group) nor the ‘shared link’ (the most female group) groups are so under-represented that they should constitute the virtual entirety of the EA population. We know that, e.g., 488 completed the survey from the 80K hours link, and 247 reported a level of engagement of 3 or more. This is not a ‘drop in the bucket’: estimates of the total number of “active EA’s” range from <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea">about 4700</a> to <a href="https://forum.effectivealtruism.org/posts/S6QHRyi7joCWN9dkv/community-vs-network?commentId=G9zwPKtkcAb4nm6EH">about 13000</a>, or perhaps a few hundred thousand if we take the widest view (cf. <a href="https://80000hours.org/newsletter/">‘over 150,000 subscribers’ to the 80K hours newsletter</a>).*</p>
+<p>For example <a href="demog.html#demog-by-ref">we report a series of key outcomes for each referrer</a> (and for some groupings of these). We also did this for <a href="#demog-by-engagement">groupings of level of self-reported engagement</a>). Consider the largest and smallest value of each measure, across all referrers, of, e.g., ‘share identifying as Male.’ This leads to a low of 59.4117647058824% male (from the ‘shared link’) and a high of 82.5641025641026% male (the opt-in from last year’s survey). Constructing 80% standard statistical confidence intervals to each of these measures we have a lower-CI for ‘shared link’ of 55.0482069474871% and an upper-CI for ‘opt-in link’ of 85.8498321116085%.</p>
+<p>These bounds are clearly overly wide, i.e., overly conservative, at least in considering the impact of over/under-sampling from each referrer. Clearly, neither the ‘opt-in link’ (the most male group) nor the ‘shared link’ (the most female group) groups are so under-represented that they should constitute the virtual entirety of the EA population. We know that, e.g., 465 completed the survey from the 80K hours link, and 235 reported a level of engagement of 3 or more. This is not a ‘drop in the bucket’: estimates of the total number of “active EA’s” range from <a href="https://forum.effectivealtruism.org/posts/zQRHAFKGWcXXicYMo/ea-survey-2019-series-how-many-people-are-there-in-the-ea">about 4700</a> to <a href="https://forum.effectivealtruism.org/posts/S6QHRyi7joCWN9dkv/community-vs-network?commentId=G9zwPKtkcAb4nm6EH">about 13000</a>, or perhaps a few hundred thousand if we take the widest view (cf. <a href="https://80000hours.org/newsletter/">‘over 150,000 subscribers’ to the 80K hours newsletter</a>).*</p>
 <div class="marginnote">
 <p>* Also note, from the same linked post, some benchmarks:</p>
 <ul>
@@ -989,8 +1084,8 @@ Given the data we have, we thus focus on ‘sensitivity-testing,’ as discussed
 <p>In future we might also use ‘total known numbers in particular groups’ as upper-benchmarks.</p>
 </div>
 </div>
-<div id="future-bounding" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Other possible approaches (for future consideration)</h2>
+<div id="future-bounding" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Other possible approaches (for future consideration)</h2>
 <p>We are working to address these methodological issues more carefully, and work towards a theoretically grounded approach, both in considering the data we have, and our future survey design and implementation. Below, we present some ideas in this direction.</p>
 <div id="re-weighting-approaches" class="section level3 unnumbered">
 <h3>Re-weighting approaches?</h3>
@@ -1142,7 +1237,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "section",
+"collapse": "none",
 "scroll_highlight": true
 }
 });
