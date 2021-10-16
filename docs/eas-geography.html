@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Geography | EA survey analyses (partial)</title>
+  <meta name="description" content="EA Survey work and posts organized" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Geography | EA survey analyses (partial)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="EA Survey work and posts organized" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Geography | EA survey analyses (partial)" />
+  
+  <meta name="twitter:description" content="EA Survey work and posts organized" />
+  
+
+<meta name="author" content="Dr. David Reinstein, many others" />
+
+
+<meta name="date" content="2021-07-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="eas-donations.html"/>
+<link rel="next" href="eas-community-info.html"/>
+<script src="book_assets/header-attrs-2.8/header-attrs.js"></script>
+<script src="book_assets/jquery-3.5.1/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="book_assets/d3-bundle-5.16.0/d3-bundle.min.js"></script>
+<script src="book_assets/d3-lasso-0.0.5/d3-lasso.min.js"></script>
+<script src="book_assets/save-svg-as-png-1.4.17/save-svg-as-png.min.js"></script>
+<link href="book_assets/ggiraphjs-0.4.1/ggiraphjs.min.css" rel="stylesheet" />
+<script src="book_assets/ggiraphjs-0.4.1/ggiraphjs.min.js"></script>
+<script src="book_assets/girafe-binding-0.7.10/girafe.js"></script>
+<script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="book_assets/plotly-binding-4.9.3/plotly.js"></script>
+<script src="book_assets/typedarray-0.1/typedarray.min.js"></script>
+<link href="book_assets/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="book_assets/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="book_assets/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="book_assets/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<!-- font families -->
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico|Source+Sans+Pro" rel="stylesheet">
+
+<!-- <script src="js/hideOutput.js"></script> -->
+
+<!-- Mathjax -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/default.js"></script>
+
+ <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        jax: ["input/TeX","output/CommonHTML"]
+      });
+      MathJax.Hub.processSectionDelay = 0;
+  </script>
+
+
+
+
+<script async defer src="https://hypothes.is/embed.js"></script>
+
+<!-- Folding text box javascript thing -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $folds = $(".fold");
+  $folds.wrapInner("<div class=\"fold-blck\">"); // wrap a div container around content
+  $folds.prepend("<button class=\"fold-btn\">Unfold</button>");  // add a button
+  $(".fold-blck").toggle();  // fold all blocks
+  $(".fold-btn").on("click", function() {  // add onClick event
+    $(this).text($(this).text() === "Fold" ? "Unfold" : "Fold");  // if the text equals "Fold", change it to "Unfold"or else to "Fold"
+    $(this).next(".fold-blck").toggle("linear");  // "swing" is the default easing function. This can be further customized in its speed or the overall animation itself.
+  })
+});
+</script>
+
+<!--
+<script type="text/javascript">
+
+// toggle visibility of R source blocks in R Markdown output
+function toggle_R() {
+  var x = document.getElementsByClassName('r');
+  if (x.length == 0) return;
+  function toggle_vis(o) {
+    var d = o.style.display;
+    o.style.display = (d == 'block' || d == '') ? 'none':'block';
+  }
+
+  for (i = 0; i < x.length; i++) {
+    var y = x[i];
+    if (y.tagName.toLowerCase() === 'pre') toggle_vis(y);
+  }
+
+    var elem = document.getElementById("myButton1");
+    if (elem.value === "Hide Global") elem.value = "Show Global";
+    else elem.value = "Hide Global";
+}
+
+document.write('<input onclick="toggle_R();" type="button" value="Hide Global" id="myButton1" style="position: absolute; top: 10%; right: 2%; z-index: 200"></input>')
+
+</script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148137970-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-148137970-3');
+</script>
+-->
+
+<!-- FOLDING TEXT BOXES -->
+
+<script>
+/* ========================================================================
+ * Bootstrap: transition.js v3.3.7
+ * http://getbootstrap.com/javascript/#transitions
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // ============================================================
+
+  function transitionEnd() {
+    var el = document.createElement('bootstrap')
+
+    var transEndEventNames = {
+      WebkitTransition : 'webkitTransitionEnd',
+      MozTransition    : 'transitionend',
+      OTransition      : 'oTransitionEnd otransitionend',
+      transition       : 'transitionend'
+    }
+
+    for (var name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
+      }
+    }
+
+    return false // explicit for ie8 (  ._.)
+  }
+
+  // http://blog.alexmaccaw.com/css-transitions
+  $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+  }
+
+  $(function () {
+    $.support.transition = transitionEnd()
+
+    if (!$.support.transition) return
+
+    $.event.special.bsTransitionEnd = {
+      bindType: $.support.transition.end,
+      delegateType: $.support.transition.end,
+      handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
+      }
+    }
+  })
+
+}(jQuery);
+</script>
+<script>
+/* ========================================================================
+ * Bootstrap: collapse.js v3.3.7
+ * http://getbootstrap.com/javascript/#collapse
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+/* jshint latedef: false */
+
++function ($) {
+  'use strict';
+
+  // COLLAPSE PUBLIC CLASS DEFINITION
+  // ================================
+
+  var Collapse = function (element, options) {
+    this.$element      = $(element)
+    this.options       = $.extend({}, Collapse.DEFAULTS, options)
+    this.$trigger      = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
+                           '[data-toggle="collapse"][data-target="#' + element.id + '"]')
+    this.transitioning = null
+
+    if (this.options.parent) {
+      this.$parent = this.getParent()
+    } else {
+      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
+    }
+
+    if (this.options.toggle) this.toggle()
+  }
+
+  Collapse.VERSION  = '3.3.7'
+
+  Collapse.TRANSITION_DURATION = 350
+
+  Collapse.DEFAULTS = {
+    toggle: true
+  }
+
+  Collapse.prototype.dimension = function () {
+    var hasWidth = this.$element.hasClass('width')
+    return hasWidth ? 'width' : 'height'
+  }
+
+  Collapse.prototype.show = function () {
+    if (this.transitioning || this.$element.hasClass('in')) return
+
+    var activesData
+    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
+    }
+
+    var startEvent = $.Event('show.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    if (actives && actives.length) {
+      Plugin.call(actives, 'hide')
+      activesData || actives.data('bs.collapse', null)
+    }
+
+    var dimension = this.dimension()
+
+    this.$element
+      .removeClass('collapse')
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse in')[dimension]('')
+      this.transitioning = 0
+      this.$element
+        .trigger('shown.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
+
+    this.$element
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
+  }
+
+  Collapse.prototype.hide = function () {
+    if (this.transitioning || !this.$element.hasClass('in')) return
+
+    var startEvent = $.Event('hide.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    var dimension = this.dimension()
+
+    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
+
+    this.$element
+      .addClass('collapsing')
+      .removeClass('collapse in')
+      .attr('aria-expanded', false)
+
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.transitioning = 0
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse')
+        .trigger('hidden.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    this.$element
+      [dimension](0)
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
+  }
+
+  Collapse.prototype.toggle = function () {
+    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
+
+  Collapse.prototype.getParent = function () {
+    return $(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
+
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
+
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
+
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+
+    return $(target)
+  }
+
+
+  // COLLAPSE PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.collapse')
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false
+      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.collapse
+
+  $.fn.collapse             = Plugin
+  $.fn.collapse.Constructor = Collapse
+
+
+  // COLLAPSE NO CONFLICT
+  // ====================
+
+  $.fn.collapse.noConflict = function () {
+    $.fn.collapse = old
+    return this
+  }
+
+
+  // COLLAPSE DATA-API
+  // =================
+
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+    var $this   = $(this)
+
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $this.data()
+
+    Plugin.call($target, option)
+  })
+
+}(jQuery);
+</script>
+<script>
+window.initializeCodeFolding = function(show) {
+
+  // handlers for show-all and hide all
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  // index for unique code element ids
+  var currentIndex = 1;
+
+  // select all R code blocks
+  var rCodeBlocks = $('pre.sourceCode, pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.js');
+  rCodeBlocks.each(function() {
+
+    // create a collapsable div to wrap the code in
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    // add a show code button right above
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    // update state of button on show/hide
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+</script>
+<script>
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.3.7
+ * http://getbootstrap.com/javascript/#dropdowns
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // =========================
+
+  var backdrop = '.dropdown-backdrop'
+  var toggle   = '[data-toggle="dropdown"]'
+  var Dropdown = function (element) {
+    $(element).on('click.bs.dropdown', this.toggle)
+  }
+
+  Dropdown.VERSION = '3.3.7'
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector && $(selector)
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+  function clearMenus(e) {
+    if (e && e.which === 3) return
+    $(backdrop).remove()
+    $(toggle).each(function () {
+      var $this         = $(this)
+      var $parent       = getParent($this)
+      var relatedTarget = { relatedTarget: this }
+
+      if (!$parent.hasClass('open')) return
+
+      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
+
+      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this.attr('aria-expanded', 'false')
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+    })
+  }
+
+  Dropdown.prototype.toggle = function (e) {
+    var $this = $(this)
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    clearMenus()
+
+    if (!isActive) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+        // if mobile we use a backdrop because click events don't delegate
+        $(document.createElement('div'))
+          .addClass('dropdown-backdrop')
+          .insertAfter($(this))
+          .on('click', clearMenus)
+      }
+
+      var relatedTarget = { relatedTarget: this }
+      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this
+        .trigger('focus')
+        .attr('aria-expanded', 'true')
+
+      $parent
+        .toggleClass('open')
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
+    }
+
+    return false
+  }
+
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
+
+    var $this = $(this)
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    if (!isActive && e.which != 27 || isActive && e.which == 27) {
+      if (e.which == 27) $parent.find(toggle).trigger('focus')
+      return $this.trigger('click')
+    }
+
+    var desc = ' li:not(.disabled):visible a'
+    var $items = $parent.find('.dropdown-menu' + desc)
+
+    if (!$items.length) return
+
+    var index = $items.index(e.target)
+
+    if (e.which == 38 && index > 0)                 index--         // up
+    if (e.which == 40 && index < $items.length - 1) index++         // down
+    if (!~index)                                    index = 0
+
+    $items.eq(index).trigger('focus')
+  }
+
+
+  // DROPDOWN PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.dropdown')
+
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.dropdown
+
+  $.fn.dropdown             = Plugin
+  $.fn.dropdown.Constructor = Dropdown
+
+
+  // DROPDOWN NO CONFLICT
+  // ====================
+
+  $.fn.dropdown.noConflict = function () {
+    $.fn.dropdown = old
+    return this
+  }
+
+
+  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // ===================================
+
+  $(document)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
+
+}(jQuery);
+</script>
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+.row { display: flex; }
+.collapse { display: none; }
+.in { display:block }
+.pull-right > .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "hide");
+});
+</script>
+
+
+<script>
+document.write('<div class="btn-group pull-right" style="position: absolute; top: 10%; right: 15%; z-index: 200"><button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast=""><span>Code</span> <span class="caret"></span></button><ul class="dropdown-menu" style="min-width: 50px;"><li><a id="rmd-show-all-code" href="#">Show All Code</a></li><li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li></ul></div>')
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="support/tufte_plus.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="outline-disc.html"><a href="outline-disc.html"><i class="fa fa-check"></i><b>1</b> Notes on this ‘bookdown’ relating to the EA Survey</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="outline-disc.html"><a href="outline-disc.html#allowing-and-encouraging-interactive-content"><i class="fa fa-check"></i><b>1.0.1</b> Allowing and encouraging interactive content?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html"><i class="fa fa-check"></i>Methodology: Representativeness; weighting and sensitivity testing</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="sensitivity.html"><a href="sensitivity.html#eas_challenges"><i class="fa fa-check"></i><b>1.1</b> The challenge for the EA Survey (EAS)</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#sensitivity-checks"><i class="fa fa-check"></i>Sensitivity-checks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="sensitivity.html"><a href="sensitivity.html#sens_checks"><i class="fa fa-check"></i><b>1.2</b> Sensitivity-checks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#why_these"><i class="fa fa-check"></i>Why these groupings?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>1.3</b> Modeling and bounding the biases</a></li>
+<li class="chapter" data-level="1.4" data-path="sensitivity.html"><a href="sensitivity.html#other-possible-approaches-for-future-consideration"><i class="fa fa-check"></i><b>1.4</b> Other possible approaches (for future consideration)</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#re-weighting-approaches"><i class="fa fa-check"></i>Re-weighting approaches?</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#less-extreme-but-ad-hoc-sensitivity-checking"><i class="fa fa-check"></i>Less extreme (but ad-hoc) sensitivity checking</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#bayesian-modeling-of-outcomes-in-light-of-distributions-of-response-rates"><i class="fa fa-check"></i>Bayesian modeling of outcomes in light of (distributions) of response rates</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="sensitivity.html"><a href="sensitivity.html#references-work-considered-above-and-linked"><i class="fa fa-check"></i><b>1.5</b> References (work considered above and linked)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-formats.html"><a href="dynamic-formats.html"><i class="fa fa-check"></i>Methods: interactive and dynamic formats, data sharing</a>
+<ul>
+<li class="chapter" data-level="1.6" data-path="dynamic-formats.html"><a href="dynamic-formats.html#sharing-data-sharing-interfacesdashboardsinteractives-and-privacy-issues"><i class="fa fa-check"></i><b>1.6</b> Sharing data, sharing interfaces/dashboards/interactives, and privacy issues</a></li>
+<li class="chapter" data-level="1.7" data-path="dynamic-formats.html"><a href="dynamic-formats.html#systematizing-data-processes"><i class="fa fa-check"></i><b>1.7</b> Systematizing data processes</a></li>
+<li class="chapter" data-level="1.8" data-path="dynamic-formats.html"><a href="dynamic-formats.html#scheduled-posts-andor-a-continuous-maintained-live-hosted-version"><i class="fa fa-check"></i><b>1.8</b> Scheduled posts and/or a continuous maintained live (hosted) version</a></li>
+<li class="chapter" data-level="1.9" data-path="dynamic-formats.html"><a href="dynamic-formats.html#notes-on-conversation"><i class="fa fa-check"></i><b>1.9</b> Notes on conversation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="demog.html"><a href="demog.html"><i class="fa fa-check"></i><b>2</b> Demographics: considering representativeness</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="demog.html"><a href="demog.html#considering-innovations-in-presentation-and-methodology"><i class="fa fa-check"></i><b>2.1</b> 2020: Considering innovations in presentation and methodology</a>
+<ul>
+<li><a href="demog.html#see-previous-section-methods-weighting-representativeness-and-sensitivity-testing">See previous section: <span>Methods: Weighting, representativeness, and sensitivity testing</span></a></li>
+<li class="chapter" data-level="2.1.1" data-path="demog.html"><a href="demog.html#see-methods-interactive-and-dynamic-formats-data-sharing"><i class="fa fa-check"></i><b>2.1.1</b> See <span>Methods: interactive and dynamic formats, data sharing</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="demog.html"><a href="demog.html#introduction"><i class="fa fa-check"></i><b>2.2</b> Introduction</a></li>
+<li class="chapter" data-level="2.3" data-path="demog.html"><a href="demog.html#age"><i class="fa fa-check"></i><b>2.3</b> Age</a></li>
+<li class="chapter" data-level="2.4" data-path="demog.html"><a href="demog.html#gender"><i class="fa fa-check"></i><b>2.4</b> Gender</a></li>
+<li class="chapter" data-level="2.5" data-path="demog.html"><a href="demog.html#raceethnicity-and-engagement"><i class="fa fa-check"></i><b>2.5</b> Race/ethnicity (and engagement)</a></li>
+<li class="chapter" data-level="2.6" data-path="demog.html"><a href="demog.html#sexual-orientation"><i class="fa fa-check"></i><b>2.6</b> Sexual orientation</a></li>
+<li class="chapter" data-level="2.7" data-path="demog.html"><a href="demog.html#employmentstudent-status"><i class="fa fa-check"></i><b>2.7</b> Employment/student-status</a></li>
+<li class="chapter" data-level="2.8" data-path="demog.html"><a href="demog.html#career-path"><i class="fa fa-check"></i><b>2.8</b> Career path</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="demog.html"><a href="demog.html#career-path-by-gender"><i class="fa fa-check"></i><b>2.8.1</b> Career path by gender</a></li>
+<li class="chapter" data-level="2.8.2" data-path="demog.html"><a href="demog.html#career-path-by-ethnicity"><i class="fa fa-check"></i><b>2.8.2</b> Career path by ethnicity</a></li>
+<li class="chapter" data-level="2.8.3" data-path="demog.html"><a href="demog.html#career-path-by-high-engagement"><i class="fa fa-check"></i><b>2.8.3</b> Career path by high engagement</a></li>
+<li class="chapter" data-level="2.8.4" data-path="demog.html"><a href="demog.html#proposed-career-path-by-student-status"><i class="fa fa-check"></i><b>2.8.4</b> (Proposed) career path by student status</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="demog.html"><a href="demog.html#childhood-ses-parents-education"><i class="fa fa-check"></i><b>2.9</b> Childhood SES, Parents’ education</a></li>
+<li class="chapter" data-level="2.10" data-path="demog.html"><a href="demog.html#clustering-are-these-demographics-co-related"><i class="fa fa-check"></i><b>2.10</b> ‘Clustering’: are these demographics co-related?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="demog.html"><a href="demog.html#gower-distances"><i class="fa fa-check"></i><b>2.10.1</b> Gower distances</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#just-counting-combinations"><i class="fa fa-check"></i>Just counting combinations</a></li>
+<li><a href="demog.html#a-simpler-correlation-matrix-approach">A simpler <strong>correlation matrix</strong> approach:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="demog.html"><a href="demog.html#demographics-over-time"><i class="fa fa-check"></i><b>2.11</b> Demographics over time</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="demog.html"><a href="demog.html#key-questions"><i class="fa fa-check"></i><b>2.11.1</b> Key questions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="demog.html"><a href="demog.html#age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement"><i class="fa fa-check"></i><b>2.12</b> Age first heard of EA: does it have a (causal) impact on engagement?</a></li>
+<li class="chapter" data-level="2.13" data-path="demog.html"><a href="demog.html#demography-sensitivity"><i class="fa fa-check"></i><b>2.13</b> Sensitivity checks</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="demog.html"><a href="demog.html#widest-most-conservative-bounds-smallest-and-largest-estimates-across-referrers-etc."><i class="fa fa-check"></i><b>2.13.1</b> Widest, most-conservative bounds: smallest and largest estimates (across referrers, etc.)</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-ref"><i class="fa fa-check"></i>Demographics by ‘referrer’</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i>Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="demog.html"><a href="demog.html#demog-by-engagement_d"><i class="fa fa-check"></i><b>2.14</b> Demographics by engagement</a>
+<ul>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i>Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#by-start-date-relative-to-others-from-same-referrer"><i class="fa fa-check"></i>By start date (relative to others from same referrer)</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#engaged-mainstream-by-moreless-survey-responsive"><i class="fa fa-check"></i>“Engaged mainstream”: By more/less survey-responsive</a></li>
+</ul></li>
+<li class="chapter" data-level="2.15" data-path="demog.html"><a href="demog.html#other-bounding-approaches"><i class="fa fa-check"></i><b>2.15</b> Other (?) bounding approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="eas-how-involved.html"><a href="eas-how-involved.html"><i class="fa fa-check"></i><b>3</b> How EAs get Involved in EA</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="eas-how-involved.html"><a href="eas-how-involved.html#how-did-you-first-hear-about-ea"><i class="fa fa-check"></i><b>3.1</b> How did you first hear about EA?</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#by-engagement-level"><i class="fa fa-check"></i>By engagement level</a></li>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#first-hear-by-gender"><i class="fa fa-check"></i>First-hear by gender</a></li>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#first-hear-by-ethnicity"><i class="fa fa-check"></i>First-hear by ethnicity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="eas-how-involved.html"><a href="eas-how-involved.html#attrition-by-introducer"><i class="fa fa-check"></i><b>3.2</b> Attrition from EA/EA survey by introducer – move to ‘engagement’ section?</a></li>
+<li class="chapter" data-level="3.3" data-path="eas-how-involved.html"><a href="eas-how-involved.html#introducers-engagement"><i class="fa fa-check"></i><b>3.3</b> Do introducers predict and/or drive engagement?</a></li>
+<li class="chapter" data-level="3.4" data-path="eas-how-involved.html"><a href="eas-how-involved.html#modeling-introducer-attrition-and-engagement"><i class="fa fa-check"></i><b>3.4</b> Modeling “introducer” attrition, and engagement</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="eas-how-involved.html"><a href="eas-how-involved.html#proposed-modeling-steps-discussion-moved-to-engagement-modeling-section"><i class="fa fa-check"></i><b>3.4.1</b> Proposed modeling steps (discussion moved to <span>engagement modeling section</span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="eas-how-involved.html"><a href="eas-how-involved.html#involve-engage-model"><i class="fa fa-check"></i><b>3.4.2</b> Simple ‘linear model’ of self-reported engagement level and involvers</a></li>
+<li class="chapter" data-level="3.4.3" data-path="eas-how-involved.html"><a href="eas-how-involved.html#simple-linear-probability-model-of-self-reported-engagement-levels-4-5"><i class="fa fa-check"></i><b>3.4.3</b> Simple ‘linear probability model’ of self-reported-engagement levels 4-5</a></li>
+<li class="chapter" data-level="3.4.4" data-path="eas-how-involved.html"><a href="eas-how-involved.html#ordered-logit-model-of-sr-engagement"><i class="fa fa-check"></i><b>3.4.4</b> Ordered logit model of SR engagement</a></li>
+<li class="chapter" data-level="3.4.5" data-path="eas-how-involved.html"><a href="eas-how-involved.html#building-random-forest-model-to-predict-engagement"><i class="fa fa-check"></i><b>3.4.5</b> Building Random Forest model to predict engagement</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="eas-how-involved.html"><a href="eas-how-involved.html#notes-and-todos-on-introducers-vs.-engagement-to-be-integrated-above"><i class="fa fa-check"></i><b>3.5</b> Notes and todos on ‘Introducers’ vs. Engagement … to be integrated above</a></li>
+<li class="chapter" data-level="3.6" data-path="eas-how-involved.html"><a href="eas-how-involved.html#more-involved-ea"><i class="fa fa-check"></i><b>3.6</b> What factors were important for getting you more involved in EA? (descriptives)</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="eas-how-involved.html"><a href="eas-how-involved.html#differences-in-getting-involved-factors-by-group"><i class="fa fa-check"></i><b>3.6.1</b> Differences in ‘getting involved’ factors by group</a></li>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#caveat-and-adjustments-for-multiple-response-categorical-variables-probably-skip-this"><i class="fa fa-check"></i>Caveat and adjustments for ‘multiple response categorical variables’ (probably skip this)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="eas-cause-prioritization.html"><a href="eas-cause-prioritization.html"><i class="fa fa-check"></i><b>4</b> Cause Prioritisation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="eas-cause-prioritization.html"><a href="eas-cause-prioritization.html#likert-scale-responses---all-responses"><i class="fa fa-check"></i><b>4.1</b> Likert scale responses - all responses</a></li>
+<li class="chapter" data-level="4.2" data-path="eas-cause-prioritization.html"><a href="eas-cause-prioritization.html#factor-analysis-grouping-of-prioritization"><i class="fa fa-check"></i><b>4.2</b> Factor analysis: grouping of prioritization</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="eas-donations.html"><a href="eas-donations.html"><i class="fa fa-check"></i><b>5</b> Donations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="eas-donations.html"><a href="eas-donations.html#introduction-and-summary"><i class="fa fa-check"></i><b>5.1</b> Introduction and summary</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="eas-donations.html"><a href="eas-donations.html#toc"><i class="fa fa-check"></i><b>5.1.1</b> Why does the EA Survey ask about donations? What does it tell us? What is the “theory of change” for how learning about donation behavior will improve outcomes?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="eas-donations.html"><a href="eas-donations.html#total-ea-donations-magnitudes-in-context"><i class="fa fa-check"></i><b>5.2</b> Total EA donations, magnitudes in context</a></li>
+<li class="chapter" data-level="5.3" data-path="eas-donations.html"><a href="eas-donations.html#career-paths-earning-to-give"><i class="fa fa-check"></i><b>5.3</b> Career paths: Earning-to-give</a></li>
+<li class="chapter" data-level="5.4" data-path="eas-donations.html"><a href="eas-donations.html#donation-totals-by-individual-descriptives"><i class="fa fa-check"></i><b>5.4</b> Donation totals by individual: descriptives</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="eas-donations.html"><a href="eas-donations.html#overall-donations-totals-by-groups"><i class="fa fa-check"></i><b>5.4.1</b> Overall donations, totals by groups</a></li>
+<li class="chapter" data-level="5.4.2" data-path="eas-donations.html"><a href="eas-donations.html#donation-shares-versus-income-and-gwwc-pledge"><i class="fa fa-check"></i><b>5.4.2</b> Donation (shares) versus income and GWWC pledge</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="eas-donations.html"><a href="eas-donations.html#total-donations-by-individual-characteristics-and-cause"><i class="fa fa-check"></i><b>5.5</b> Total donations: by individual characteristics (and cause)</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="eas-donations.html"><a href="eas-donations.html#employment-and-student-status"><i class="fa fa-check"></i><b>5.5.1</b> Employment and student status</a></li>
+<li class="chapter" data-level="5.5.2" data-path="eas-donations.html"><a href="eas-donations.html#donations-by-country"><i class="fa fa-check"></i><b>5.5.2</b> Donations by country</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#donations-and-income-by-whether-a-lr-cause-is-top-priority-by-request"><i class="fa fa-check"></i>Donations and income by whether a LR cause is top priority (by request)</a></li>
+<li class="chapter" data-level="5.5.3" data-path="eas-donations.html"><a href="eas-donations.html#self-reported-engagement-in-ea-and-years-in-ea"><i class="fa fa-check"></i><b>5.5.3</b> Self-reported Engagement in EA and Years in EA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="eas-donations.html"><a href="eas-donations.html#which-charities-causes-and-categories-are-eas-donating-to"><i class="fa fa-check"></i><b>5.6</b> Which charities (causes and categories) are EAs donating to?</a></li>
+<li class="chapter" data-level="5.7" data-path="eas-donations.html"><a href="eas-donations.html#donations-plans-and-aspirations-versus-actual-reported-donations"><i class="fa fa-check"></i><b>5.7</b> Donations: plans and aspirations versus actual (reported) donations</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#planned-vs.-actual-individuals-present-in-both-surveys"><i class="fa fa-check"></i>2019 Planned vs. actual: Individuals present in both surveys</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#planned-vs.-actual-all-respondents-and-those-who-joined-before-2019"><i class="fa fa-check"></i>2019 planned vs. actual: All respondents; and those who joined before 2019</a></li>
+<li class="chapter" data-level="5.7.1" data-path="eas-donations.html"><a href="eas-donations.html#donations-across-years-planned-and-actual"><i class="fa fa-check"></i><b>5.7.1</b> Donations across years – planned and actual</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#planned-vs.-actual-in-a-typical-year-across-all-years"><i class="fa fa-check"></i>Planned vs. actual in a ‘typical year’ (across all years)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="eas-donations.html"><a href="eas-donations.html#model-of-ea-donation-behavior-descriptive-predictive-or-causal"><i class="fa fa-check"></i><b>5.8</b> Model of EA donation behavior (descriptive, predictive, or causal?)</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="eas-donations.html"><a href="eas-donations.html#possible-modeling-questions-and-approaches"><i class="fa fa-check"></i><b>5.8.1</b> Possible modeling ‘questions’ and approaches:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="eas-donations.html"><a href="eas-donations.html#donation-and-income-trends-in-ea"><i class="fa fa-check"></i><b>5.9</b> Donation and income trends in EA</a></li>
+<li class="chapter" data-level="5.10" data-path="eas-donations.html"><a href="eas-donations.html#discussion-workspace"><i class="fa fa-check"></i><b>5.10</b> Discussion workspace</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="eas-geography.html"><a href="eas-geography.html"><i class="fa fa-check"></i><b>6</b> Geography</a></li>
+<li class="chapter" data-level="7" data-path="eas-community-info.html"><a href="eas-community-info.html"><i class="fa fa-check"></i><b>7</b> Community Information</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="eas-community-info.html"><a href="eas-community-info.html#factors-affecting-engagement-self-reports"><i class="fa fa-check"></i><b>7.1</b> Factors affecting engagement (self-reports)</a></li>
+<li class="chapter" data-level="7.2" data-path="eas-community-info.html"><a href="eas-community-info.html#likert-scale-responses---all-responses-1"><i class="fa fa-check"></i><b>7.2</b> Likert scale responses - all responses</a></li>
+<li class="chapter" data-level="7.3" data-path="eas-community-info.html"><a href="eas-community-info.html#satisfaction"><i class="fa fa-check"></i><b>7.3</b> Satisfaction</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="eas-community-info.html"><a href="eas-community-info.html#predictors-of-positive-attitudes-towardssatisfaction-with-the-ea-community"><i class="fa fa-check"></i><b>7.3.1</b> Predictors of ‘positive attitudes towards’/‘satisfaction with’ the EA community</a></li>
+<li class="chapter" data-level="" data-path="eas-community-info.html"><a href="eas-community-info.html#plotting-odds-ratio-effects-from-above-with-cis-rescaled"><i class="fa fa-check"></i>Plotting odds ratio effects from above, with CIs, rescaled</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="eas-engagement.html"><a href="eas-engagement.html"><i class="fa fa-check"></i><b>8</b> Engagement</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="demog.html"><a href="demog.html#introduction"><i class="fa fa-check"></i><b>8.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="eas-engagement.html"><a href="eas-engagement.html#why-do-we-care-about-engagement"><i class="fa fa-check"></i><b>8.1.1</b> Why do we care about ‘engagement?’</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="eas-engagement.html"><a href="eas-engagement.html#engage-measures"><i class="fa fa-check"></i><b>8.2</b> Measures of Engagement</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-measures-and-validation"><i class="fa fa-check"></i><b>8.2.1</b> Engagement measures and validation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptives-of-engagement-see-forum-post-link"><i class="fa fa-check"></i><b>8.3</b> Descriptives of engagement (see forum post [LINK])</a></li>
+<li class="chapter" data-level="8.4" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptives-engagement-by-demographics-socio-economic-factors-attitudesbehaviors-and-paths-and-vice-versa"><i class="fa fa-check"></i><b>8.4</b> Descriptives: Engagement by Demographics, Socio-Economic factors, Attitudes/Behaviors, and Paths (and vice-versa)</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="eas-engagement.html"><a href="eas-engagement.html#self-reported-engagement-key-comparisons"><i class="fa fa-check"></i><b>8.4.1</b> Self-reported engagement: key comparisons</a></li>
+<li class="chapter" data-level="8.4.2" data-path="eas-engagement.html"><a href="eas-engagement.html#summary-charts"><i class="fa fa-check"></i><b>8.4.2</b> Summary charts</a></li>
+<li class="chapter" data-level="8.4.3" data-path="eas-engagement.html"><a href="eas-engagement.html#when-people-get-involved-in-ea-time-in-ea-age-age-when-first-involved-in-ea"><i class="fa fa-check"></i><b>8.4.3</b> When people get involved in EA/ Time in EA / Age / Age When First Involved in EA</a></li>
+<li class="chapter" data-level="8.4.4" data-path="eas-engagement.html"><a href="eas-engagement.html#gender-and-self-reported-engagement-and-group-membership---see-forum-post-link"><i class="fa fa-check"></i><b>8.4.4</b> Gender and self-reported engagement, … and group membership - see forum post [LINK]</a></li>
+<li class="chapter" data-level="8.4.5" data-path="eas-engagement.html"><a href="eas-engagement.html#race-and-and-group-membership-race-and-activities---see-forum-post"><i class="fa fa-check"></i><b>8.4.5</b> Race and and group membership; Race and activities - see forum post</a></li>
+<li class="chapter" data-level="8.4.6" data-path="eas-engagement.html"><a href="eas-engagement.html#where-people-first-heard-of-ea"><i class="fa fa-check"></i><b>8.4.6</b> Where people first heard of EA</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="eas-engagement.html"><a href="eas-engagement.html#modeling-engagement"><i class="fa fa-check"></i><b>8.5</b> Modeling engagement*</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptive-modeling"><i class="fa fa-check"></i><b>8.5.1</b> Descriptive modeling</a></li>
+<li class="chapter" data-level="8.5.2" data-path="eas-engagement.html"><a href="eas-engagement.html#predictive-and-causal-modeling"><i class="fa fa-check"></i><b>8.5.2</b> Predictive and causal modeling</a></li>
+<li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choices-of-variablesfeatures"><i class="fa fa-check"></i>Choices of variables/features</a></li>
+<li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choosing-features-and-modeling-target-variables"><i class="fa fa-check"></i>Choosing features and modeling target variables</a></li>
+<li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#engage-ologit"><i class="fa fa-check"></i>Ordered logit models of self-reported engagement level</a></li>
+<li class="chapter" data-level="8.5.3" data-path="eas-engagement.html"><a href="eas-engagement.html#interpretation-robustness-further-exploration"><i class="fa fa-check"></i><b>8.5.3</b> Interpretation, robustness, further exploration</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="eas-engagement.html"><a href="eas-engagement.html#engage_time"><i class="fa fa-check"></i><b>8.6</b> Engagement: age, tenure, period and cohort effects</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="eas-engagement.html"><a href="eas-engagement.html#which-age"><i class="fa fa-check"></i><b>8.6.1</b> Engagement by tenure/age: ‘prediction for “outreach at what age?”’</a></li>
+<li class="chapter" data-level="8.6.2" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-and-tenure"><i class="fa fa-check"></i><b>8.6.2</b> Engagement by age and tenure</a></li>
+<li class="chapter" data-level="8.6.3" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-first-involved-and-tenure"><i class="fa fa-check"></i><b>8.6.3</b> Engagement by ‘Age-first-involved’ and tenure</a></li>
+<li class="chapter" data-level="8.6.4" data-path="eas-engagement.html"><a href="eas-engagement.html#see-also-attrition-from-eaea-survey-by-introducer"><i class="fa fa-check"></i><b>8.6.4</b> See also: <span>Attrition from EA/EA survey by introducer</span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="eas-engagement.html"><a href="eas-engagement.html#additional-cea-request-citiesareas-by-group-engagement-and-retention-adapted"><i class="fa fa-check"></i><b>8.7</b> Additional – CEA request: cities/areas by group engagement and retention, adapted:</a></li>
+<li class="chapter" data-level="8.8" data-path="eas-engagement.html"><a href="eas-engagement.html#conclusions-and-future-work"><i class="fa fa-check"></i><b>8.8</b> Conclusions and Future work</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html"><i class="fa fa-check"></i><b>9</b> Internal: Discussion of presentation, methodology, and code</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#organisation-collophon-formatting"><i class="fa fa-check"></i><b>9.1</b> Organisation, collophon, formatting</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#how-this-is-built-how-it-works-how-it-relates-to-ea-forum-posts"><i class="fa fa-check"></i><b>9.1.1</b> How this is built, how it works, how it relates to EA Forum posts</a></li>
+<li class="chapter" data-level="9.1.2" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#markdown-formatting-conversion-etc."><i class="fa fa-check"></i><b>9.1.2</b> Markdown formatting, conversion, etc.</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#coding-and-organisational-issues"><i class="fa fa-check"></i><b>9.2</b> Coding and organisational issues</a></li>
+<li class="chapter" data-level="9.3" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#content-and-methods"><i class="fa fa-check"></i><b>9.3</b> Content and methods</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#visualisations"><i class="fa fa-check"></i><b>9.3.1</b> Visualisations</a></li>
+<li class="chapter" data-level="9.3.2" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#statistical-tests"><i class="fa fa-check"></i><b>9.3.2</b> Statistical tests</a></li>
+<li class="chapter" data-level="9.3.3" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#models"><i class="fa fa-check"></i><b>9.3.3</b> ‘Models’</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="internal-discussion-of-presentation-methodology-and-code.html"><a href="internal-discussion-of-presentation-methodology-and-code.html#section-by-section-specific-points"><i class="fa fa-check"></i><b>9.4</b> Section-by-section specific points</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html"><i class="fa fa-check"></i><b>10</b> README - EA Survey data and analysis work</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#key-files-and-folders"><i class="fa fa-check"></i><b>10.1</b> Key files and folders</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#code-config-lib"><i class="fa fa-check"></i><b>10.1.1</b> <span>code</span>, <span>config</span>, <span>lib</span></a></li>
+<li class="chapter" data-level="10.1.2" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#build"><i class="fa fa-check"></i><b>10.1.2</b> <span>build</span></a></li>
+<li class="chapter" data-level="10.1.3" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#analysis"><i class="fa fa-check"></i><b>10.1.3</b> <span>analysis</span></a></li>
+<li class="chapter" data-level="10.1.4" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#codebooks"><i class="fa fa-check"></i><b>10.1.4</b> <span>codebooks</span></a></li>
+<li class="chapter" data-level="10.1.5" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#data"><i class="fa fa-check"></i><b>10.1.5</b> <span>data</span></a></li>
+<li class="chapter" data-level="10.1.6" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#models-1"><i class="fa fa-check"></i><b>10.1.6</b> <span>models</span></a></li>
+<li class="chapter" data-level="10.1.7" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#output"><i class="fa fa-check"></i><b>10.1.7</b> <span>Output</span></a></li>
+<li class="chapter" data-level="10.1.8" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#project_discussion"><i class="fa fa-check"></i><b>10.1.8</b> <span>project_discussion</span></a></li>
+<li class="chapter" data-level="10.1.9" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#config"><i class="fa fa-check"></i><b>10.1.9</b> <span>config</span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#further-notes"><i class="fa fa-check"></i><b>10.2</b> Further notes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EA survey analyses (partial)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="eas_geography" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Geography</h1>
+<p>Combine <a href="https://forum.effectivealtruism.org/posts/cvkqyxepf4W2whYSK/ea-survey-2019-series-geographic-distribution-of-eas%20withhttps://forum.effectivealtruism.org/posts/nAwKzXcbGyCksdGBu/ea-survey-series-2019-how-many-eas-live-in-the-main-ea-hubs">2019 how many eas in main hubs</a></p>
+<p>with maybe some of <a href="https://forum.effectivealtruism.org/posts/Lyg2bgRgQePBDnyA6/ea-survey-series-2019-ea-cities-and-the-cost-of-living">EA cities cost of living</a></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="eas-donations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eas-community-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
