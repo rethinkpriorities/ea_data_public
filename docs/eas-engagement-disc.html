@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 Modeling Engagement | EA survey analyses (partial)</title>
+  <meta name="description" content="EA Survey work and posts organized" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 Modeling Engagement | EA survey analyses (partial)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="EA Survey work and posts organized" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 Modeling Engagement | EA survey analyses (partial)" />
+  
+  <meta name="twitter:description" content="EA Survey work and posts organized" />
+  
+
+<meta name="author" content="Dr. David Reinstein, many others" />
+
+
+<meta name="date" content="2021-06-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="eas-engagement.html"/>
+<link rel="next" href="readme-ea-survey-data-and-analysis-work.html"/>
+<script src="book_assets/header-attrs-2.8/header-attrs.js"></script>
+<script src="book_assets/jquery-3.5.1/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="book_assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="book_assets/d3-bundle-5.16.0/d3-bundle.min.js"></script>
+<script src="book_assets/d3-lasso-0.0.5/d3-lasso.min.js"></script>
+<script src="book_assets/save-svg-as-png-1.4.17/save-svg-as-png.min.js"></script>
+<link href="book_assets/ggiraphjs-0.4.1/ggiraphjs.min.css" rel="stylesheet" />
+<script src="book_assets/ggiraphjs-0.4.1/ggiraphjs.min.js"></script>
+<script src="book_assets/girafe-binding-0.7.10/girafe.js"></script>
+<script src="book_assets/kePrint-0.0.1/kePrint.js"></script>
+<link href="book_assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="book_assets/plotly-binding-4.9.3/plotly.js"></script>
+<script src="book_assets/typedarray-0.1/typedarray.min.js"></script>
+<link href="book_assets/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="book_assets/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="book_assets/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="book_assets/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<!-- font families -->
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans|Pacifico|Source+Sans+Pro" rel="stylesheet">
+
+<!-- <script src="js/hideOutput.js"></script> -->
+
+<!-- Mathjax -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/default.js"></script>
+
+ <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+        jax: ["input/TeX","output/CommonHTML"]
+      });
+      MathJax.Hub.processSectionDelay = 0;
+  </script>
+
+
+
+
+<script async defer src="https://hypothes.is/embed.js"></script>
+
+<!-- Folding text box javascript thing -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $folds = $(".fold");
+  $folds.wrapInner("<div class=\"fold-blck\">"); // wrap a div container around content
+  $folds.prepend("<button class=\"fold-btn\">Unfold</button>");  // add a button
+  $(".fold-blck").toggle();  // fold all blocks
+  $(".fold-btn").on("click", function() {  // add onClick event
+    $(this).text($(this).text() === "Fold" ? "Unfold" : "Fold");  // if the text equals "Fold", change it to "Unfold"or else to "Fold"
+    $(this).next(".fold-blck").toggle("linear");  // "swing" is the default easing function. This can be further customized in its speed or the overall animation itself.
+  })
+});
+</script>
+
+<!--
+<script type="text/javascript">
+
+// toggle visibility of R source blocks in R Markdown output
+function toggle_R() {
+  var x = document.getElementsByClassName('r');
+  if (x.length == 0) return;
+  function toggle_vis(o) {
+    var d = o.style.display;
+    o.style.display = (d == 'block' || d == '') ? 'none':'block';
+  }
+
+  for (i = 0; i < x.length; i++) {
+    var y = x[i];
+    if (y.tagName.toLowerCase() === 'pre') toggle_vis(y);
+  }
+
+    var elem = document.getElementById("myButton1");
+    if (elem.value === "Hide Global") elem.value = "Show Global";
+    else elem.value = "Hide Global";
+}
+
+document.write('<input onclick="toggle_R();" type="button" value="Hide Global" id="myButton1" style="position: absolute; top: 10%; right: 2%; z-index: 200"></input>')
+
+</script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148137970-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-148137970-3');
+</script>
+-->
+
+<!-- FOLDING TEXT BOXES -->
+
+<script>
+/* ========================================================================
+ * Bootstrap: transition.js v3.3.7
+ * http://getbootstrap.com/javascript/#transitions
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // ============================================================
+
+  function transitionEnd() {
+    var el = document.createElement('bootstrap')
+
+    var transEndEventNames = {
+      WebkitTransition : 'webkitTransitionEnd',
+      MozTransition    : 'transitionend',
+      OTransition      : 'oTransitionEnd otransitionend',
+      transition       : 'transitionend'
+    }
+
+    for (var name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
+      }
+    }
+
+    return false // explicit for ie8 (  ._.)
+  }
+
+  // http://blog.alexmaccaw.com/css-transitions
+  $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+  }
+
+  $(function () {
+    $.support.transition = transitionEnd()
+
+    if (!$.support.transition) return
+
+    $.event.special.bsTransitionEnd = {
+      bindType: $.support.transition.end,
+      delegateType: $.support.transition.end,
+      handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
+      }
+    }
+  })
+
+}(jQuery);
+</script>
+<script>
+/* ========================================================================
+ * Bootstrap: collapse.js v3.3.7
+ * http://getbootstrap.com/javascript/#collapse
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+/* jshint latedef: false */
+
++function ($) {
+  'use strict';
+
+  // COLLAPSE PUBLIC CLASS DEFINITION
+  // ================================
+
+  var Collapse = function (element, options) {
+    this.$element      = $(element)
+    this.options       = $.extend({}, Collapse.DEFAULTS, options)
+    this.$trigger      = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
+                           '[data-toggle="collapse"][data-target="#' + element.id + '"]')
+    this.transitioning = null
+
+    if (this.options.parent) {
+      this.$parent = this.getParent()
+    } else {
+      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
+    }
+
+    if (this.options.toggle) this.toggle()
+  }
+
+  Collapse.VERSION  = '3.3.7'
+
+  Collapse.TRANSITION_DURATION = 350
+
+  Collapse.DEFAULTS = {
+    toggle: true
+  }
+
+  Collapse.prototype.dimension = function () {
+    var hasWidth = this.$element.hasClass('width')
+    return hasWidth ? 'width' : 'height'
+  }
+
+  Collapse.prototype.show = function () {
+    if (this.transitioning || this.$element.hasClass('in')) return
+
+    var activesData
+    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
+    }
+
+    var startEvent = $.Event('show.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    if (actives && actives.length) {
+      Plugin.call(actives, 'hide')
+      activesData || actives.data('bs.collapse', null)
+    }
+
+    var dimension = this.dimension()
+
+    this.$element
+      .removeClass('collapse')
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse in')[dimension]('')
+      this.transitioning = 0
+      this.$element
+        .trigger('shown.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
+
+    this.$element
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
+  }
+
+  Collapse.prototype.hide = function () {
+    if (this.transitioning || !this.$element.hasClass('in')) return
+
+    var startEvent = $.Event('hide.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    var dimension = this.dimension()
+
+    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
+
+    this.$element
+      .addClass('collapsing')
+      .removeClass('collapse in')
+      .attr('aria-expanded', false)
+
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.transitioning = 0
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse')
+        .trigger('hidden.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    this.$element
+      [dimension](0)
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
+  }
+
+  Collapse.prototype.toggle = function () {
+    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
+
+  Collapse.prototype.getParent = function () {
+    return $(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
+
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
+
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
+
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+
+    return $(target)
+  }
+
+
+  // COLLAPSE PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.collapse')
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false
+      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.collapse
+
+  $.fn.collapse             = Plugin
+  $.fn.collapse.Constructor = Collapse
+
+
+  // COLLAPSE NO CONFLICT
+  // ====================
+
+  $.fn.collapse.noConflict = function () {
+    $.fn.collapse = old
+    return this
+  }
+
+
+  // COLLAPSE DATA-API
+  // =================
+
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+    var $this   = $(this)
+
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $this.data()
+
+    Plugin.call($target, option)
+  })
+
+}(jQuery);
+</script>
+<script>
+window.initializeCodeFolding = function(show) {
+
+  // handlers for show-all and hide all
+  $("#rmd-show-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('show');
+    });
+  });
+  $("#rmd-hide-all-code").click(function() {
+    $('div.r-code-collapse').each(function() {
+      $(this).collapse('hide');
+    });
+  });
+
+  // index for unique code element ids
+  var currentIndex = 1;
+
+  // select all R code blocks
+  var rCodeBlocks = $('pre.sourceCode, pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.js');
+  rCodeBlocks.each(function() {
+
+    // create a collapsable div to wrap the code in
+    var div = $('<div class="collapse r-code-collapse"></div>');
+    if (show)
+      div.addClass('in');
+    var id = 'rcode-643E0F36' + currentIndex++;
+    div.attr('id', id);
+    $(this).before(div);
+    $(this).detach().appendTo(div);
+
+    // add a show code button right above
+    var showCodeText = $('<span>' + (show ? 'Hide' : 'Code') + '</span>');
+    var showCodeButton = $('<button type="button" class="btn btn-default btn-xs code-folding-btn pull-right"></button>');
+    showCodeButton.append(showCodeText);
+    showCodeButton
+        .attr('data-toggle', 'collapse')
+        .attr('data-target', '#' + id)
+        .attr('aria-expanded', show)
+        .attr('aria-controls', id);
+
+    var buttonRow = $('<div class="row"></div>');
+    var buttonCol = $('<div class="col-md-12"></div>');
+
+    buttonCol.append(showCodeButton);
+    buttonRow.append(buttonCol);
+
+    div.before(buttonRow);
+
+    // update state of button on show/hide
+    div.on('hidden.bs.collapse', function () {
+      showCodeText.text('Code');
+    });
+    div.on('show.bs.collapse', function () {
+      showCodeText.text('Hide');
+    });
+  });
+
+}
+</script>
+<script>
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.3.7
+ * http://getbootstrap.com/javascript/#dropdowns
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // =========================
+
+  var backdrop = '.dropdown-backdrop'
+  var toggle   = '[data-toggle="dropdown"]'
+  var Dropdown = function (element) {
+    $(element).on('click.bs.dropdown', this.toggle)
+  }
+
+  Dropdown.VERSION = '3.3.7'
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector && $(selector)
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+  function clearMenus(e) {
+    if (e && e.which === 3) return
+    $(backdrop).remove()
+    $(toggle).each(function () {
+      var $this         = $(this)
+      var $parent       = getParent($this)
+      var relatedTarget = { relatedTarget: this }
+
+      if (!$parent.hasClass('open')) return
+
+      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
+
+      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this.attr('aria-expanded', 'false')
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+    })
+  }
+
+  Dropdown.prototype.toggle = function (e) {
+    var $this = $(this)
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    clearMenus()
+
+    if (!isActive) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+        // if mobile we use a backdrop because click events don't delegate
+        $(document.createElement('div'))
+          .addClass('dropdown-backdrop')
+          .insertAfter($(this))
+          .on('click', clearMenus)
+      }
+
+      var relatedTarget = { relatedTarget: this }
+      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this
+        .trigger('focus')
+        .attr('aria-expanded', 'true')
+
+      $parent
+        .toggleClass('open')
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
+    }
+
+    return false
+  }
+
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
+
+    var $this = $(this)
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    if (!isActive && e.which != 27 || isActive && e.which == 27) {
+      if (e.which == 27) $parent.find(toggle).trigger('focus')
+      return $this.trigger('click')
+    }
+
+    var desc = ' li:not(.disabled):visible a'
+    var $items = $parent.find('.dropdown-menu' + desc)
+
+    if (!$items.length) return
+
+    var index = $items.index(e.target)
+
+    if (e.which == 38 && index > 0)                 index--         // up
+    if (e.which == 40 && index < $items.length - 1) index++         // down
+    if (!~index)                                    index = 0
+
+    $items.eq(index).trigger('focus')
+  }
+
+
+  // DROPDOWN PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.dropdown')
+
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.dropdown
+
+  $.fn.dropdown             = Plugin
+  $.fn.dropdown.Constructor = Dropdown
+
+
+  // DROPDOWN NO CONFLICT
+  // ====================
+
+  $.fn.dropdown.noConflict = function () {
+    $.fn.dropdown = old
+    return this
+  }
+
+
+  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // ===================================
+
+  $(document)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
+
+}(jQuery);
+</script>
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+.row { display: flex; }
+.collapse { display: none; }
+.in { display:block }
+.pull-right > .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "hide");
+});
+</script>
+
+
+<script>
+document.write('<div class="btn-group pull-right" style="position: absolute; top: 10%; right: 15%; z-index: 200"><button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast=""><span>Code</span> <span class="caret"></span></button><ul class="dropdown-menu" style="min-width: 50px;"><li><a id="rmd-show-all-code" href="#">Show All Code</a></li><li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li></ul></div>')
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="support/tufte_plus.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="outline-disc.html"><a href="outline-disc.html"><i class="fa fa-check"></i><b>1</b> Notes on this ‘bookdown’ relating to the EA Survey</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="outline-disc.html"><a href="outline-disc.html#allowing-and-encouraging-interactive-content"><i class="fa fa-check"></i><b>1.0.1</b> Allowing and encouraging interactive content?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html"><i class="fa fa-check"></i>Methodology: Representativeness; weighting and sensitivity testing</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="sensitivity.html"><a href="sensitivity.html#eas_challenges"><i class="fa fa-check"></i><b>1.1</b> The challenge for the EA Survey (EAS)</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#sensitivity-checks"><i class="fa fa-check"></i>Sensitivity-checks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="sensitivity.html"><a href="sensitivity.html#sens_checks"><i class="fa fa-check"></i><b>1.2</b> Sensitivity-checks</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#why_these"><i class="fa fa-check"></i>Why these groupings?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="sensitivity.html"><a href="sensitivity.html#bound-bias-discussion"><i class="fa fa-check"></i><b>1.3</b> Modeling and bounding the biases</a></li>
+<li class="chapter" data-level="1.4" data-path="sensitivity.html"><a href="sensitivity.html#other-possible-approaches-for-future-consideration"><i class="fa fa-check"></i><b>1.4</b> Other possible approaches (for future consideration)</a>
+<ul>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#re-weighting-approaches"><i class="fa fa-check"></i>Re-weighting approaches?</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#less-extreme-but-ad-hoc-sensitivity-checking"><i class="fa fa-check"></i>Less extreme (but ad-hoc) sensitivity checking</a></li>
+<li class="chapter" data-level="" data-path="sensitivity.html"><a href="sensitivity.html#bayesian-modeling-of-outcomes-in-light-of-distributions-of-response-rates"><i class="fa fa-check"></i>Bayesian modeling of outcomes in light of (distributions) of response rates</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="sensitivity.html"><a href="sensitivity.html#references-work-considered-above-and-linked"><i class="fa fa-check"></i><b>1.5</b> References (work considered above and linked)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="dynamic-formats.html"><a href="dynamic-formats.html"><i class="fa fa-check"></i>Methods: interactive and dynamic formats, data sharing</a>
+<ul>
+<li class="chapter" data-level="1.6" data-path="dynamic-formats.html"><a href="dynamic-formats.html#sharing-data-sharing-interfacesdashboardsinteractives-and-privacy-issues"><i class="fa fa-check"></i><b>1.6</b> Sharing data, sharing interfaces/dashboards/interactives, and privacy issues</a></li>
+<li class="chapter" data-level="1.7" data-path="dynamic-formats.html"><a href="dynamic-formats.html#systematizing-data-processes"><i class="fa fa-check"></i><b>1.7</b> Systematizing data processes</a></li>
+<li class="chapter" data-level="1.8" data-path="dynamic-formats.html"><a href="dynamic-formats.html#scheduled-posts-andor-a-continuous-maintained-live-hosted-version"><i class="fa fa-check"></i><b>1.8</b> Scheduled posts and/or a continuous maintained live (hosted) version</a></li>
+<li class="chapter" data-level="1.9" data-path="dynamic-formats.html"><a href="dynamic-formats.html#notes-on-conversation"><i class="fa fa-check"></i><b>1.9</b> Notes on conversation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="demog.html"><a href="demog.html"><i class="fa fa-check"></i><b>2</b> Demographics: considering representativeness</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="demog.html"><a href="demog.html#considering-innovations-in-presentation-and-methodology"><i class="fa fa-check"></i><b>2.1</b> 2020: Considering innovations in presentation and methodology</a>
+<ul>
+<li><a href="demog.html#see-previous-section-methods-weighting-representativeness-and-sensitivity-testing">See previous section: <span>Methods: Weighting, representativeness, and sensitivity testing</span></a></li>
+<li class="chapter" data-level="2.1.1" data-path="demog.html"><a href="demog.html#see-methods-interactive-and-dynamic-formats-data-sharing"><i class="fa fa-check"></i><b>2.1.1</b> See <span>Methods: interactive and dynamic formats, data sharing</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="demog.html"><a href="demog.html#introduction"><i class="fa fa-check"></i><b>2.2</b> Introduction</a></li>
+<li class="chapter" data-level="2.3" data-path="demog.html"><a href="demog.html#age"><i class="fa fa-check"></i><b>2.3</b> Age</a></li>
+<li class="chapter" data-level="2.4" data-path="demog.html"><a href="demog.html#gender"><i class="fa fa-check"></i><b>2.4</b> Gender</a></li>
+<li class="chapter" data-level="2.5" data-path="demog.html"><a href="demog.html#raceethnicity-and-engagement"><i class="fa fa-check"></i><b>2.5</b> Race/ethnicity (and engagement)</a></li>
+<li class="chapter" data-level="2.6" data-path="demog.html"><a href="demog.html#sexual-orientation"><i class="fa fa-check"></i><b>2.6</b> Sexual orientation</a></li>
+<li class="chapter" data-level="2.7" data-path="demog.html"><a href="demog.html#employmentstudent-status"><i class="fa fa-check"></i><b>2.7</b> Employment/student-status</a></li>
+<li class="chapter" data-level="2.8" data-path="demog.html"><a href="demog.html#career-path"><i class="fa fa-check"></i><b>2.8</b> Career path</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="demog.html"><a href="demog.html#career-path-by-gender"><i class="fa fa-check"></i><b>2.8.1</b> Career path by gender</a></li>
+<li class="chapter" data-level="2.8.2" data-path="demog.html"><a href="demog.html#career-path-by-ethnicity"><i class="fa fa-check"></i><b>2.8.2</b> Career path by ethnicity</a></li>
+<li class="chapter" data-level="2.8.3" data-path="demog.html"><a href="demog.html#career-path-by-high-engagement"><i class="fa fa-check"></i><b>2.8.3</b> Career path by high engagement</a></li>
+<li class="chapter" data-level="2.8.4" data-path="demog.html"><a href="demog.html#proposed-career-path-by-student-status"><i class="fa fa-check"></i><b>2.8.4</b> (Proposed) career path by student status</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="demog.html"><a href="demog.html#childhood-ses-parents-education"><i class="fa fa-check"></i><b>2.9</b> Childhood SES, Parents’ education</a></li>
+<li class="chapter" data-level="2.10" data-path="demog.html"><a href="demog.html#clustering-are-these-demographics-co-related"><i class="fa fa-check"></i><b>2.10</b> ‘Clustering’: are these demographics co-related?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="demog.html"><a href="demog.html#gower-distances"><i class="fa fa-check"></i><b>2.10.1</b> Gower distances</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#just-counting-combinations"><i class="fa fa-check"></i>Just counting combinations</a></li>
+<li><a href="demog.html#a-simpler-correlation-matrix-approach">A simpler <strong>correlation matrix</strong> approach:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="demog.html"><a href="demog.html#demographics-over-time"><i class="fa fa-check"></i><b>2.11</b> Demographics over time</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="demog.html"><a href="demog.html#key-questions"><i class="fa fa-check"></i><b>2.11.1</b> Key questions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="demog.html"><a href="demog.html#age-first-heard-of-ea-does-it-have-a-causal-impact-on-engagement"><i class="fa fa-check"></i><b>2.12</b> Age first heard of EA: does it have a (causal) impact on engagement?</a></li>
+<li class="chapter" data-level="2.13" data-path="demog.html"><a href="demog.html#demography-sensitivity"><i class="fa fa-check"></i><b>2.13</b> Sensitivity checks</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="demog.html"><a href="demog.html#widest-most-conservative-bounds-smallest-and-largest-estimates-across-referrers-etc."><i class="fa fa-check"></i><b>2.13.1</b> Widest, most-conservative bounds: smallest and largest estimates (across referrers, etc.)</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-ref"><i class="fa fa-check"></i>Demographics by ‘referrer’</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="demog.html"><a href="demog.html#demog-by-engagement_d"><i class="fa fa-check"></i><b>2.14</b> Demographics by engagement</a>
+<ul>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#demog-by-wtr_lateness"><i class="fa fa-check"></i>Demographics by willingness-to-respond to future surveys and by lateness of response</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#by-start-date-relative-to-others-from-same-referrer"><i class="fa fa-check"></i>By start date (relative to others from same referrer)</a></li>
+<li class="chapter" data-level="" data-path="demog.html"><a href="demog.html#engaged-mainstream-by-moreless-survey-responsive"><i class="fa fa-check"></i>“Engaged mainstream”: By more/less survey-responsive</a></li>
+</ul></li>
+<li class="chapter" data-level="2.15" data-path="demog.html"><a href="demog.html#other-bounding-approaches"><i class="fa fa-check"></i><b>2.15</b> Other (?) bounding approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="eas-how-involved.html"><a href="eas-how-involved.html"><i class="fa fa-check"></i><b>3</b> How EAs get Involved in EA</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="eas-how-involved.html"><a href="eas-how-involved.html#how-did-you-first-hear-about-ea"><i class="fa fa-check"></i><b>3.1</b> How did you first hear about EA?</a>
+<ul>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#by-engagement-level"><i class="fa fa-check"></i>By engagement level</a></li>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#first-hear-by-gender"><i class="fa fa-check"></i>First-hear by gender</a></li>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#first-hear-by-ethnicity"><i class="fa fa-check"></i>First-hear by ethnicity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="eas-how-involved.html"><a href="eas-how-involved.html#attrition-by-introducer"><i class="fa fa-check"></i><b>3.2</b> Attrition from EA/EA survey by introducer – move to ‘engagement’ section?</a></li>
+<li class="chapter" data-level="3.3" data-path="eas-how-involved.html"><a href="eas-how-involved.html#introducers-engagement"><i class="fa fa-check"></i><b>3.3</b> Do introducers predict and/or drive engagement?</a></li>
+<li class="chapter" data-level="3.4" data-path="eas-how-involved.html"><a href="eas-how-involved.html#modeling-introducer-attrition-and-engagement"><i class="fa fa-check"></i><b>3.4</b> Modeling “introducer” attrition, and engagement</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="eas-how-involved.html"><a href="eas-how-involved.html#proposed-modeling-steps-discussion-moved-to-engagement-modeling-section"><i class="fa fa-check"></i><b>3.4.1</b> Proposed modeling steps (discussion moved to <span>engagement modeling section</span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="eas-how-involved.html"><a href="eas-how-involved.html#involve-engage-model"><i class="fa fa-check"></i><b>3.4.2</b> Simple ‘linear model’ of self-reported engagement level and involvers</a></li>
+<li class="chapter" data-level="3.4.3" data-path="eas-how-involved.html"><a href="eas-how-involved.html#simple-linear-probability-model-of-self-reported-engagement-levels-4-5"><i class="fa fa-check"></i><b>3.4.3</b> Simple ‘linear probability model’ of self-reported-engagement levels 4-5</a></li>
+<li class="chapter" data-level="3.4.4" data-path="eas-how-involved.html"><a href="eas-how-involved.html#ordered-logit-model-of-sr-engagement"><i class="fa fa-check"></i><b>3.4.4</b> Ordered logit model of SR engagement</a></li>
+<li class="chapter" data-level="3.4.5" data-path="eas-how-involved.html"><a href="eas-how-involved.html#building-random-forest-model-to-predict-engagement"><i class="fa fa-check"></i><b>3.4.5</b> Building Random Forest model to predict engagement</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="eas-how-involved.html"><a href="eas-how-involved.html#notes-and-todos-on-introducers-vs.-engagement-to-be-integrated-above"><i class="fa fa-check"></i><b>3.5</b> Notes and todos on ‘Introducers’ vs. Engagement … to be integrated above</a></li>
+<li class="chapter" data-level="3.6" data-path="eas-how-involved.html"><a href="eas-how-involved.html#more-involved-ea"><i class="fa fa-check"></i><b>3.6</b> What factors were important for getting you more involved in EA? (descriptives)</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="eas-how-involved.html"><a href="eas-how-involved.html#differences-in-getting-involved-factors-by-group"><i class="fa fa-check"></i><b>3.6.1</b> Differences in ‘getting involved’ factors by group</a></li>
+<li class="chapter" data-level="" data-path="eas-how-involved.html"><a href="eas-how-involved.html#caveat-and-adjustments-for-multiple-response-categorical-variables-probably-skip-this"><i class="fa fa-check"></i>Caveat and adjustments for ‘multiple response categorical variables’ (probably skip this)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="eas-cause-prioritization.html"><a href="eas-cause-prioritization.html"><i class="fa fa-check"></i><b>4</b> Cause Prioritisation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="eas-cause-prioritization.html"><a href="eas-cause-prioritization.html#likert-scale-responses---all-responses"><i class="fa fa-check"></i><b>4.1</b> Likert scale responses - all responses</a></li>
+<li class="chapter" data-level="4.2" data-path="eas-cause-prioritization.html"><a href="eas-cause-prioritization.html#factor-analysis-grouping-of-prioritization"><i class="fa fa-check"></i><b>4.2</b> Factor analysis: grouping of prioritization</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="eas-donations.html"><a href="eas-donations.html"><i class="fa fa-check"></i><b>5</b> Donations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="eas-donations.html"><a href="eas-donations.html#summary"><i class="fa fa-check"></i><b>5.1</b> Summary</a></li>
+<li class="chapter" data-level="5.2" data-path="eas-donations.html"><a href="eas-donations.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="eas-donations.html"><a href="eas-donations.html#why-does-the-ea-survey-ask-about-donations-what-does-it-tell-us-what-is-the-theory-of-change-for-how-learning-about-donation-behavior-will-improve-outcoms"><i class="fa fa-check"></i><b>5.2.1</b> Why does the EA Survey ask about donations? What does it tell us? What is the “theory of change” for how learning about donation behavior will improve outcoms?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="eas-donations.html"><a href="eas-donations.html#magnitudes-in-context"><i class="fa fa-check"></i><b>5.2.2</b> Magnitudes in context</a></li>
+<li class="chapter" data-level="5.2.3" data-path="eas-donations.html"><a href="eas-donations.html#donation-shares-versus-income-and-gwwc-pledge"><i class="fa fa-check"></i><b>5.2.3</b> Donation (shares) versus income and GWWC pledge</a></li>
+<li class="chapter" data-level="5.2.4" data-path="eas-donations.html"><a href="eas-donations.html#low-and-zero-donations"><i class="fa fa-check"></i><b>5.2.4</b> Low and zero donations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="eas-donations.html"><a href="eas-donations.html#total-donations-by-individual-characteristics-and-cause"><i class="fa fa-check"></i><b>5.3</b> Total donations: by individual characteristics (and cause)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="eas-donations.html"><a href="eas-donations.html#employment-and-student-status"><i class="fa fa-check"></i><b>5.3.1</b> Employment and student status</a></li>
+<li class="chapter" data-level="5.3.2" data-path="eas-donations.html"><a href="eas-donations.html#location"><i class="fa fa-check"></i><b>5.3.2</b> Location</a></li>
+<li class="chapter" data-level="" data-path="eas-donations.html"><a href="eas-donations.html#donations-and-income-by-whether-a-lr-cause-is-top-priority-by-request"><i class="fa fa-check"></i>Donations and income by whether a LR cause is top priority (by request)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="eas-donations.html"><a href="eas-donations.html#self-reported-engagement-in-ea-and-years-in-ea"><i class="fa fa-check"></i><b>5.3.3</b> Self-reported Engagement in EA and Years in EA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="eas-donations.html"><a href="eas-donations.html#which-charities-causes-and-categories-are-eas-donating-to"><i class="fa fa-check"></i><b>5.4</b> Which Charities (causes and categories) are EAs Donating to?</a></li>
+<li class="chapter" data-level="5.5" data-path="eas-donations.html"><a href="eas-donations.html#donations-plans-and-aspirations-versus-actual-reported-donations"><i class="fa fa-check"></i><b>5.5</b> Donations: plans and aspirations versus actual (reported) donations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="model-of-ea-donation-behavior-descriptive-predictive-or-causal.html"><a href="model-of-ea-donation-behavior-descriptive-predictive-or-causal.html"><i class="fa fa-check"></i><b>6</b> Model of EA donation behavior (descriptive, predictive, or causal?)</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="model-of-ea-donation-behavior-descriptive-predictive-or-causal.html"><a href="model-of-ea-donation-behavior-descriptive-predictive-or-causal.html#possible-modeling-questions-and-approaches"><i class="fa fa-check"></i><b>6.0.1</b> Possible modeling ‘questions’ and approaches:</a></li>
+<li class="chapter" data-level="6.1" data-path="model-of-ea-donation-behavior-descriptive-predictive-or-causal.html"><a href="model-of-ea-donation-behavior-descriptive-predictive-or-causal.html#donation-and-income-trends-in-ea"><i class="fa fa-check"></i><b>6.1</b> Donation and income trends in EA</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="eas-geography.html"><a href="eas-geography.html"><i class="fa fa-check"></i><b>7</b> Geography</a></li>
+<li class="chapter" data-level="8" data-path="eas-community-info.html"><a href="eas-community-info.html"><i class="fa fa-check"></i><b>8</b> Community Information</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="eas-community-info.html"><a href="eas-community-info.html#factors-affecting-engagement-self-reports"><i class="fa fa-check"></i><b>8.1</b> Factors affecting engagement (self-reports)</a></li>
+<li class="chapter" data-level="8.2" data-path="eas-community-info.html"><a href="eas-community-info.html#likert-scale-responses---all-responses-1"><i class="fa fa-check"></i><b>8.2</b> Likert scale responses - all responses</a></li>
+<li class="chapter" data-level="8.3" data-path="eas-community-info.html"><a href="eas-community-info.html#satisfaction"><i class="fa fa-check"></i><b>8.3</b> Satisfaction</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="eas-community-info.html"><a href="eas-community-info.html#predictors-of-positive-attitudes-towardssatisfaction-with-the-ea-community"><i class="fa fa-check"></i><b>8.3.1</b> Predictors of ‘positive attitudes towards’/‘satisfaction with’ the EA community</a></li>
+<li class="chapter" data-level="" data-path="eas-community-info.html"><a href="eas-community-info.html#plotting-odds-ratio-effects-from-above-with-cis-rescaled"><i class="fa fa-check"></i>Plotting odds ratio effects from above, with CIs, rescaled</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="eas-engagement.html"><a href="eas-engagement.html"><i class="fa fa-check"></i><b>9</b> Engagement</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="eas-engagement.html"><a href="eas-engagement.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="eas-engagement.html"><a href="eas-engagement.html#why-do-we-care-about-engagement"><i class="fa fa-check"></i><b>9.1.1</b> Why do we care about ‘engagement?’</a></li>
+<li class="chapter" data-level="9.1.2" data-path="eas-engagement.html"><a href="eas-engagement.html#how-should-we-measure-engagement"><i class="fa fa-check"></i><b>9.1.2</b> How should we measure engagement?</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="eas-engagement.html"><a href="eas-engagement.html#demographics-by-engagement"><i class="fa fa-check"></i><b>9.2</b> Demographics by engagement</a></li>
+<li class="chapter" data-level="9.3" data-path="eas-engagement.html"><a href="eas-engagement.html#paths-to-ea-by-engagement"><i class="fa fa-check"></i><b>9.3</b> Paths to EA by engagement</a></li>
+<li class="chapter" data-level="9.4" data-path="eas-engagement.html"><a href="eas-engagement.html#modeling-engagment"><i class="fa fa-check"></i><b>9.4</b> Modeling engagment</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptive-modeling"><i class="fa fa-check"></i><b>9.4.1</b> Descriptive modeling</a></li>
+<li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choices-of-variablesfeatures"><i class="fa fa-check"></i>Choices of variables/features</a></li>
+<li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#choosing-features-and-modeling-target-variables"><i class="fa fa-check"></i>Choosing features and modeling target variables</a></li>
+<li class="chapter" data-level="9.4.2" data-path="eas-engagement.html"><a href="eas-engagement.html#descriptives-engagement-by-groupings-without-controls"><i class="fa fa-check"></i><b>9.4.2</b> Descriptives: engagement by groupings (without controls)</a></li>
+<li class="chapter" data-level="9.4.3" data-path="eas-engagement.html"><a href="eas-engagement.html#simple-linear-model-of-self-reported-engagement-level"><i class="fa fa-check"></i><b>9.4.3</b> Simple ‘linear model’ of self-reported engagement level</a></li>
+<li class="chapter" data-level="" data-path="eas-engagement.html"><a href="eas-engagement.html#engage-ologit"><i class="fa fa-check"></i>Ordered logit models of self-reported engagement level</a></li>
+<li class="chapter" data-level="9.4.4" data-path="eas-engagement.html"><a href="eas-engagement.html#selection-and-differential-attrition-focus-on-recent-recruits"><i class="fa fa-check"></i><b>9.4.4</b> Selection and differential attrition: focus on recent recruits</a></li>
+<li class="chapter" data-level="9.4.5" data-path="eas-engagement.html"><a href="eas-engagement.html#alternative-factor-analysis-unlabeled-approach"><i class="fa fa-check"></i><b>9.4.5</b> Alternative factor-analysis (unlabeled) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="eas-engagement.html"><a href="eas-engagement.html#engage_time"><i class="fa fa-check"></i><b>9.5</b> Engagement: age, tenure, period and cohort effects</a></li>
+<li class="chapter" data-level="9.6" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-tenureage-prediction-for-selection-at-what-age"><i class="fa fa-check"></i><b>9.6</b> Engagement by tenure/age: ‘prediction for “selection at what age?”’</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-and-tenure"><i class="fa fa-check"></i><b>9.6.1</b> Engagement by age and tenure</a></li>
+<li class="chapter" data-level="9.6.2" data-path="eas-engagement.html"><a href="eas-engagement.html#engagement-by-age-first-involved-and-tenure"><i class="fa fa-check"></i><b>9.6.2</b> Engagement by ‘Age-first-involved’ and tenure</a></li>
+<li class="chapter" data-level="9.6.3" data-path="eas-engagement.html"><a href="eas-engagement.html#see-attrition-from-eaea-survey-by-introducer"><i class="fa fa-check"></i><b>9.6.3</b> See: <span>Attrition from EA/EA survey by introducer</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="eas-engagement.html"><a href="eas-engagement.html#additional-cea-request-citiesareas-by-group-engagement-and-retention-adapted"><i class="fa fa-check"></i><b>9.7</b> Additional – CEA request: cities/areas by group engagement and retention, adapted:</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html"><i class="fa fa-check"></i><b>10</b> Modeling Engagement</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#introduction-3"><i class="fa fa-check"></i><b>10.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#why-do-we-care-about-engagement-1"><i class="fa fa-check"></i><b>10.1.1</b> Why do we care about ‘engagement?’</a></li>
+<li class="chapter" data-level="10.1.2" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#engage-measures"><i class="fa fa-check"></i><b>10.1.2</b> How should we measure engagement?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#engagement-measures-and-validation"><i class="fa fa-check"></i><b>10.2</b> Engagement measures and validation</a></li>
+<li class="chapter" data-level="10.3" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#demog-by-engagement"><i class="fa fa-check"></i><b>10.3</b> <img src="https://lh3.googleusercontent.com/IMQGGP2G6mxfgcRTpcEqqJwV26Z8dEopjNq-nNhRYTYVCUVBOWuZGHRbuz67cTcDUm8Rpo3SquCt2XGcsRVHQd8FZmcH5cY06jC3yR9y0otjCsDZEg34OR37KPw8a_5fLaWWwGzj" />Further descriptives</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#descriptive-modeling-1"><i class="fa fa-check"></i><b>10.3.1</b> Descriptive modeling</a></li>
+<li class="chapter" data-level="10.3.2" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#engage-modeling"><i class="fa fa-check"></i><b>10.3.2</b> Proposed modeling steps</a></li>
+<li class="chapter" data-level="10.3.3" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#simple-linear-model-of-self-reported-engagement-level-1"><i class="fa fa-check"></i><b>10.3.3</b> Simple ‘linear model’ of self-reported engagement level</a></li>
+<li class="chapter" data-level="10.3.4" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#alternative-factor-analysis-unlabeled-approach-1"><i class="fa fa-check"></i><b>10.3.4</b> Alternative factor-analysis (unlabeled) approach</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#cross-year-descriptives-and-analysis"><i class="fa fa-check"></i><b>10.4</b> Cross-year descriptives and analysis</a></li>
+<li class="chapter" data-level="10.5" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#engage_time-disc"><i class="fa fa-check"></i><b>10.5</b> Engagement: age, tenure, period and cohort effects</a></li>
+<li class="chapter" data-level="10.6" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#engagement-by-tenureage-prediction-for-selection-at-what-age-1"><i class="fa fa-check"></i><b>10.6</b> Engagement by tenure/age: ‘prediction for “selection at what age?”’</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#see-attrition-from-eaea-survey-by-introducer-1"><i class="fa fa-check"></i><b>10.6.1</b> See: <span>Attrition from EA/EA survey by introducer</span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#future-research-eng"><i class="fa fa-check"></i><b>10.7</b> Promising future research avenues</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#improving-continuous-functional-outcome-model"><i class="fa fa-check"></i><b>10.7.1</b> Improving (continuous) functional outcome model</a></li>
+<li class="chapter" data-level="10.7.2" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#predict-survey-persistence"><i class="fa fa-check"></i><b>10.7.2</b> Predict survey persistence</a></li>
+<li class="chapter" data-level="10.7.3" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#approach-a-classification-e.g.-random-forest"><i class="fa fa-check"></i><b>10.7.3</b> Approach: A ‘classification’ (e.g., Random Forest)</a></li>
+<li class="chapter" data-level="10.7.4" data-path="eas-engagement-disc.html"><a href="eas-engagement-disc.html#cross-year-descriptives-and-analysis-1"><i class="fa fa-check"></i><b>10.7.4</b> Cross-year descriptives and analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html"><i class="fa fa-check"></i><b>11</b> README - EA Survey data and analysis work</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#key-files-and-folders"><i class="fa fa-check"></i><b>11.1</b> Key files and folders</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#code-config-lib"><i class="fa fa-check"></i><b>11.1.1</b> <span>code</span>, <span>config</span>, <span>lib</span></a></li>
+<li class="chapter" data-level="11.1.2" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#build"><i class="fa fa-check"></i><b>11.1.2</b> <span>build</span></a></li>
+<li class="chapter" data-level="11.1.3" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#analysis"><i class="fa fa-check"></i><b>11.1.3</b> <span>analysis</span></a></li>
+<li class="chapter" data-level="11.1.4" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#codebooks"><i class="fa fa-check"></i><b>11.1.4</b> <span>codebooks</span></a></li>
+<li class="chapter" data-level="11.1.5" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#data"><i class="fa fa-check"></i><b>11.1.5</b> <span>data</span></a></li>
+<li class="chapter" data-level="11.1.6" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#models"><i class="fa fa-check"></i><b>11.1.6</b> <span>models</span></a></li>
+<li class="chapter" data-level="11.1.7" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#output"><i class="fa fa-check"></i><b>11.1.7</b> <span>Output</span></a></li>
+<li class="chapter" data-level="11.1.8" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#project_discussion"><i class="fa fa-check"></i><b>11.1.8</b> <span>project_discussion</span></a></li>
+<li class="chapter" data-level="11.1.9" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#config"><i class="fa fa-check"></i><b>11.1.9</b> <span>config</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="readme-ea-survey-data-and-analysis-work.html"><a href="readme-ea-survey-data-and-analysis-work.html#further-notes"><i class="fa fa-check"></i><b>11.2</b> Further notes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EA survey analyses (partial)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="eas-engagement-disc" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Modeling Engagement</h1>
+<p>This chapter complements, and is linked in our 2020 post on Engagement [LINK]</p>
+<p>(see bookdown <a href="eas-engagement.html#eas-engagement">9</a> in the full version, and Google Doc <a href="https://docs.google.com/document/d/1b9rdRpbnXx-vWh-ECg7v1eQNE1TvdZQS4wHe-q5JYEI/edit#">here</a> bringing this work together.</p>
+<p>This chapter:</p>
+<ul>
+<li><p>discusses the goals of our modeling of ‘EA engagement’</p></li>
+<li><p>presents some statistical and modeling issues</p></li>
+<li><p>offers steps towards more sophisticated causal and predictive analysis</p></li>
+</ul>
+<div id="introduction-3" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Introduction</h2>
+<div id="why-do-we-care-about-engagement-1" class="section level3" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Why do we care about ‘engagement?’</h3>
+<p>From the 2019 <a href="https://forum.effectivealtruism.org/posts/z73rJbz8PNi7aFfsW/ea-survey-2019-engagement-levels#Introduction">introduction</a>:</p>
+<blockquote>
+<p>In recent years there has been significant interest in the levels of engagement of EAs and in particular, the most engaged members of the community. The focus and resources devoted to those considered “contributors” or “core”… are likely very different to those considered part of the EA “network.” CEA has noted that the level of involvement with EA of typical applicants to EA Globals has risen so much that the typical person who didn’t get accepted to attend has changed from someone who was barely involved with EA to someone who is probably pretty knowledgeable about EA and has been involved for at least a few years.</p>
+</blockquote>
+<p>These points remain relevant. We present a descriptive picture of “who is more engaged” because this offers greater understanding of “what the EA movement looks like.” Those who are more engaged are likely to have a greater impact, and thus of greater interest.</p>
+<p>In addition to description, we are also interested in more ambitious <em>predictive</em> and even (at least suggestively) <em>causal</em> modeling of engagement for several reasons, also mentioned in previous posts. These serve three categories of goals: <em>Selection</em>, <em>Planning</em>, and <em>Policy</em>.</p>
+<ol style="list-style-type: decimal">
+<li><em>Selection</em>: Knowing “which types of people are likely to become more engaged” informs the “selection” process. In other words, it can help movement and group leaders (and active EAs) make better decisions about how many resources to put into recruiting and retaining people from different areas, in different ways, and with different characteristics. We could make an analogy to “customer lifetime value” in marketing – companies will offer more costly promotions to those customers they think will be more valuable over the long term.</li>
+</ol>
+<p>This motivates a <em>predictive</em> approach: trying to forecast (lifetime) engagement based on factors (e.g., age, gender, previous education, source of ‘first heard of EA’) that can be measured, and are fixed at a point in time <em>before</em> the engagement and involvement journey.</p>
+<p>If we know ‘which sorts of people were more likely to become engaged’ in the past, this may predict ‘which sorts… that we might recruit now, are likely to become engaged in the future.’ Of course, we should be careful about making these extrapolations, as the nature of background processes may change over time, as well as the links between an observed and observed factors.*</p>
+<div class="marginnote">
+<p>For example, ‘jazzy people’ in the years 2014-2016 may have tended to also have being a highly prosocially motivated, because the jazz movement was volunteer-based during this period. Thus, being jazzy in 2015 may have been highly predictive of EA engagement in 2020. But if the jazz movement started to pay people to join in 2020, then being jazzy in 2020 may poorly predict EA engagement in 2025.</p>
+</div>
+<p><br />
+Another factor that limits this: If we use only the 2020 survey, these estimates may be driven by differential attrition from EA, and from filling out the survey, as noted elsewhere.**</p>
+<div class="marginnote">
+<p>** Suppose we find that people who are inherently jazzy (for simplicity, suppose this is an immutable characteristic), who we see in the 2020 survey, tend to be much more highly engaged. This could be because being jazzy is closely linked to engagement, or to another unobserved factor that predicts engagement. In such a case, we may expect this to be a good predictor of future engagement, and this would argue for us trying to heavily recruit jazzy people. However, another possibility is that jazzy people tend to only continue in the movement and fill out the surveys when they are heavily engaged, while non-jazzy people fill out the surveys equally regardless of their engagement level. We can only disentangle this by looking at earlier data and considering the differential rates of attrition.</p>
+<p>We have some evidence for differential rates of attrition, e.g., by ‘introducer’ – see <a href="eas-how-involved.html#attrition-by-introducer">Attrition from EA/EA survey by introducer</a> in the “How EAs get Involved in EA” post.</p>
+<p>We are still considering how how to feasibly deal with this as we have such poor rates of emails and thus poor connectivity across years. E.g., on average, an individual in any EA survey can be tracked over only <code>`summary(eas_all$num_surveys)[4]`</code> surveys)</p>
+</div>
+<p>Taking into account both engagement and attrition, over a medium run, this will also inform decisions surrounding “whether and how much to encourage growth,” and how much to “focus on helping those already in the movement take further actions.” A key measure informing this decision is the “conversion rate” between new recruits to EA (who tend to be less engaged. and later heavily engaged EAs.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><em>Planning and anticipating movement growth</em>: We may want to know how large the movement is likely to grow over time, and what level of engagement we can predict in the future. This could inform choices we make about infrastructure as well as which approaches to focus on. For example (off-the-cuff), if it is unlikely that we will ever become a large and engaged movement, this may make direct political action less feasible and less worth planning, and we might be less concerned about the dilution of core ideas. Knowing what the composition of the movement is likely to look like in the future (e.g., age, demographics and geography) may also help identify more fruitful possibilities. The EA Survey may help us learn the ways the different participants tend to become more or less engaged over time, as well as whether they leave the movement entirely, allowing better forecast and planning.</p></li>
+<li><p><em>Policy/what works</em>: Knowing “what might lead to people becoming more engaged” will help us choose ‘policies,’ i.e., understand which approaches to take in bringing people into the movement, encouraging their participation, and promoting different activities and messages. However, this <em>causal</em> inference is a harder target. To the extent that we do observe the ‘policies’ an individual EA faced (or things related to these, like the self-reported influences). These will tend to be related to other observable and unobservable characteristics (such as country, age, year-joined, individual’s educational choices), which in turn may have direct and indirect effects and relate to other important on observable determinants of engagement.</p></li>
+</ol>
+<p>As we do not have clear policy experiments or ‘natural experiments’ (see the literature on causal inference), we can, at best, look for patterns that <em>suggest</em> causal links. Because of this limitation, we will do this only sparingly in the current post.</p>
+<!-- Kim may be doing a large part of this -- I will be in touch with her on this -->
+</div>
+<div id="engage-measures" class="section level3" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> How should we measure engagement?</h3>
+<p>As stated in 2019:</p>
+<blockquote>
+<p>It is important to state at the outset that being involved in the community by posting on the Forum, attending lots of events, or working at EA related organizations is not necessarily the same as dedication to EA or having the most impact.</p>
+</blockquote>
+<blockquote>
+<p>Here we examine how engaged in different activities are the 2,513 EAs who responded to the 2019 EA Survey. Naturally, what measure we should use to determine the most engaged EAs in the survey is controversial. Any proxy we select will also necessarily be imperfect as there will almost certainly be exceptions to the rule. In this post we examine potential proxies, which may each capture distinct modes of EA involvement; group membership, activities, and self-reported engagement.</p>
+</blockquote>
+<p>For the current post (for the 2020 survey) we focus on <em>self-reported engagement</em>. In the next section we provide some validation for this measure, illustrating its strong connection to other outcomes that would seem to reflect engagement.</p>
+</div>
+</div>
+<div id="engagement-measures-and-validation" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Engagement measures and validation</h2>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="eas-engagement-disc.html#cb211-1" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb211-2"><a href="eas-engagement-disc.html#cb211-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(engagement) <span class="sc">%&gt;%</span> <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:engage_table_simple">
+<caption style="caption-side: top; text-align: center;">(#tab:engage_table_simple) </caption><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">engagement</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">n</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">percent</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">valid_percent</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">(1) No engagement</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">45</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.08%</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.36%</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(2) Mild engagement</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">359</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">16.59%</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18.85%</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">(3) Moderate engagement</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">569</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">26.29%</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">29.87%</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(4) Considerable engagement</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">561</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">25.92%</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">29.45%</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">(5) High engagement</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">371</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">17.14%</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">19.48%</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">259</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">11.97%</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">-</td></tr>
+</table>
+
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="eas-engagement-disc.html#cb212-1" aria-hidden="true" tabindex="-1"></a>eas_20 <span class="sc">%&gt;%</span></span>
+<span id="cb212-2"><a href="eas-engagement-disc.html#cb212-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(engagement_num, referrer_cat)</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:engage_table_simple">
+<caption style="caption-side: top; text-align: center;">(#tab:engage_table_simple) </caption><col><col><col><col><col><col><col><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">engagement_num</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">80K hours</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">EA Forum</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">EA Newsletter</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Email; opt-in from prev. EAS</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Giving What We Can</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Groups (local)</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Less Wrong or SlateStarCodex-Reddit</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Reddit</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Shared link</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Social media (FB/memes)</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Other</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">25</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">119</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">26</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">55</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">26</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">39</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">31</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">14</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">29</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">137</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">76</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">81</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">66</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">16</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">80</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">26</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">7</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">60</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">73</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">133</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">45</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">74</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">13</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">116</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">74</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">16</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">37</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">158</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">50</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">49</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">35</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">12</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">97</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">32</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">7</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">48</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">24</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">7</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">15</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td></tr>
+</table>
+
+<!-- Then in the post we can show how the MCA shows the various things maps onto the engagement scale, as well as other things -->
+<p>Here we can include and illustrate the work done by Kim Cuddington:<br />
+</p>
+<ul>
+<li><p><a href="https://docs.google.com/document/d/1DLIE1Zf2VNTRfDr70_vtFhCaOyQ2i29qgsk9RYByRYg/edit#heading=h.llrtsji4lr1y">HERE</a>, for the 2019 data, Kim did a great deal of Multiple Correspondence Analysis (<a href="https://en.wikipedia.org/wiki/Multiple_correspondence_analysis#:~:text=In%20statistics%2C%20multiple%20correspondence%20analysis,structures%20in%20a%20data%20set.&amp;text=MCA%20can%20be%20viewed%20as,large%20set%20of%20categorical%20variables.">MCA - wiki</a>) work and binary logistic regressions.  and ordered logistic regression.</p></li>
+<li><p>For the 2020 data, Kim’s work <a href="https://docs.google.com/document/d/1llunQ0q-GxaOBjEbfzfO2IiMSeziOSVMlonDvFGO8P0/edit?ts=60931a20">HERE</a> includes MCA, reduced MCA, Anova, Permnova, and factor analysis<br />
+</p></li>
+</ul>
+
+<div class="note">
+<p>DR: The clustering/factor analysis is an unsupervised/unlabeled procedure. It simply looks for ‘what clusters together’ or (for EFA/CFA), ‘which factors may be underlying this?’</p>
+<p>If we are going to use it here I suggest we limit it to looking for clusters of variables that are inherently tied to <em>engagement</em>, building this measure/component/factor without including things like demographics. We can then consider such a measure as an ‘outcome’ to be predicted.</p>
+</div>
+<p>Summarizing this work:<br />
+</p>
+<blockquote>
+<p>We plot a point cloud of individuals was then plotted, colour coded for self-reported engagement level, against the positioning of the variables on the first two axes (to aid interpretation only the top 20 contributing variables are shown). When we map self-reported engagement on this plot, we find that the first axis is well correlated with variation in engagement. This can be seen visually, and is supported by formal statistical testing (see <a href="https://docs.google.com/document/d/1llunQ0q-GxaOBjEbfzfO2IiMSeziOSVMlonDvFGO8P0/edit?ts=60931a20https://docs.google.com/document/d/1llunQ0q-GxaOBjEbfzfO2IiMSeziOSVMlonDvFGO8P0/edit?ts=60931a20#">HERE</a>).</p>
+</blockquote>
+</div>
+<div id="demog-by-engagement" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> <img src="https://lh3.googleusercontent.com/IMQGGP2G6mxfgcRTpcEqqJwV26Z8dEopjNq-nNhRYTYVCUVBOWuZGHRbuz67cTcDUm8Rpo3SquCt2XGcsRVHQd8FZmcH5cY06jC3yR9y0otjCsDZEg34OR37KPw8a_5fLaWWwGzj" />Further descriptives</h2>
+<div id="descriptive-modeling-1" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Descriptive modeling</h3>
+<p>“What is associated with engagement holding other things constant?” Here, we still try to leave out ‘confounders’ (especially things that are themselves proxies for engagement), but we recognize that ‘being in the sample’ (considering attrition) may be a sort of confounder in itself.</p>
+</div>
+<div id="engage-modeling" class="section level3" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Proposed modeling steps</h3>
+<div class="marginnote">
+<p>This section has been moved from the <a href="eas-how-involved.html#eas_how_involved">“How EAs get involved”</a> chapter. 8 May 2021 – it may repeat some of the above, we may need to remove repetition.</p>
+</div>
+<p>Ideally we would, and will:</p>
+<p>I. Create a measure <span class="math inline">\(G\)</span> (or set of measures) of ‘engagement’ (and or value-added) that captures the outcomes we think we are looking for. <!-- Previous 'clustering' work (by Kim) may inform this. --></p>
+<p>For the present, we will use “self-reported engagment (or dichotomising this into 1-3 vs 4-5).” As noted above, this measure seems to be ‘validated’ by the cluster analysis. <!-- This could also as a default or benchmark for analysis with the clusters as predicted outcomes.--> As noted above, this measure seems to be ‘validated’ by the cluster analysis.</p>
+<ol start="2" style="list-style-type: upper-roman">
+<li>Goals and relationships (theoretical structural model)</li>
+</ol>
+<p>In a perfect world, we would like to estimate a function</p>
+<ul>
+<li>for the (real or counterfactual) ‘level of engagement’</li>
+<li>of person <span class="math inline">\(i\)</span> in year <span class="math inline">\(t\)</span>,</li>
+<li>with permanent characteristics <span class="math inline">\(X_i\)</span> and time-varying characteristics <span class="math inline">\(X_{it}\)</span> (these are vectors),</li>
+<li>who became involved in EA in year <span class="math inline">\(t_0\)</span>,</li>
+<li>who was ‘exposed to a vector <span class="math inline">\(S_t\)</span> of EA stimuli in each year since joining,’ summarized as <span class="math inline">\(S \equiv S_t \forall t \geq t_0\)</span>.</li>
+</ul>
+<p>We can write this ‘true structural model’ as</p>
+<p><span class="math display">\[G_{it} = f(t, X_i, X_{it}, S, t_0, t) + \epsilon_{it}\]</span>,</p>
+<p>where <span class="math inline">\(\epsilon_{it}\)</span> is an irreducible true random term.</p>
+<p>In principle, knowing the above ‘true model’ would allow us to address a range of causal questions about possible ‘interventions,’ e.g.,</p>
+<blockquote>
+<p>how engaged would the average German Female who joins EA in 2021 be in 2025 if they were (A) exposed to a heavy diet of LessWrong and three 80K podcasts per month … versus (B) if they were not exposed to Less Wrong but (induced?) to taking the GWWC pledge and becoming vegan. Thus “what is the (causal) effect of (B) relative to (A)?”</p>
+</blockquote>
+<p>or similar ‘retrospective’ questions:</p>
+<blockquote>
+<p>… who joined EA in 2014 have been in 2020 if they had been exposed to some set of stimuli (C) versus (D)? (Or if they had joined in 2015 instead, etc.)</p>
+</blockquote>
+<p>More reasonably, we will never be able to observe <em>all</em> of the important characteristics of the individual, nor her exposures, never know the ‘true functional form’ of the model, nor be able to perfectly distinguish causal relationships from chance. (But we will do our best!)</p>
+<p>We aim for a more ‘predictive model’ first, while considering issues of causality. For example, considering the previous questions, we may aim to predict…</p>
+<blockquote>
+<p>What will be the average level of engagement for a typical individual whom we see, in year 0, in observable group <span class="math inline">\(A\)</span>, after <span class="math inline">\(\tau=5\)</span> years of being in EA’? How does the same measure differ from that of an individual whom we see in group <span class="math inline">\(B\)</span>?</p>
+</blockquote>
+<p>I.e., <span class="math display">\[E\big(G_{t_0+5}|A\big) - E\big(G_{t_0+5}|B\big)\]</span></p>
+<p>Consider “group,” to embody any number of characteristics we observe in the EAS, such as ‘place first heard of EA,’ or ‘country of origin.’ Here we are <em>not</em> asking the causal ‘counterfactual’ question ‘for the same individual how would this differ depending on whether they were in (or had the characteristics of) group A versus B, all else equal.’ All else is not equal: we realize that for any groupings A and B, people in these groups will have very different observable <em>and unobservable</em> characteristics (<span class="math inline">\(X_i, X_{it}\)</span>) from one another, and also will be exposed to a different set of stimuli <span class="math inline">\(S\)</span>.*</p>
+<div class="marginnote">
+<p>* They may also have joined EA in different calendar years (<span class="math inline">\(t_0\)</span>), but we will explicitly try to keep this constant in our work.</p>
+</div>
+<p>Instead, we will focus on making decent <em>predictions</em> to guide our policy choices. Arguably, we mainly care most about making these predictions for people entering in <em>future</em> years, so as to better direct our resources (see above discussion of the ‘three goals’). Knowing that ‘EAs who joined through GWWC in 2014 are more active (in 2021) than those who joined through LW in 2017’ only informs our choices to the extent that these differences are stable, and likely to persist into future years.<br />
+</p>
+<p><em>We seek to build models that predict…</em></p>
+<ol style="list-style-type: decimal">
+<li>Accurately:</li>
+</ol>
+<ul>
+<li><p>predicting using past data (of course, as all data is past data), but predicting outside the data the model was trained on (see the problem of “Overfitting”),</p></li>
+<li><p>and predicting throughout the range of the years of data, including the most recent data.</p></li>
+</ul>
+<p>(Allowing for trends and trend-differences across years may make the model better at predicting well in the future.)</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Based on variables we can and do <em>observe at the time we make relevant policy choices</em>. Thus:</li>
+</ol>
+<ul>
+<li><p>considering the limits of the EAS scope, and</p></li>
+<li><p>without using ‘ex-post’ and ‘outcome’ variables such as ‘participation in EA Forum’ (aka ‘leaks’ and ‘colliders’).</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>For EA <em>individuals</em>, not just for the subset of individuals who remain in EA/in the EA survey. Thus:</li>
+</ol>
+<ul>
+<li>We need to take attrition (from EA and from the survey) seriously, and potentially make it part of our model.</li>
+</ul>
+<p><br />
+</p>
+<div id="choices-of-variablesfeatures-1" class="section level4 unnumbered">
+<h4>Choices of variables/features</h4>
+<p>Prediction and selection decisions: There are a range of categories on which we might want to make policy-relevant predictions about engagement. We may care specifically about the extent to which other things (demographics, initial alignment, etc) predict later engagement.</p>
+<p>In assessing the <em>impact</em> of a factor such as ‘introducer,’ a causal model might reasonably ‘control’ for other observable features, such as age and gender (although causal interpretation will still require strong assumptions, and ‘controls’ can sometimes introduce additional bias to causal estimates).</p>
+<p>On the other hand, a predictive model may not want to control in the same way. Suppose we were specifically considering the potential of each (e.g., ‘first-heard’) ‘channel’ in recruiting EEAs. We might not want to ‘control’ in the same way. E.g., we may want to know whether LessWrong can be expected to outperform 80K allowing that part of this difference may be driven by age or gender differences. Here we might not want to “difference out” the component of the LW effect that comes from these. (Footnote:  However, we might bring this decomposition back in a mixed-modeling context.)</p>
+<p><br />
+</p>
+<p><strong>Predictors (and/or causal factors) of interest for ‘selection (whom to recruit) question’</strong></p>
+<ul>
+<li><p>‘Place first heard of EA’ (first_hear_ea_lump etc.)</p></li>
+<li><p>Demographics<br />
+</p></li>
+</ul>
+<p><strong>Important ‘controls’</strong> … less interesting (because we cannot select on them nor influence them) but possibly confounded:</p>
+<ul>
+<li><p>Year entered EA (‘Cohort’): This is essential, particularly in considering the aggregated retrospective data</p></li>
+<li><p>Time in EA (Tenure; hard to distinguish from cohort)</p></li>
+<li><p>Period (‘when’ we are seeing the level of engagement)</p></li>
+</ul>
+<p><br />
+<em>Notes</em>:</p>
+<p>In general, <span class="math inline">\(Period = Cohort + Tenure\)</span>; we cannot identify the ‘effect’ of all three of these independently, without any further restrictions.</p>
+<p>For 2020 retrospective data, <span class="math inline">\(Period=2020\)</span> and <span class="math inline">\(Cohort = 2020 - Tenure\)</span>. Unless we are willing to make further assumptions (e.g., a linear impact of Tenure), we will necessarily pick up cohort and tenure effects together.</p>
+<p>Note: We will try to allow for changing relationships between predictors and engagement over time</p>
+<p><br />
+</p>
+<p><strong>Approach I: Modeling the engagment outcome as a (continuous) function</strong></p>
+<p>Possibilities</p>
+<ul>
+<li><p>Linear with normalised outcome variable</p></li>
+<li><p>Ordered Logit (logistic) for the EA-affiliation outcome (2019 retrospective only)</p></li>
+<li><p>Another outcome that is present in all years, allowing us to fit age (tenure), period and cohort effects (although arguably, any 2 of these are entangled)</p></li>
+</ul>
+<p>‘Traditional APC and APCC models’ discussed/linked <a href="https://daaronr.github.io/metrics_discussion/causal-inference-other-paths-to-observational-identification.html#time-series-ish-panel-approaches-to-micro">here</a> … see “Age-period-cohort effects”</p>
+<p><br />
+</p>
+<p><strong>Approach II: A ‘classification’ (e.g., Random Forest)</strong></p>
+<ul>
+<li>‘Cluster’ outcome with clusters built from variables present in each EAS<br />
+</li>
+</ul>
+<p>Build, fit, and test/validate our model:</p>
+<ul>
+<li>Allowing <span class="math inline">\(G\)</span> to depend on time-in-EA</li>
+</ul>
+<div class="marginnote">
+<ul>
+<li>Other responses:</li>
+</ul>
+<p>(roughly code open comment and report proportions)</p>
+<ul>
+<li><p>More details open comment box (code and report proportions)</p></li>
+<li><p>Changes across time</p></li>
+</ul>
+<blockquote>
+<p>I think this highlights that looking at differences in First Heard data by cohort across years could be informative: e.g. if we see that in 2018 50% of people report having heard of EA from GWWC, but by 2020 no-one in 2018 cohort reports having done so, this will suggest to us those GWWC people dropped out.</p>
+</blockquote>
+</div>
+</div>
+<div id="choosing-features-and-modeling-target-variables-1" class="section level4 unnumbered">
+<h4>Choosing features and modeling target variables</h4>
+<!-- "Chi-sq plots with CI's --- let me look into this more specifically" -->
+</div>
+</div>
+<div id="simple-linear-model-of-self-reported-engagement-level-1" class="section level3" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> Simple ‘linear model’ of self-reported engagement level</h3>
+<p>We consider the association between a range of features and their level of engagement. These (arguably) should still <em>not</em> be interpreted as causal relationships. For simplicity’s sake (and we realise it is controversial), this linear model considers:</p>
+<ul>
+<li><p>self-reported engagement (`<code>engagement_num` =</code>1-5) as if it were a meaningful cardinal outcome, and also</p></li>
+<li><p>the binary ‘highly engaged’ self-reported outcome of (‘4-5 engagement’ vs ‘1-3 engagement’)</p></li>
+</ul>
+<p>This model extends the work done in <a href="eas-how-involved.html#involve-engage-model">linear models in the “How EAs get involved”</a> chapter.</p>
+</div>
+<div id="alternative-factor-analysis-unlabeled-approach-1" class="section level3" number="10.3.4">
+<h3><span class="header-section-number">10.3.4</span> Alternative factor-analysis (unlabeled) approach</h3>
+<blockquote>
+<p>In the spirit of data exploration, I also took a look at a factor analysis instead of an MFA. To do this, all variables were converted to numeric, and some that required effort to code were omitted (gender and year of involvement). I ran this on the data set WITHOUT self-reported engagement and activity because we would want to predict engagement, and because DR suggested that activity was the result of engagement rather than a predictor.</p>
+<p>I first checked a Kaiser, Meyer, Olkin Measure of Sampling Adequacy which measures the degree of correlation in the data. The minimum acceptable value is 0.50, but most authors recommend a value of at 0.60 before undertaking a factor analysis…..Going on heedlessly, screeplot suggests 2-5 factors might play a role, while a parallel analysis suggests 11 factors in the summary, but 5-7 seems right given how close the observed are to the random line. A parallel analysis generates random correlation matrices and compares the eigenvalues to the eigenvalues of the observed data, with the assumption that observed eigenvalues that are higher than their corresponding random eigenvalues are more likely to be from "meaningful</p>
+<pre><code>pf.out &lt;-fa(EAL5num[,-indsupql],nfactors =3,fm=&quot;pa&quot;,max.iter =500,rotate =&quot;varimax&quot;)
+fa.diagram(pf.out)</code></pre>
+</blockquote>
+<p><img src="https://lh3.googleusercontent.com/aKukDd8zt4GZl9Su7qXSrtFPM1CK82yo0DaYzmQOJcr0U3_40DLxFbaal48lxT2jJ5QWoJev9_wcpCWF3YJOfzlfwTVDd1E6gKHsUXdsruBbenkGlFAQup2JErDmuwYtulylTeTz" /></p>
+<p>Did not get convergence with 5 factors, but 2 does work, and….. suggests that some membership and involvement factors can be grouped.</p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="cross-year-descriptives-and-analysis" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Cross-year descriptives and analysis</h2>
+<!-- Pete: I think I have in mind looking at the various action variables and how they've changed over time relative to the size of the EA movement
+
+Moss: I think we can and will comment on that in the Engagement post, now that we have 2-3 years of of 'actions' data which are mostly overlapping
+
+Moss: Accounting for "size/growth of EA movement" in that context will be more than a little speculative though, since the EA movement has (presumably) grown in those 3 years but the EAS population has dramatically declined
+
+Reinstein: Ties to our better modeling EAS participation and also perhaps finding a reliable subset with little attrition, or 'constant attrition' or something -->
+</div>
+<div id="engage_time-disc" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Engagement: age, tenure, period and cohort effects</h2>
+<p>See “Tenure and ‘age first heard’ vs engagement” in demography chapter/post.</p>
+<div class="marginnote">
+<p>Aspirationally:</p>
+<p>We should try to separate cohort, trend, and age effects here; some possibility to do this if we combine data from earlier years.</p>
+<p>“Engagement by years since joining, controlling for year and age”</p>
+<p>“Engagement by year, controlling for years since joining and age”…</p>
+</div>
+<p><br />
+</p>
+</div>
+<div id="engagement-by-tenureage-prediction-for-selection-at-what-age-1" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Engagement by tenure/age: ‘prediction for “selection at what age?”’</h2>
+<p>Here the main concern is: ‘What is the optimal age to reach out to EA’s?’</p>
+<p>In a best-case we’d want to estimate the function (not ‘customer lifetime value’ but…) ‘effective lifetime value’ (<span class="math inline">\(ELV\)</span>) as a function of ‘age first heard of EA’ (<span class="math inline">\(afh\)</span>), and everything else (<span class="math inline">\(X\)</span>): <span class="math display">\[ELV = f(AFH, X)\]</span>,</p>
+<p>and look for the values of AFH that maximizes this, perhaps averaging over the ‘everything else’ stuff.</p>
+<p>Of course, we don’t know ELV, and it would take a great effort (as well as controversial assumptions) to construct this:</p>
+<p>More simply, we can plot::</p>
+<ol style="list-style-type: decimal">
+<li>Engagement at age <span class="math inline">\(A\)</span> as a function of age-first-heard (AFH):</li>
+</ol>
+<p>This would combine both</p>
+<ul>
+<li><p>Tenure effects, as those who started younger have been in longer</p>
+<ul>
+<li>and unfortunately, differentially attrited, adding a possible bias, and</li>
+</ul></li>
+<li><p>Receptiveness-at-age effects (e.g., earlier inculcation is stronger)</p></li>
+<li><p>Selection-at-age effects (e.g., those who we tend to recruit younger might be more engage-prone)</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Engagement <span class="math inline">\(T\)</span> years after first-heard as a function of AFH, combining</li>
+</ol>
+<ul>
+<li><p>Receptiveness-at-age effects (e.g., earlier inculcation is stronger)</p></li>
+<li><p>standard life-cycle age effects</p></li>
+<li><p>selection-at-age effects</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Simple ‘engagement level by age’</li>
+</ol>
+<ul>
+<li>roughly capturing the life-cycle age effects</li>
+<li>but combining a variety of effects, including, e.g., ‘younger people might be more active,’ and ‘young people tend to have been in EA for less time’</li>
+</ul>
+<p><br />
+In the previous section we plot the latter for the 2020 survey data… The trend appears more or less flat at younger ages, with a possible decline in the middle of the age range. However, the ‘age’ variable might combine both life-cycle age effects and differences in tenure (as well as differences in cohorts introduced to EA).</p>
+<p><br />
+</p>
+<p>Noting this, we also plotted tenure against age below:</p>
+<div class="marginnote">
+<p>It might be that the age-20 thing is a ‘real peak’ (i.e., that people age 20 are more active than people age 18). But the CI’s are wide in the faceted data. To get a more precise estimate of ‘age 18’ vs ‘age 20’ (holding tenure constant) we need to look more carefully, within a model with, e.g., a linear tenure term Even within the tenure facets, there are variations in tenure, which may be driving the ‘bump at the beginning’ … those who are older still tend to have more tenure (and remember this also could be driven by a persistence/selection effect)</p>
+</div>
+<p><br />
+</p>
+<p><em>Engagement by tenure, ‘faceted’ by age groupings:</em></p>
+<p>### Engagement by ‘Age-first-involved’ and tenure</p>
+<p><br />
+</p>
+<!--
+Moss:
+
+One thing I noted this year is that I found an apparently roughly linear association between age-first-heard-of-EA and engagement, whereas last year there was an apparent non-linear trend (best age was early 20s, slightly lower engagement for people who heard about it younger). Would be interested if you can have a look at 2019 vs 2020 and see if you a) confirm these observations, b) have any thoughts about an explanation?
+
+
+One thing you might immediately think of c is that this is doubtless confounded by # of years in EA. This is messy of c but last year when we looked at the association for each cohort there was a similar hump at early-20s for each cohort. For this year's data... this is much less clear: there do appear to be some humps in early 20s for individual cohorts but for whatever reason that trend is not visible just looking at the aggregate data
+
+
+DR:  which_year_EA is ‘which year you became involved with EA’. But that picks up both cohort effects and tenure effects, as those who became involved earlier … have been in longer.
+
+DM:  Definitely. Is there a good way around that with the data we have though?
+
+DR: Yes, I think there is, once we join together the data across EA surveys (which I was working on).
+
+E.g., compare the EAS-2017 engagement score of someone who became involved in 2014 to the EAS-2020 engagement score of someone who became involved in 2017 Each have 3 years tenure, but they are from different cohorts. However period effects could frustrate our identification of this…
+
+E.g., suppose 2017 made people much more engaged than did 2020. (Or the selection to the EAS was different among these) … then we couldn’t attribute the above difference to cohort differences .
+
+
+DR: Trying to flesh out my understanding of the APC stuff [HERE](https://daaronr.github.io/metrics_discussion/causal-inference-other-paths-to-observational-identification.html) sec 7.4.2 Age-period-cohort effects. Was trying to do the reading and writing there.
+
+
+-->
+<div id="see-attrition-from-eaea-survey-by-introducer-1" class="section level3" number="10.6.1">
+<h3><span class="header-section-number">10.6.1</span> See: <a href="eas-how-involved.html#attrition-by-introducer">Attrition from EA/EA survey by introducer</a></h3>
+</div>
+</div>
+<div id="future-research-eng" class="section level2" number="10.7">
+<h2><span class="header-section-number">10.7</span> Promising future research avenues</h2>
+<div id="improving-continuous-functional-outcome-model" class="section level3" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Improving (continuous) functional outcome model</h3>
+<p>Possible: learning model (random forest or ridge/lasso) multi-level Much later: sensitivity checks for differential attrition (digging up earlier data)</p>
+<p>age/period/cohort modeling, simulated panel? more sophisticated predictive work? use outcome (engagement measure) from factor (analysis</p>
+</div>
+<div id="predict-survey-persistence" class="section level3" number="10.7.2">
+<h3><span class="header-section-number">10.7.2</span> Predict survey persistence</h3>
+<p>Biggest next win imo: Universe: people in 2014, 2015, 2017 surveys</p>
+<p>Outcome: ‘filling out an EAS survey 3+ years later’</p>
+<p>Predictor variables:</p>
+<ul>
+<li>anything observable in earlier survey (or better still, any ‘publicly observable traits’ like country and student status)</li>
+</ul>
+<p>Considerations:</p>
+<ul>
+<li><p>Richness of data or lack thereof (<span class="math inline">\(\rightarrow\)</span> impute/missing-code).</p></li>
+<li><p>Is ‘show up in a later EAS’ a good measure of engagement?</p>
+<ul>
+<li>Confounding email privacy issue (but we have a ‘fixed effect’ here)</li>
+</ul></li>
+<li><p>Avoid overfitting</p></li>
+<li><p>Keep model interpretable/useable</p></li>
+<li><p>Secondary:</p>
+<ul>
+<li>Does past performance inform the future?</li>
+<li>Age/Period/Cohort concerns</li>
+</ul></li>
+</ul>
+</div>
+<div id="approach-a-classification-e.g.-random-forest" class="section level3" number="10.7.3">
+<h3><span class="header-section-number">10.7.3</span> Approach: A ‘classification’ (e.g., Random Forest)</h3>
+<!--
+
+-   'Cluster' outcome with clusters built from variables present in each EAS\
+
+Build, fit, and test/validate our model:
+
+-   Allowing $G$ to depend on time-in-EA
+
+::: {.marginnote}
+-   Other responses:
+
+(roughly code open comment and report proportions)
+
+-   More details open comment box (code and report proportions)
+
+-   Changes across time
+
+> I think this highlights that looking at differences in First Heard data by cohort across years could be informative: e.g. if we see that in 2018 50% of people report having heard of EA from GWWC, but by 2020 no-one in 2018 cohort reports having done so, this will suggest to us those GWWC people dropped out.
+:::
+
+-->
+</div>
+<div id="cross-year-descriptives-and-analysis-1" class="section level3" number="10.7.4">
+<h3><span class="header-section-number">10.7.4</span> Cross-year descriptives and analysis</h3>
+<!-- Pete: I think I have in mind looking at the various action variables and how they've changed over time relative to the size of the EA movement
+
+Moss: I think we can and will comment on that in the Engagement post, now that we have 2-3 years of of 'actions' data which are mostly overlapping
+
+Moss: Accounting for "size/growth of EA movement" in that context will be more than a little speculative though, since the EA movement has (presumably) grown in those 3 years but the EAS population has dramatically declined
+
+Reinstein: Ties to our better modeling EAS participation and also perhaps finding a reliable subset with little attrition, or 'constant attrition' or something -->
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="eas-engagement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="readme-ea-survey-data-and-analysis-work.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
