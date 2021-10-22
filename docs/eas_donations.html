@@ -10,16 +10,16 @@
 
   <meta property="og:title" content="4 Donation | EA survey analyses (partial)" />
   <meta property="og:type" content="book" />
-  
-  
+
+
   <meta property="og:description" content="EA Survey work and posts organized" />
-  
+
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="4 Donation | EA survey analyses (partial)" />
-  
+
   <meta name="twitter:description" content="EA Survey work and posts organized" />
-  
+
 
 <meta name="author" content="Dr. David Reinstein, many others" />
 
@@ -29,8 +29,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
+
+
 <link rel="prev" href="eas-engagement.html"/>
 
 <script src="book_assets/header-attrs-2.11/header-attrs.js"></script>
@@ -3725,7 +3725,7 @@ Todo  (low): all figures in 1000Usd?
 }
 </style>
 <table class="gt_table">
-  
+
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
@@ -3875,7 +3875,7 @@ Todo  (low): all figures in 1000Usd?
 <td class="gt_row gt_center">24,930 [11,970] (170,546)</td>
 <td class="gt_row gt_center">12,033 [2,345] (54,382)</td></tr>
   </tbody>
-  
+
   <tfoot>
     <tr class="gt_footnotes">
       <td colspan="11">
@@ -3883,7 +3883,7 @@ Todo  (low): all figures in 1000Usd?
           <sup class="gt_footnote_marks">
             <em>1</em>
           </sup>
-           
+
           c(&quot;Median&quot;, &quot;10%-90%&quot;, &quot;Mean [se] (SD)&quot;)
           <br />
         </p>
@@ -9443,7 +9443,6 @@ Consider sensitivity to outliers -- possibly do prediction for those below 500k 
 <p>* When considering predicted outcomes on the <em>logarithmic</em> scale, both RMSE and MAE indicate roughly ‘how many exponential orders of magnitude our predictions for the <em>non-logged outcomes</em> are off. E.g., a MSE of 1.5 for ’log donation’ suggests an we are off by about <span class="math inline">\(exp(1.5) =\)</span> 4.48 times in terms of donations, getting them off by a factor of about 5. This conversion avoid such complications.</p>
 </div>
 <!-- Talk about filter for income, didn't make much different for non donation_amount models -->
-<p><strong>DR NOTE, 15 Oct 2021: there seems to be a bug in the table below. The MAE seems much higher than could plausibly be the case.</strong></p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="eas_donations.html#cb253-1" aria-hidden="true" tabindex="-1"></a>l_don_av_2yr_best_params <span class="ot">&lt;-</span> l_don_av_2yr_best_params <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">dv =</span> <span class="st">&quot;Donation amount*&quot;</span>)</span>
 <span id="cb253-2"><a href="eas_donations.html#cb253-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb253-3"><a href="eas_donations.html#cb253-3" aria-hidden="true" tabindex="-1"></a>don_share_inc_imp_best_params <span class="ot">&lt;-</span> don_share_inc_imp_best_params <span class="sc">%&gt;%</span></span>
@@ -10144,7 +10143,7 @@ We will link this in the post. (With a section header and then a link).
 }
 </style>
 <table class="gt_table">
-  
+
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
@@ -10294,7 +10293,7 @@ We will link this in the post. (With a section header and then a link).
 <td class="gt_row gt_center">990 [163] (1,906)</td>
 <td class="gt_row gt_center">691 [93] (1,372)</td></tr>
   </tbody>
-  
+
   <tfoot>
     <tr class="gt_footnotes">
       <td colspan="11">
@@ -10302,7 +10301,7 @@ We will link this in the post. (With a section header and then a link).
           <sup class="gt_footnote_marks">
             <em>1</em>
           </sup>
-           
+
           c(&quot;Median&quot;, &quot;10%-90%&quot;, &quot;Mean [se] (SD)&quot;)
           <br />
         </p>
@@ -10702,7 +10701,7 @@ We will link this in the post. (With a section header and then a link).
 }
 </style>
 <table class="gt_table">
-  
+
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
@@ -10794,7 +10793,7 @@ We will link this in the post. (With a section header and then a link).
 <td class="gt_row gt_center">0.09 [0.01] (0.33)</td>
 <td class="gt_row gt_center">0.16 [0.10] (2.55)</td></tr>
   </tbody>
-  
+
   <tfoot>
     <tr class="gt_footnotes">
       <td colspan="5">
@@ -10802,7 +10801,7 @@ We will link this in the post. (With a section header and then a link).
           <sup class="gt_footnote_marks">
             <em>1</em>
           </sup>
-           
+
           c(&quot;Median&quot;, &quot;10%-90%&quot;, &quot;Mean [se] (SD)&quot;)
           <br />
         </p>
@@ -10975,16 +10974,16 @@ Median planned donation
 </table>
 <p>Below, the results of the signed rank test for plan versus actual donation, excluding 0 donations.</p>
 <div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="eas_donations.html#cb267-1" aria-hidden="true" tabindex="-1"></a>w_signed_test_planned_actual_no0s</span></code></pre></div>
-<pre><code>## 
+<pre><code>##
 ##  Wilcoxon signed rank test with continuity correction
-## 
+##
 ## data:  planned_actual_2019$donation_2019 and planned_actual_2019$planned_donation_2019
 ## V = 30124, p-value = 0.000009109
 ## alternative hypothesis: true location shift is greater than 0
 ## 95 percent confidence interval:
 ##  162.205     Inf
 ## sample estimates:
-## (pseudo)median 
+## (pseudo)median
 ##            281</code></pre>
 </div>
 <div id="donations-by-income-earning-to-give-career-status" class="section level3" number="4.9.2">
