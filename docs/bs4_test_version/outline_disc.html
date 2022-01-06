@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>2 Notes on this ‘bookdown’ relating to the EA Survey | EA survey analyses (partial)</title>
 <meta name="author" content="Dr. David Reinstein, many others">
-<meta name="description" content="This material is meant to supplement EA Survey series posts on the EA forum, and may be linked in those posts. It has been/is being put together by David Reinstein of Rethink Priorities, with the...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="description" content="Rmdnote thing below: This material is meant to supplement EA Survey series posts on the EA forum, and may be linked in those posts. It has been/is being put together by David Reinstein of Rethink...">
+<meta name="generator" content="bookdown 0.24.4 with bs4_book()">
 <meta property="og:title" content="2 Notes on this ‘bookdown’ relating to the EA Survey | EA survey analyses (partial)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This material is meant to supplement EA Survey series posts on the EA forum, and may be linked in those posts. It has been/is being put together by David Reinstein of Rethink Priorities, with the...">
+<meta property="og:description" content="Rmdnote thing below: This material is meant to supplement EA Survey series posts on the EA forum, and may be linked in those posts. It has been/is being put together by David Reinstein of Rethink...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2 Notes on this ‘bookdown’ relating to the EA Survey | EA survey analyses (partial)">
-<meta name="twitter:description" content="This material is meant to supplement EA Survey series posts on the EA forum, and may be linked in those posts. It has been/is being put together by David Reinstein of Rethink Priorities, with the...">
+<meta name="twitter:description" content="Rmdnote thing below: This material is meant to supplement EA Survey series posts on the EA forum, and may be linked in those posts. It has been/is being put together by David Reinstein of Rethink...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.0/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
@@ -158,8 +158,14 @@
 <h1>
 <span class="header-section-number">2</span> Notes on this ‘bookdown’ relating to the EA Survey<a class="anchor" aria-label="anchor" href="#outline_disc"><i class="fas fa-link"></i></a>
 </h1>
+<p>Rmdnote thing below:</p>
 <div class="rmdnote">
 <p>This material is meant to supplement <a href="https://forum.effectivealtruism.org/tag/effective-altruism-survey">EA Survey series posts on the EA forum</a>, and may be linked in those posts. It has been/is being put together by <a href="https://daaronr.github.io/markdown-cv/">David Reinstein</a> of <a href="https://www.rethinkpriorities.org/our-team">Rethink Priorities</a>, with the collaboration and input from others at RP.</p>
+</div>
+<p>Now testing a lonely footnote, will it hover?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;please I hope it will hover&lt;/p&gt;"><sup>1</sup></a></p>
+<p>And testing a ‘foldable’ … these sometimes work, sometimes come out only as grey bars’:</p>
+<div class="foldable">
+<p>I might hope that it indeed does contain materials from multiple posts/chapters — imho that’s a key feature, not a bug. You can easily jump/link across these and also it gives people perspective.</p>
 </div>
 <!--
 ## How shall we share/use this "current Bookdown"?
@@ -218,7 +224,26 @@ Note: we do not have permission to share the EAS data publicly, at least not for
 
 -->
 
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#From https://stackoverflow.com/questions/62028925/how-do-i-catch-errors-in-inline-code-chunk-in-r-markdown</span>
+
+<span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/knit_hooks.html">knit_hooks</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>
+  evaluate.inline <span class="op">=</span> <span class="kw">function</span> <span class="op">(</span><span class="va">code</span>, <span class="va">envir</span> <span class="op">=</span> <span class="fu">knit_global</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">v</span> <span class="op">=</span> <span class="kw"><a href="https://rdrr.io/r/base/try.html">try</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/eval.html">eval</a></span><span class="op">(</span><span class="fu">xfun</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/xfun/man/parse_only.html">parse_only</a></span><span class="op">(</span><span class="va">code</span><span class="op">)</span>, envir <span class="op">=</span> <span class="va">envir</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/knit_print.html">knit_print</a></span><span class="op">(</span><span class="va">v</span>, inline <span class="op">=</span> <span class="cn">TRUE</span>, options <span class="op">=</span> <span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">get</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+  <span class="op">}</span>,
+  inline <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/any.html">any</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">==</span> <span class="st">"try-error"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="va">x</span>
+<span class="op">}</span><span class="op">)</span>
+
+<span class="co"># knitr::knit_hooks$set(inline = function(x) {</span>
+<span class="co">#   if(is.double(x))</span>
+<span class="co">#   x &lt;- sprintf("%1.1f", x)</span>
+<span class="co"># })</span></code></pre></div>
 </div>
+
   <div class="chapter-nav">
 <div class="prev"><a href="index.html"><span class="header-section-number">1</span> INDEX (skip)</a></div>
 <div class="next"><a href="eas_donations.html"><span class="header-section-number">3</span> Donation</a></div>
@@ -240,7 +265,7 @@ Note: we do not have permission to share the EAS data publicly, at least not for
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>EA survey analyses (partial)</strong>" was written by Dr. David Reinstein, many others. It was last built on 2022-01-04.</p>
+    <p>"<strong>EA survey analyses (partial)</strong>" was written by Dr. David Reinstein, many others. It was last built on 2022-01-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
