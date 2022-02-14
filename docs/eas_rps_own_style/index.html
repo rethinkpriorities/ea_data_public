@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="EA survey analyses (partial)" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="EA Survey analysis and reports" />
+<meta name="github-repo" content="/rethinkpriorities/ea-data" />
+
+<meta name="author" content="Dr. David Reinstein, many others" />
+
+<meta name="date" content="2022-02-14" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="EA Survey analysis and reports">
+
+<title>EA survey analyses (partial)</title>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/littlefoot/dist/littlefoot.css"
+/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<link href="libs/book-1.0.0/style.css" rel="stylesheet" />
+<script src="libs/book-1.0.0/littlefoot.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+  <div id="wrapper" class="d-flex">
+    
+
+<div class="border-end bg-white" id="sidebar-wrapper">
+  <div id="sidebar-heading" class="border-bottom bg-light">
+    <img src="logo.png" width="25px" height="25px"/>
+    <span class="text-nowrap">EA survey analyses (partial)</span>
+  </div>
+  <div id="TOC" class="list-group list-group-flush">
+  <a id="item-introduction" class="list-group-item" href="index.html"><span class="toc-section-number">1</span><span>Introduction</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-outline_disc" class="list-group-item" href="index.html#outline_disc"><span class="toc-section-number">1.1</span><span>Notes on this ‘bookdown’ and the EA Survey</a>
+  <a id="item-style-and-collophon" class="list-group-item" href="index.html#style-and-collophon"><span class="toc-section-number">1.2</span><span>Style and ‘collophon’</a>
+  <a id="item-methodological-discussion" class="list-group-item" href="index.html#methodological-discussion"><span class="toc-section-number">1.3</span><span>Methodological discussion</a>
+  </div>
+  <a id="item-eas_donations" class="list-group-item" href="eas_donations.html"><span class="toc-section-number">2</span><span>Donations</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-introduction" class="list-group-item" href="index.html#introduction"><span class="toc-section-number">2.1</span><span>Introduction and summary</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-sum-results" class="list-group-item" href="eas_donations.html#sum-results"><span class="toc-section-number">2.1.1</span><span>Summary, key results and numbers</a>
+  <a id="item-toc" class="list-group-item" href="eas_donations.html#toc">Link: Why does the EA Survey ask about donations?</a>
+  </div>
+  <a id="item-total_mag" class="list-group-item" href="eas_donations.html#total_mag"><span class="toc-section-number">2.2</span><span>Total EA donations, magnitudes in context</a>
+  <a id="item-career-etg" class="list-group-item" href="eas_donations.html#career-etg"><span class="toc-section-number">2.3</span><span>Career paths: Earning-to-give</a>
+  <a id="item-descriptives" class="list-group-item" href="eas_donations.html#descriptives"><span class="toc-section-number">2.4</span><span>Donation totals: descriptives</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-overall-donations-totals-by-groups" class="list-group-item" href="eas_donations.html#overall-donations-totals-by-groups">Overall donations, totals by groups</a>
+  <a id="item-donshares" class="list-group-item" href="eas_donations.html#donshares"><span class="toc-section-number">2.4.1</span><span>Donation (shares) vs. income and GWWC pledge</a>
+  <a id="item-emp-student" class="list-group-item" href="eas_donations.html#emp-student"><span class="toc-section-number">2.4.2</span><span>Employment and student status</a>
+  <a id="item-don-by-country" class="list-group-item" href="eas_donations.html#don-by-country"><span class="toc-section-number">2.4.3</span><span>Donations by country</a>
+  <a id="item-donations-age-and-years-in-ea" class="list-group-item" href="eas_donations.html#donations-age-and-years-in-ea">Donations, age and years in EA</a>
+  <a id="item-by-referrer" class="list-group-item" href="eas_donations.html#by-referrer">By referrer</a>
+  </div>
+  <a id="item-donation-and-income-trends-in-ea" class="list-group-item" href="eas_donations.html#donation-and-income-trends-in-ea"><span class="toc-section-number">2.5</span><span>Donation and income for recent years</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-graphsdonation-densities" class="list-group-item" href="eas_donations.html#graphsdonation-densities">Graphs:donation densities</a>
+  </div>
+  <a id="item-which-charities" class="list-group-item" href="eas_donations.html#which-charities"><span class="toc-section-number">2.6</span><span>Which charities (causes and categories) are EAs donating to?</a>
+  <a id="item-plan-actual" class="list-group-item" href="eas_donations.html#plan-actual"><span class="toc-section-number">2.7</span><span>Donations: plans/aspirations vs. actual (reported) amounts</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-planned-vs.-actual-individuals-present-in-both-surveys" class="list-group-item" href="eas_donations.html#planned-vs.-actual-individuals-present-in-both-surveys">2019 Planned vs. actual: Individuals present in both surveys</a>
+  <a id="item-plan-actual-all" class="list-group-item" href="eas_donations.html#plan-actual-all">Planned vs. actual: All respondents (across relevant years)</a>
+  </div>
+  <a id="item-next-year" class="list-group-item" href="eas_donations.html#next-year"><span class="toc-section-number">2.8</span><span>Donations versus <em>next year’s</em> plans</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-simulation-based-tests" class="list-group-item" href="eas_donations.html#simulation-based-tests">Simulation-based tests</a>
+  </div>
+  <a id="item-modeling" class="list-group-item" href="eas_donations.html#modeling"><span class="toc-section-number">2.9</span><span>Model of EA donation behavior</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-modeling-questions-and-approaches" class="list-group-item" href="eas_donations.html#modeling-questions-and-approaches">Modeling ‘questions’ and approaches:</a>
+  <a id="item-descriptive" class="list-group-item" href="eas_donations.html#descriptive"><span class="toc-section-number">2.9.1</span><span>Descriptive (and causally-suggestive) models</a>
+  <a id="item-predictive-models" class="list-group-item" href="eas_donations.html#predictive-models"><span class="toc-section-number">2.9.2</span><span>Predictive models</a>
+  <a id="item-summary-of-modeling-results-see-introduction" class="list-group-item" href="eas_donations.html#summary-of-modeling-results-see-introduction"><span class="toc-section-number">2.9.3</span><span>Summary of modeling results – see <span>introduction</span></a>
+  </div>
+  <a id="item-robust-appendix" class="list-group-item" href="eas_donations.html#robust-appendix"><span class="toc-section-number">2.10</span><span>Appendix: Extra analysis and robustness checks</a>
+  <div class="list-group list-group-flush list-subgroup">
+  <a id="item-save-to-don" class="list-group-item" href="eas_donations.html#save-to-don">‘Saved to donate later’</a>
+  <a id="item-don_eng" class="list-group-item" href="eas_donations.html#don_eng">Donations by engagement level</a>
+  <a id="item-don_inc_by_student" class="list-group-item" href="eas_donations.html#don_inc_by_student">Donations and income by student/employment status</a>
+  <a id="item-don_share_by_tenure_facet_referrer" class="list-group-item" href="eas_donations.html#don_share_by_tenure_facet_referrer">Donation as share of income by tenure, ‘faceted’ by referrer to survey*</a>
+  <a id="item-additional-donations-and-income-by-whether-a-longtermist-cause-is-top-priority" class="list-group-item" href="eas_donations.html#additional-donations-and-income-by-whether-a-longtermist-cause-is-top-priority">Additional: Donations and income by whether a Longtermist cause is top priority</a>
+  <a id="item-plan-don-by-year" class="list-group-item" href="eas_donations.html#plan-don-by-year"><span class="toc-section-number">2.10.1</span><span>Planned donation by year, comparison tests</a>
+  <a id="item-donations-by-income-earning-to-give-career-status" class="list-group-item" href="eas_donations.html#donations-by-income-earning-to-give-career-status"><span class="toc-section-number">2.10.2</span><span>Donations by income ‘earning-to-give’ career status</a>
+  <a id="item-usa-don" class="list-group-item" href="eas_donations.html#usa-don"><span class="toc-section-number">2.10.3</span><span>Donation shares by income (by US-residence, 2019)</a>
+  <a id="item-nonresponse" class="list-group-item" href="eas_donations.html#nonresponse"><span class="toc-section-number">2.10.4</span><span>Models: nonresponse coefficients</a>
+  </div>
+  </div>
+  </div>
+</div>
+<!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+<!-- Top navigation-->
+    <nav 
+      id="navbar" 
+      class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+    >
+      <div class="container-fluid">
+        <button class="btn btn-primary p-1" id="sidebarToggle">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="26" 
+            height="26" 
+            fill="currentColor" 
+            class="bi bi-list" viewBox="0 0 16 16"
+          >
+            <path 
+              fill-rule="evenodd" 
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </button>
+        <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarContent" 
+          aria-controls="navbarContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">
+              <a 
+                class="nav-link dropdown-toggle" 
+                id="navbarDropdown" 
+                href="#" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-haspopup="true" 
+                aria-expanded="false">
+                  Settings
+              </a>
+              <div 
+                class="dropdown-menu dropdown-menu-end" 
+                aria-labelledby="navbarDropdown">
+                  <a id="toggleCodeButton" class="dropdown-item" href="#!">Toggle code</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!-- Page content-->
+    <div id="main-container" class="container-fluid">
+<main>
+<div id="header">
+<h1 class="title">EA survey analyses (partial)</h1>
+<h4 class="author"><em>Dr. David Reinstein, many others</em></h4>
+<h4 class="date"><em>2022-02-14</em></h4>
+</div>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<div id="outline_disc" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Notes on this ‘bookdown’ and the EA Survey</h2>
+<!--  install.packages("bookdown") or the development version
+# devtools::install_github("rstudio/bookdown")
+-->
+<!-- Download 'backup' bibtex file from dropbox (synced with Zotero), do the rename workaround -->
+
+<!-- note installing packages is mainly removed because this is done in baseoptions.R -->
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r collapse"><div><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#From https://stackoverflow.com/questions/62028925/how-do-i-catch-errors-in-inline-code-chunk-in-r-markdown</span></span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>knit_hooks<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">evaluate.inline =</span> <span class="cf">function</span> (code, <span class="at">envir =</span> <span class="fu">knit_global</span>()) {</span>
+<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    v <span class="ot">=</span> <span class="fu">try</span>(<span class="fu">eval</span>(xfun<span class="sc">::</span><span class="fu">parse_only</span>(code), <span class="at">envir =</span> envir))</span>
+<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a>    knitr<span class="sc">::</span><span class="fu">knit_print</span>(v, <span class="at">inline =</span> <span class="cn">TRUE</span>, <span class="at">options =</span> knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">get</span>())</span>
+<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  },</span>
+<span id="cb1-8"><a href="index.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">inline =</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-9"><a href="index.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">class</span>(x) <span class="sc">==</span> <span class="st">&quot;try-error&quot;</span>)) {</span>
+<span id="cb1-10"><a href="index.html#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.vector</span>(x)</span>
+<span id="cb1-11"><a href="index.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> x</span>
+<span id="cb1-12"><a href="index.html#cb1-12" aria-hidden="true" tabindex="-1"></a>})</span></code></div></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r collapse"><div><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#TODO: Some of this repeats content in &#39;main&#39; --- delete from one or the other?</span></span>
+<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Define objects for 2020 survey</span></span>
+<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="index.html#cb2-5" aria-hidden="true" tabindex="-1"></a>year_s <span class="ot">&lt;-</span> <span class="st">&quot;2020&quot;</span></span>
+<span id="cb2-6"><a href="index.html#cb2-6" aria-hidden="true" tabindex="-1"></a>year_n <span class="ot">&lt;-</span> <span class="dv">2020</span></span></code></div></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r collapse"><div><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#formatting functions</span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>op <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">d=</span><span class="dv">3</span>) <span class="fu">format</span>(x, <span class="at">format=</span><span class="st">&quot;f&quot;</span>, <span class="at">big.mark=</span><span class="st">&quot;,&quot;</span>, <span class="at">digits=</span>d, <span class="at">scientific=</span><span class="cn">FALSE</span>)</span>
+<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a>ops <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">d=</span><span class="dv">3</span>, <span class="at">ns=</span><span class="dv">2</span>) <span class="fu">format</span>(x, <span class="at">format=</span><span class="st">&quot;f&quot;</span>, <span class="at">big.mark=</span><span class="st">&quot;,&quot;</span>, <span class="at">digits=</span>d, <span class="at">nsmall=</span>ns, <span class="at">scientific =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-4"><a href="index.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb3-5"><a href="index.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#scatter_theme &lt;- theme_minimal()</span></span></code></div></pre></div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<!--Can define text blocks here, refer to them again and again if desired
+-->
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N5J806X5T4"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N5J806X5T4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N5J806X5T4');
+</script>
+
+<p>This ‘bookdown’ is managed by the <a href="https://www.rethinkpriorities.org/our-team">Rethink Priorities</a> survey team, (particularly David Reinstein, Willem Sleegers, and Jamie Elsley, under the management of David Moss, with the collaboration and input from others at RP.
+It concisely presents decriptive statistics, visualizations, and statistical analysis of data from the EA Survey, with minimal narrative. It covers both the ‘most recent updated data,’ trends over time, and analyses using multi-year data. This provides a supplement to our <a href="https://forum.effectivealtruism.org/tag/effective-altruism-survey">EA Survey series posts on the EA forum</a>, and may be linked in those posts. This is a ‘dynamic document’: all of the code generating the results is embedded within.</p>
+</div>
+<div id="style-and-collophon" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Style and ‘collophon’</h2>
+<p>For more information on how this ‘bookdown’ was created, see our public template <a href="https://rethinkpriorities.github.io/bookdown-template/">here</a>, and also consult the resources at <a href="https://bookdown.org/">bookdown.org</a></p>
+</div>
+<div id="methodological-discussion" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Methodological discussion</h2>
+<p>We are putting together an organized discussion and explanation of our methodology as a bookdown <a href="https://rethinkpriorities.github.io/methodology-statistics-design/introduction-and-overview.html">here</a>, and will refer to specific sections within. However, that resource is very much a work in progress.</p>
+<!--
+## How shall we share/use this "current Bookdown"?
+
+
+Currently (13 Mar 2021) this is shared on a private github repo but not 'hosted'. Only a few RP-staff are accessing and looking at this.
+
+\
+
+
+For the bookdown we might share publicly...
+
+::: {.foldable} 
+ 
+
+I might hope that it indeed does contain materials from multiple posts/chapters — imho that’s a key feature, not a bug. You can easily jump/link across these and also it gives people perspective.
+
+However, I understand
+
+- not wanting to overwhelm/confuse people (but this could probably be dealt with using good sign-posting)
+
+- not wanting to link incomplete content if it could leave a bad impression (thus, if this is a concern, perhaps a version of the Bookdown with only public-ready content)
+
+ 
+:::
+-->
+<!--
+## The EA Survey, Codebooks and materials
+
+**Codebooks:**
+
+[2020 EA survey 'codebook'](codebooks/codebook_eas_2020.html)
+
+[2019 EA survey 'codebook'](codebooks/codebook_eas_2019.html)
+
+[2018 EA survey 'codebook'](codebooks/codebook_eas_2018.html)
+
+[2017 EA survey 'codebook'](codebooks/codebook_eas_2017.html)
+
+[2015 EA survey 'codebook'](codebooks/codebook_eas_2015.html)
+
+[2014 EA survey 'codebook'](codebooks/codebook_eas_2014.html)
+
+
+\
+
+Survey instruments are/will be stored in the `survey_instruments_materials` folder
+
+
+Note: we do not have permission to share the EAS data publicly, at least not for now.
+
+## Methodological issues
+
+- [Representativeness; weighting and sensitivity testing](s#sensitivity)
+
+-->
+
+</div>
+</div>
+<div class="text-center m-3">
+
+<a href="eas_donations.html"><button class="btn btn-secondary">Next</button></a>
+</div>
+</main>
+</div>
+</div>
+
+
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+  crossorigin="anonymous">
+</script>
+
+<!-- Littlefoot -->
+<script type="application/javascript">
+littlefoot.littlefoot()
+</script>
+
+<script>
+// Set the current page to be active in the TOC
+const id = document.getElementsByClassName("level1").item(0).id
+const item = document.getElementById("item-" + id)
+item.classList.toggle("active")
+
+// Add foldable sections
+const foldables = document.getElementsByClassName("foldable")
+
+for (foldable of foldables) {
+  const a = foldable.firstChild
+  
+  a.href = "#"
+  a.onclick = function() {
+
+    if (this.innerHTML === "Show") {
+      this.innerHTML = "Hide"
+    } else {
+      this.innerHTML = "Show"
+    }
+    
+    const bsCollapse = new bootstrap.Collapse(a.nextSibling, {
+      toggle: true
+    })
+  }
+}
+
+</script>
+
+<script>
+// Create toggle code function
+toggleCode = function() {
+  const mainContainer = document.getElementById("main-container")
+  const codes = mainContainer.getElementsByClassName('sourceCode r collapse')
+  
+  for (code of codes) {
+    new bootstrap.Collapse(code, {toggle: true})
+  }
+}
+
+// Add sidebar toggle functionality
+window.addEventListener('DOMContentLoaded', event => {
+  // Toggle the side navigation
+  const sidebarToggle = document.body.querySelector('#sidebarToggle');
+  if (sidebarToggle) {
+    
+    if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+      document.body.classList.toggle('sb-sidenav-toggled');
+    }
+    sidebarToggle.addEventListener('click', event => {
+      event.preventDefault();
+      document.body.classList.toggle('sb-sidenav-toggled');
+      localStorage.setItem(
+        'sb|sidebar-toggle', 
+        document.body.classList.contains('sb-sidenav-toggled')
+      );
+    });
+  }
+  
+  // Add toggle code function to toggle code button
+  const toggleCodeButton = document.getElementById("toggleCodeButton")
+  toggleCodeButton.onclick = toggleCode
+});
+</script>
+
+</body>
+</html>
