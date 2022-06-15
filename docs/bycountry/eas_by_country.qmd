@@ -30,7 +30,7 @@ filter <- dplyr::filter
 library(rnoodling)
 library(rethinkpriorities)
 
-p_load(broom,  dplyr, ggplot2,  ggrepel, janitor, kableExtra, readr, tidyr, tidyselect, tidymodels, tidyverse, plotly,  install = FALSE)
+p_load(broom,  dplyr, ggplot2,  ggrepel, janitor, kableExtra, readr, tidyr, tidyselect, tidymodels, tidyverse, plotly, DT,  install = FALSE)
 
 
 ```
@@ -57,7 +57,8 @@ rownames(easpercapita_nomissing) <- easpercapita_nomissing$country
 
 ```{r lm_eapercap}
 
-model <- easpercapita_nomissing %>% lm(easpercap ~ gdppop + emancipative + secular, .)
+model <- easpercapita_nomissing %>% 
+  lm(easpercap ~ gdppop + emancipative + secular, .)
 
 ```
 
@@ -108,16 +109,17 @@ Table of residuals
 ```{r tabresid}
 
 
-model_data %>% 
+(
+  table_resid <- model_data %>% 
   select(.rownames, easpercap, .fitted, .resid)  %>% 
   transmute(
     Country = .rownames,
     `EAS per million` = exp(easpercap)*1000*1000,
     `Predicted EAS/mln` = exp(.fitted)*1000*1000,
-    `Residual EAS/mln` = `EAS per million` - `Predicted EAS/mln`
-  ) %>% 
-  .kable() %>% 
-  .kable_styling() 
+    `Residual EAS/mln` = `EAS per million` - `Predicted EAS/mln`) %>%  
+     mutate(across(is.numeric, round, digits = 3)) %>%  
+  datatable(class = 'cell-border stripe')
+)
 ```
 
 \
