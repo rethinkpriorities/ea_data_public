@@ -30,7 +30,7 @@ filter <- dplyr::filter
 library(rnoodling)
 library(rethinkpriorities)
 
-p_load(broom,  dplyr, ggplot2,  ggrepel, janitor, kableExtra, readr, tidyr, tidyselect, tidymodels, tidyverse,  install = FALSE)
+p_load(broom,  dplyr, ggplot2,  ggrepel, janitor, kableExtra, readr, tidyr, tidyselect, tidymodels, tidyverse, plotly,  install = FALSE)
 
 
 ```
@@ -41,7 +41,7 @@ p_load(broom,  dplyr, ggplot2,  ggrepel, janitor, kableExtra, readr, tidyr, tidy
 
 easpercapita <-
   read_csv(here("data", "supplementary", "easpercapita.csv"),
-    col_types = cols(sub = col_skip()))
+    col_types = cols(sub = col_skip())) 
 
 #Explicitly make it 'complete cases only' ... unless we want to impute the missing values, which we probably do:
 
@@ -89,19 +89,35 @@ ea_outliers <- model_data %>%
 ea_outliers <- model_data %>%
     filter(abs(.resid) >0.8) %>% 
   ggplot() +
-  aes(x=.fitted,
-           y=easpercap, color=.resid) +
+  aes(x=exp(.fitted)*1000000,
+           y=exp(easpercap)*1000000, color=.resid) +
     geom_point(size=2) +
  geom_label_repel(aes(label = .rownames),
                   box.padding   = 0.3, 
                   point.padding = 0.4,
                   segment.color = 'grey50') +
-    ggtitle("Largest positive and negative residuals") +
+    ggtitle("EAS per million: Largest positive and negative residuals") +
     theme_classic()
 )
 
 
+```
 
+Table of residuals
+
+```{r tabresid}
+
+
+model_data %>% 
+  select(.rownames, easpercap, .fitted, .resid)  %>% 
+  transmute(
+    Country = .rownames,
+    `EAS per million` = exp(easpercap)*1000*1000,
+    `Predicted EAS/mln` = exp(.fitted)*1000*1000,
+    `Residual EAS/mln` = `EAS per million` - `Predicted EAS/mln`
+  ) %>% 
+  .kable() %>% 
+  .kable_styling() 
 ```
 
 \
