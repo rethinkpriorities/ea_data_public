@@ -1,0 +1,107 @@
+---
+project:
+  type: website
+  output-dir: docs/vignettes
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    toc: true
+    number-sections: true
+    citations-hover: true
+    footnotes-hover: true
+execute:
+    freeze: auto # re-render only when source changes
+    warning: false
+    message: false
+    error: true
+comments:
+    hypothesis: true
+---
+
+```{r}
+
+library(here)
+library(pacman)
+here <- here::here()
+filter <- dplyr::filter
+library(rnoodling)
+library(rethinkpriorities)
+
+p_load(broom,  dplyr, ggplot2,  ggrepel, janitor, kableExtra, readr, tidyr, tidyselect, tidymodels, tidyverse,  install = FALSE)
+
+
+```
+
+## Bring in country level data (input by hand, etc)
+
+```{r input_eapercap}
+
+easpercapita <-
+  read_csv(here("data", "supplementary", "easpercapita.csv"),
+    col_types = cols(sub = col_skip()))
+
+#Explicitly make it 'complete cases only' ... unless we want to impute the missing values, which we probably do:
+
+easpercapita_nomissing <- easpercapita %>% 
+  filter(complete.cases(.)) 
+
+rownames(easpercapita_nomissing) <- easpercapita_nomissing$country  
+
+
+```
+
+# Simple models
+
+```{r lm_eapercap}
+
+model <- easpercapita_nomissing %>% lm(easpercap ~ gdppop + emancipative + secular, .)
+
+```
+
+Predicted versus actual levels
+
+```{r}
+
+# Add fitted and residuals to model
+
+p_load(broom, ggplotly, janitor)
+library(broom, ggplotly, janitor)
+model_data <- augment(model)
+
+(
+ea_outliers <- model_data %>%
+  ggplot() +
+  aes(x=.fitted,
+           y=easpercap, color=gdppop) +
+    geom_point(size=2) +
+     geom_smooth(method = lm, se = FALSE) + 
+ geom_label_repel(aes(label = .rownames),
+                  box.padding   = 0.3, 
+                  point.padding = 0.4,
+                  segment.color = 'grey50') +
+    theme_classic()
+)
+
+(
+ea_outliers <- model_data %>%
+    filter(abs(.resid) >0.8) %>% 
+  ggplot() +
+  aes(x=.fitted,
+           y=easpercap, color=.resid) +
+    geom_point(size=2) +
+ geom_label_repel(aes(label = .rownames),
+                  box.padding   = 0.3, 
+                  point.padding = 0.4,
+                  segment.color = 'grey50') +
+    ggtitle("Largest positive and negative residuals") +
+    theme_classic()
+)
+
+
+
+```
+
+\
