@@ -106,7 +106,6 @@ EF_English_Proficiency_Index <- read_csv(
       )) %>% 
     select(country, ef_epi_19)
 
-
 ```
 
 The two English prevalence/proficiency measures cover different countries, each with many missing values. As a compromise measure, we average these two, taking the nonmissing value of one where the other is missing, a feature we call `english_av`. Finally, where both are missing for a country, we take the average of the above average for the "Cultural Zone" of the countr. (Code chunk below).
@@ -207,8 +206,8 @@ model_eapercap <- eas_by_country_all %>%
   lm(make_formula("easpercap*1000*100", features_percap), .)
 model_eapercap_i <- eas_by_country_all_i %>%  lm(make_formula("easpercap*1000*100", features_percap), .)
 
-model_eapercap_psn <- eas_by_country_all %>%  glm(make_formula("eas_3yr_avg*1000", log_features), family=quasipoisson, data =.) 
-model_eapercap_psn_i <- eas_by_country_all_i %>%  glm(make_formula("eas_3yr_avg*1000", log_features), family=quasipoisson, data =.) 
+model_ea_psn <- eas_by_country_all %>%  glm(make_formula("eas_3yr_avg*1000", log_features), family=quasipoisson, data =.) 
+model_ea_psn_i <- eas_by_country_all_i %>%  glm(make_formula("eas_3yr_avg*1000", log_features), family=quasipoisson, data =.) 
 
 
 ```
@@ -226,8 +225,8 @@ huxreg(
   "imp." =  model_log_eapercap_i,
   "Per `100k` capita" = model_eapercap, 
   "imp" = model_eapercap_i, 
-  "Quasi-Poisson" = model_eapercap_psn,
-  "imp" = model_eapercap_psn_i) %>% 
+  "Quasi-Poisson" = model_ea_psn,
+  "imp" = model_ea_psn_i) %>% 
   set_number_format("%#.2f") %>%
    set_bold(1, everywhere)             %>%
     set_bottom_border(1, everywhere) %>%
@@ -242,6 +241,7 @@ Next, we add the predicted values to the basic data set (imputed and non), to la
 ```{r eas_by_country_all_m}
 
 #the repetition for both data sets below is rubbish -- I should use 'map' instead
+
 eas_by_country_all_m_i <- eas_by_country_all_i %>%
   add_predictions(model_linear, var = "pred_linear") %>%
   add_predictions(model_linear_i, var = "pred_linear_i") %>%
@@ -249,11 +249,12 @@ eas_by_country_all_m_i <- eas_by_country_all_i %>%
   add_predictions(model_eapercap_i, var = "pred_eapercap_i") %>%
   add_predictions(model_log_eapercap, var = "pred_log_eapercap") %>%
   add_predictions(model_log_eapercap_i, var = "pred_log_eapercap_i") %>%
-  add_predictions(model_eapercap_psn, var = "pred_psn") %>%
-  add_predictions(model_eapercap_psn_i, var = "pred_psn_i") %>%
+  add_predictions(model_ea_psn, var = "pred_psn") %>%
+  add_predictions(model_ea_psn_i, var = "pred_psn_i") %>%
   mutate(
     exp_pred_log_eapercap_xmil = exp(pred_log_eapercap)*1000*1000,
     pred_eapercap_permil = pred_eapercap*10,
+    pred_eapercap_permil_i = pred_eapercap_i*10,
     easpercap_permil = easpercap*1000*1000)
 
 eas_by_country_all_m <- eas_by_country_all %>%
@@ -263,8 +264,8 @@ eas_by_country_all_m <- eas_by_country_all %>%
   add_predictions(model_eapercap_i, var = "pred_eapercap_i") %>%
   add_predictions(model_log_eapercap, var = "pred_log_eapercap") %>%
   add_predictions(model_log_eapercap_i, var = "pred_log_eapercap_i") %>%
-  add_predictions(model_eapercap_psn, var = "pred_psn") %>%
-  add_predictions(model_eapercap_psn_i, var = "pred_psn_i") %>%
+  add_predictions(model_ea_psn, var = "pred_psn") %>%
+  add_predictions(model_ea_psn_i, var = "pred_psn_i") %>%
   mutate(
     exp_pred_log_eapercap_xmil = exp(pred_log_eapercap)*1000*1000,
     pred_eapercap_permil = pred_eapercap*10,
@@ -291,7 +292,6 @@ scale_color_viridis(option = "H")
 
 
 ### Linear
-
 
 
 ```{r model_eapercap_linear}
@@ -340,8 +340,9 @@ ea_outliers_linear_i <- model_linear_i %>%
 )
 
 ```
-### Log
+### Log-log per capita
 
+(Note, I skipped linear per-capita for space)
 
 ```{r model_eapercap_log_plot}
 
@@ -389,82 +390,86 @@ ea_outliers_percap_log_i <- model_log_eapercap_i %>%
 
 ```
 
-```{r plot_ea_dev_percap}
+
+### Exponential Quasi-Poisson
+
+```{r model_eapercap_qp_plot}
 
 (
-ea_dev_percap <- model_eapercap %>%
+ea_dev_percap_qp <- model_ea_psn %>% 
+    augment(newdata=eas_by_country_all) %>% 
   ggplot() +
-  aes(x=.fitted,
-           y=`easpercap * 1000 * 100`, color=gdppop_3yr_avg) +
-         geom_smooth(method = lm, se = FALSE) +
-    devplotopts
+  aes(x=.fitted, y=eas_3yr_avg, color=english_av) +
+    geom_smooth(method = lm, se = FALSE) +
+    scale_x_continuous(trans='log2') +  
+    scale_y_continuous(trans='log2') +
+    devplotopts +
+    ggtitle("QP model - EAs: predicted, actual, no imputation") 
 )
 
 (
-ea_outliers_percap <- model_eapercap %>%
-    filter(abs(.std.resid) > 0.7) %>% 
+ea_dev_percap_qp_i <- model_ea_psn_i %>% 
+    augment(newdata=eas_by_country_all_i) %>% 
   ggplot() +
-  aes(x=exp(.fitted)*1000000,
-           y=exp(`easpercap * 1000 * 100`), color=.std.resid) +
+  aes(x=.fitted, y=eas_3yr_avg, color=english_av) + geom_smooth(method = lm, se = FALSE) +
+    devplotopts +
+    ggtitle("QP - EAs: Predicted, actual, Imputed where missing") 
+)
+
+(
+ea_outliers_percap_qp <- model_ea_psn %>%
+    augment(newdata=eas_by_country_all) %>% 
+    mutate(.resid =  eas_3yr_avg - .fitted) %>% 
+    filter(abs(.resid) > 10) %>% 
+  ggplot() +
+  aes(x=.fitted, y=(eas_3yr_avg), color=.resid) +
+    scale_x_continuous(trans='log2') +  
+    scale_y_continuous(trans='log2') +
+    geom_abline(intercept =0, slope = 1) +
    devplotopts +
-    ggtitle("EAS per million: Largest positive and negative residuals") 
+    ggtitle("QP = EAs per 1000: Largest residuals, no imputation") 
 )
+    
+
+(
+ea_outliers_percap_qp_i <- model_ea_psn_i %>%
+    augment(newdata=eas_by_country_all_i) %>% 
+    mutate(.resid =  eas_3yr_avg - .fitted) %>% 
+    filter(abs(.resid) > 10) %>% 
+  ggplot() +
+  aes(x=.fitted, y=eas_3yr_avg, color=.resid) +
+    scale_x_continuous(trans='log2') +  
+    scale_y_continuous(trans='log2') +
+        geom_abline(intercept = 0, slope = 1) +
+   devplotopts +
+    ggtitle("QP - EAs per 1000: Largest residuals, Imputed where missing") 
+)
+
 ```
 
-\
 
-```{r model_eapoisson_plot}
+## Table of residuals
 
-# Add fitted and residuals to model
-
-(
-ea_dev_percap_psn <- model_eapercap_psn %>% 
-    augment() %>% 
-  ggplot() + 
-  aes(x=.fitted,
-           y=`eas_3yr_avg * 1000`, color=`log(gdppop_3yr_avg)`) +
-         geom_smooth(method = lm, se = FALSE) +
-      scale_y_continuous(trans='log10') +
-    devplotopts
-)
-
-(
-ea_outliers_percap_psn <- model_eapercap_psn %>%
-        augment() %>% 
-    filter(abs(.std.resid) > 1) %>% 
-  ggplot() +
-  aes(x=(.fitted),
-           y=(`eas_3yr_avg * 1000`), color=.std.resid) +
-          scale_y_continuous(trans='log10') +
-   devplotopts +
-    ggtitle("EAS per million: Largest positive and negative residuals") 
-)
-```
-
-\
-Table of residuals
 
 ```{r tabresid}
 
 (
-  eas_v_predicted <- eas_by_country_all_m %>%  
-    select(country, population_3yr_avg, eas_3yr_avg, pred_linear, pred_psn, easpercap_permil, pred_eapercap_permil) %>% 
-      mutate(across(is.numeric, round, digits = 2)) %>% 
+  eas_v_predicted <- eas_by_country_all_m_i %>%  
+    mutate(
+      resid_linear = eas_3yr_avg - pred_linear,
+      resid_linear_i = eas_3yr_avg - pred_linear_i,
+      resid_permln = easpercap_permil - pred_eapercap_permil,
+      resid_permln_i = easpercap_permil - pred_eapercap_permil_i,
+      resid_log_per = easpercap_permil - exp(pred_log_eapercap),
+      resid_log_per_i = easpercap_permil - exp(pred_log_eapercap_i),
+      resid_psn = eas_3yr_avg - pred_psn,
+      resid_psn_i = eas_3yr_avg - pred_psn_i
+      ) %>% 
+    mutate(across(is.numeric, round, digits = 2)) %>% 
+      select(country, population_3yr_avg, eas_3yr_avg, easpercap_permil, pred_linear, starts_with("resid_")) %>% 
   datatable(class = 'cell-border stripe')
 )
   
-
-(
-  table_resid <- model_data %>% 
-  select(.rownames, easpercap, .fitted, .resid)  %>% 
-  transmute(
-    Country = .rownames,
-    `EAS per million` = exp(easpercap)*1000*1000,
-    `Predicted EAS/mln` = exp(.fitted)*1000*1000,
-    `Residual EAS/mln` = `EAS per million` - `Predicted EAS/mln`) %>%  
-     mutate(across(is.numeric, round, digits = 2)) %>%  
-  datatable(class = 'cell-border stripe')
-)
 ```
 
 \
