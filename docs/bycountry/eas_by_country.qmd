@@ -12,6 +12,7 @@ format:
     number-sections: true
     citations-hover: true
     footnotes-hover: true
+    margin-right: .2em
 execute:
     freeze: auto # re-render only when source changes
     warning: false
@@ -38,8 +39,6 @@ p_load(huxtable)
 p_load(modelr)
 p_load(httr)
 p_load(viridis, ggsci)
-
-
 
 ```
 
@@ -108,7 +107,7 @@ EF_English_Proficiency_Index <- read_csv(
 
 ```
 
-The two English prevalence/proficiency measures cover different countries, each with many missing values. As a compromise measure, we average these two, taking the nonmissing value of one where the other is missing, a feature we call `english_av`. Finally, where both are missing for a country, we take the average of the above average for the "Cultural Zone" of the countr. (Code chunk below).
+The two English prevalence/proficiency measures cover different countries, each with many missing values. As a compromise measure, we average these two, taking the nonmissing value of one where the other is missing, a feature we call `english_av`. Finally, where both are missing for a country, we take the average of the above average for the "Cultural Zone" of the country. (Code chunk below).
 
 ```{r english_av}
 
@@ -146,7 +145,7 @@ eas_by_country_all %>%
 
 ### Other imputation 
 
-We quickly impute all other features where missing by taking the average for the "Cultural Zone" (relevant for below models: `Emancipative` and `Secular`). The data frame with imputated values is called `eas_by_country_all_i`, the one without imputations is `eas_by_country_all`.^[More careful work could do Linear or nearest-neighbor imputation, or a specific model of missingness. We should also check the sensitivity of our results to these imputations.]
+We quickly impute all other features where missing by taking the average for the "Cultural Zone" (relevant for below models: `Emancipative` and `Secular`). The data frame with imputed values is called `eas_by_country_all_i`, the one without imputations is `eas_by_country_all`.^[More careful work could do linear or nearest-neighbor imputation, or a specific model of missingness. We should also check the sensitivity of our results to these imputations.]
 
 ```{r imputation}
 
@@ -161,7 +160,7 @@ eas_by_country_all_i <- eas_by_country_all %>%
 
 # Simple models
 
-I typically like to define the 'key features' and 'key outcomes' up top. I started on this here, but didn't do it too much.^[With the tidy modeling tools we would do this more carefully, creating 'recipes' etc. I keep it a bit simpler for now. If we end up running more models and comparisons we may want to automate this more again.s]
+I typically like to define the 'key features' and 'key outcomes' up top. I started on this here, but didn't do it too much.^[With the tidy modeling tools we would do this more carefully, creating 'recipes' etc. I keep it a bit simpler for now. If we end up running more models and comparisons we may want to automate this more.]
 
 ```{r modelprep}
 
@@ -206,8 +205,8 @@ model_eapercap <- eas_by_country_all %>%
   lm(make_formula("easpercap*1000*100", features_percap), .)
 model_eapercap_i <- eas_by_country_all_i %>%  lm(make_formula("easpercap*1000*100", features_percap), .)
 
-model_ea_psn <- eas_by_country_all %>%  glm(make_formula("eas_3yr_avg*1000", log_features), family=quasipoisson, data =.) 
-model_ea_psn_i <- eas_by_country_all_i %>%  glm(make_formula("eas_3yr_avg*1000", log_features), family=quasipoisson, data =.) 
+model_ea_psn <- eas_by_country_all %>%  glm(make_formula("eas_3yr_avg", log_features), family=quasipoisson, data =.) 
+model_ea_psn_i <- eas_by_country_all_i %>%  glm(make_formula("eas_3yr_avg", log_features), family=quasipoisson, data =.) 
 
 
 ```
@@ -220,19 +219,20 @@ We put the coefficients of these models into summary tables below:
 ea_by_country_all_models_table <- 
 huxreg(
     "Linear" = model_linear, 
-  "imp" = model_linear_i,
+  "... imputed" = model_linear_i,
   "log per-capita, no 0's" = model_log_eapercap, 
-  "imp." =  model_log_eapercap_i,
+  "... imputed" =  model_log_eapercap_i,
   "Per `100k` capita" = model_eapercap, 
-  "imp" = model_eapercap_i, 
+  "... imputed" = model_eapercap_i, 
   "Quasi-Poisson" = model_ea_psn,
-  "imp" = model_ea_psn_i) %>% 
-  set_number_format("%#.2f") %>%
-   set_bold(1, everywhere)             %>%
+  "... imputed" = model_ea_psn_i) %>% 
+  set_number_format(row=-1, col=-1, value="%#.2f") %>%
+   set_bold(1, everywhere) %>%
     set_bottom_border(1, everywhere) %>%
-    set_caption_pos("bottom")
+    set_caption_pos("top") %>% 
+    set_caption("EAs by country: Models") %>% 
+    set_col_width(c(.25, rep(.13,8)))
 )
-
 
 ```
 
@@ -276,19 +276,26 @@ eas_by_country_all_m <- eas_by_country_all %>%
 
 ## Plotting predicted versus actual levels and largest 'outliers'
 
-```{r devplotopts}
 
+```{r devplotopts}
 
 devplotopts <- list( geom_point(size=2), 
  geom_label_repel(aes(label = country),
                   box.padding   = 0.3, 
                   point.padding = 0.4,
                   segment.color = 'grey50'),
+      geom_abline(intercept =0, slope = 1, color='grey'),
     theme_classic(), 
 scale_color_viridis(option = "H")
   )
 
 ```
+
+We plot the predicted and actual numbers (or population shares) of EAs for each country, for most of the models. For each, we first plot the 'complete cases' only, and then the models with imputed missing values of features. 
+
+In each case countries above the grey degree line represent 'overperformers'  relative to prediction and those below it 'underperformers'.
+
+We color the country dots based on their Englis prevalence and proficiency score. 
 
 
 ### Linear
@@ -300,9 +307,8 @@ scale_color_viridis(option = "H")
 ea_dev_linear <- model_linear %>% 
     augment(newdata=eas_by_country_all) %>% 
   ggplot() +
-  aes(x=.fitted, y=eas_3yr_avg, color=english_av) +
-    geom_smooth(method = lm, se = FALSE) +
     devplotopts +
+  aes(x=.fitted, y=eas_3yr_avg, color=english_av) +
         scale_x_continuous(trans='log10') + scale_y_continuous(trans='log10') +
     ggtitle("EAS per capita (linear model, log scales): Predicted, actual, no imputation") 
 )
@@ -311,38 +317,52 @@ ea_dev_linear <- model_linear %>%
 ea_dev_linear_i <- model_linear_i %>% 
     augment(newdata=eas_by_country_all_i) %>% 
   ggplot() +
-  aes(x=.fitted, y=eas_3yr_avg, color=english_av) + geom_smooth(method = lm, se = FALSE) +
-    devplotopts +
+        devplotopts +
+  aes(x=.fitted, y=eas_3yr_avg, color=english_av) + 
     scale_x_continuous(trans='log10') + scale_y_continuous(trans='log10') + 
     ggtitle("EAS per capita (linear, log scales): Predicted, actual, Imputed where missing") 
 )
 
+```
+```{r}
+resid_threshold <- 15
+minEA_threshold <- 10
+```
+
+Next we isolate the 'largest positive or negative outliers'; the countries that are most 'surprising' to the model; more than `r resid_threshold` above or below prediction. Here we also leave out countries with fewer than `r minEA_threshold` EAs as well as  fewer than `r minEA_threshold` predicted EAs.   
+
+
+```{r ea_outliers_linear}
+
 (
 ea_outliers_linear <- model_linear %>%
     augment(newdata=eas_by_country_all) %>% 
-    filter(abs(.resid) > 15) %>% 
-  ggplot() + aes(x=.fitted, y=(eas_3yr_avg), color=.resid) + devplotopts +
+    filter(abs(.resid) > resid_threshold) %>% 
+    filter(!(eas_3yr_avg<minEA_threshold & .fitted <minEA_threshold)) %>% 
+  ggplot() +  devplotopts + aes(x=.fitted, y=(eas_3yr_avg), color=english_av) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
-    geom_abline(intercept =0, slope = 1) +
     ggtitle("EAS per capita (linear, log scales): Largest residuals, no imputation") 
 )
 
 (
 ea_outliers_linear_i <- model_linear_i %>%
     augment(newdata=eas_by_country_all_i) %>% 
-    filter(abs(.resid) > 15) %>% 
-  ggplot() + aes(x=.fitted, y=eas_3yr_avg, color=.resid) + devplotopts +
+    filter(abs(.resid) > resid_threshold) %>% 
+    filter(!(eas_3yr_avg<minEA_threshold & .fitted <minEA_threshold)) %>% 
+  ggplot() + aes(x=.fitted, y=eas_3yr_avg, color=english_av) + devplotopts +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
-    geom_abline(intercept =0, slope = 1) +
     ggtitle("EAS per capita (linear, log scales): Largest residuals, Imputed where missing") 
 )
 
 ```
+^[In the final graph above it looks like there are more negative than positive residuals. However, note these are presented on a log scale, and thus the observations above the line are 'more overperforming' than those just below the line.
+
 ### Log-log per capita
 
-(Note, I skipped linear per-capita for space)
+
+*(Note, I skipped plotting linear per-capita models for space)*
 
 ```{r model_eapercap_log_plot}
 
@@ -350,17 +370,16 @@ ea_outliers_linear_i <- model_linear_i %>%
 ea_dev_percap_log <- model_log_eapercap %>% 
     augment(newdata=eas_by_country_all) %>% 
   ggplot() +
-  aes(x=.fitted, y=log_easpercap, color=english_av) +
-    geom_smooth(method = lm, se = FALSE) +
+  aes(x=.fitted, y= log_easpercap, color=english_av) +
     devplotopts +
-    ggtitle("Log EAS per capita: Predicted, actual, no imputation") 
+    ggtitle("EAS per capita, log model: Predicted, actual, no imputation") 
 )
 
 (
 ea_dev_percap_log_i <- model_log_eapercap_i %>% 
     augment(newdata=eas_by_country_all_i) %>% 
   ggplot() +
-  aes(x=.fitted, y=log_easpercap, color=english_av) + geom_smooth(method = lm, se = FALSE) +
+  aes(x=.fitted, y=log_easpercap, color=english_av) + 
     devplotopts +
     ggtitle("Log EAS per capita: Predicted, actual, Imputed where missing") 
 )
@@ -369,13 +388,13 @@ ea_dev_percap_log_i <- model_log_eapercap_i %>%
 ea_outliers_percap_log <- model_log_eapercap %>%
     augment(newdata=eas_by_country_all) %>% 
     filter(abs(.resid) > .75) %>% 
-  ggplot() +
-  aes(x=.fitted, y=(`log_easpercap`), color=.resid) +
+    filter(!(eas_3yr_avg<10 & .fitted <10)) %>% 
+
+  ggplot() +aes(x=.fitted, y=(`log_easpercap`), color=.resid) +
     geom_abline(intercept =0, slope = 1) +
    devplotopts +
     ggtitle("Log EAS per capita: Largest residuals, no imputation") 
 )
-    
 
 (
 ea_outliers_percap_log_i <- model_log_eapercap_i %>%
@@ -400,7 +419,6 @@ ea_dev_percap_qp <- model_ea_psn %>%
     augment(newdata=eas_by_country_all) %>% 
   ggplot() +
   aes(x=.fitted, y=eas_3yr_avg, color=english_av) +
-    geom_smooth(method = lm, se = FALSE) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
     devplotopts +
@@ -411,7 +429,9 @@ ea_dev_percap_qp <- model_ea_psn %>%
 ea_dev_percap_qp_i <- model_ea_psn_i %>% 
     augment(newdata=eas_by_country_all_i) %>% 
   ggplot() +
-  aes(x=.fitted, y=eas_3yr_avg, color=english_av) + geom_smooth(method = lm, se = FALSE) +
+  aes(x=.fitted, y=eas_3yr_avg, color=english_av) + 
+        scale_x_continuous(trans='log2') +  
+    scale_y_continuous(trans='log2') +
     devplotopts +
     ggtitle("QP - EAs: Predicted, actual, Imputed where missing") 
 )
@@ -420,29 +440,28 @@ ea_dev_percap_qp_i <- model_ea_psn_i %>%
 ea_outliers_percap_qp <- model_ea_psn %>%
     augment(newdata=eas_by_country_all) %>% 
     mutate(.resid =  eas_3yr_avg - .fitted) %>% 
-    filter(abs(.resid) > 10) %>% 
+        filter(abs(.resid) > resid_threshold) %>% 
+    filter(!(eas_3yr_avg<minEA_threshold & .fitted <minEA_threshold)) %>% 
   ggplot() +
   aes(x=.fitted, y=(eas_3yr_avg), color=.resid) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
-    geom_abline(intercept =0, slope = 1) +
    devplotopts +
-    ggtitle("QP = EAs per 1000: Largest residuals, no imputation") 
+    ggtitle("QP = EAs: Largest residuals, no imputation") 
 )
-    
 
 (
 ea_outliers_percap_qp_i <- model_ea_psn_i %>%
     augment(newdata=eas_by_country_all_i) %>% 
     mutate(.resid =  eas_3yr_avg - .fitted) %>% 
-    filter(abs(.resid) > 10) %>% 
-  ggplot() +
+        filter(abs(.resid) > resid_threshold) %>% 
+    filter(!(eas_3yr_avg<minEA_threshold & .fitted <minEA_threshold)) %>%  
+    ggplot() +
   aes(x=.fitted, y=eas_3yr_avg, color=.resid) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
-        geom_abline(intercept = 0, slope = 1) +
    devplotopts +
-    ggtitle("QP - EAs per 1000: Largest residuals, Imputed where missing") 
+    ggtitle("QP - EAss: Largest residuals, Imputed where missing") 
 )
 
 ```
