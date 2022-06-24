@@ -53,6 +53,14 @@ eas_by_country_all <-
   read_csv(
     here("data", "supplementary", "EAs per capita across time - Compiled Dataset.csv"), skip=1, na=c("N/A"))
 
+#Alt: input direct from Google sheets 
+
+#May need authorisation to writeread from RP drive
+gs4_auth(scopes = "https://www.googleapis.com/auth/drive",  email = "dreinstein@rethinkpriorities.org")
+
+eas_by_country_all <-read_sheet(
+  ss = "https://docs.google.com/spreadsheets/d/1-oTtv71FnMfenXJtHiPwnhh-Za10s46AGmDLp4mnjvY/edit#gid=1909032845", sheet = "Compiled Dataset", skip=1,  na=c("N/A")) 
+
 eas_by_country_all <- eas_by_country_all %>%
   #mutate(across(matches("GDP|"), as.numeric)) %>% 
     rowwise() %>%
@@ -64,15 +72,24 @@ eas_by_country_all <- eas_by_country_all %>%
     log_eas_3yr_01 = log(eas_3yr_avg + 0.1),
     population_3yr_avg = rowMeans(across(c(Population_2018, Population_2019, Population_2020), na.rm=TRUE)),
     gdpppp_3yr_avg = rowMeans(across(c(GDPPPP_2018, GDPPPP_2019, GDPPPP_2020), na.rm=TRUE)),
-    gdppop_3yr_avg =  gdpppp_3yr_avg/population_3yr_avg
+    gdppop_3yr_avg =  gdpppp_3yr_avg/population_3yr_avg,
+    log_gdppop_3yr_avg = (log(gdppop_3yr_avg)),
   ) %>% 
   ungroup()
 
+med_country_gdppop <- median(eas_by_country_all$gdppop_3yr_avg, na.rm=TRUE)
+
+eas_by_country_all <- eas_by_country_all %>%
+  mutate(
+    gdppop_3yr_avg_above_med = gdppop_3yr_avg*(gdppop_3yr_avg>med_country_gdppop),
+    log_gdppop_3yr_avg_above_med = log_gdppop_3yr_avg*(gdppop_3yr_avg>med_country_gdppop),
+    )
+  
 ```
 
 ## Further English language features and imputation
 
-UK Government classification of 'majority native English speaking' according to [university websites](https://www.northampton.ac.uk/international/english-language-requirements/majority-native-english-speaking-countries/).
+We add the UK Government classification of 'majority native English speaking' according to [university websites](https://www.northampton.ac.uk/international/english-language-requirements/majority-native-english-speaking-countries/).
 
 ```{r}
 
@@ -94,7 +111,7 @@ eas_by_country_all <- eas_by_country_all %>%
 
 ```
 
-The following dataset is extracted from <https://en.wikipedia.org/wiki/EF_English_Proficiency_Index>, through a [Kaggler](https://www.kaggle.com/datasets/mathurinache/ef-english-proficiency-index?resource=download).
+We input a measure of English proficiency by country, from <https://en.wikipedia.org/wiki/EF_English_Proficiency_Index>, through a [Kaggler](https://www.kaggle.com/datasets/mathurinache/ef-english-proficiency-index?resource=download).
 
 ```{r epi_input}
 
@@ -112,12 +129,32 @@ EF_English_Proficiency_Index <- read_csv(
 
 ```
 
-The two English prevalence/proficiency measures cover different countries, each with many missing values. As a compromise measure, we average these two, taking the nonmissing value of one where the other is missing, a feature we call `english_av`. Finally, where both are missing for a country, we take the average of the above average for the "Cultural Zone" of the country. (Code chunk below).
+Our analysis (not shown) arguably suggested that the proficiency measure was the more reasonable one. However, this measure is missing for predominantly-English-speaking countries; we semi-arbitrarily assign these countries a score of 80.^[For other countries where it is missing, we either drop this country ('no imputation models') or impute it at the average for the country's "Cultural Zone".]
+
+```{r epi_join_adjust}
+
+eas_by_country_all <- eas_by_country_all %>%
+  left_join(EF_English_Proficiency_Index, by = "country") %>%
+  mutate(ef_epi_19_adj = case_when(
+    d_uk_english == 1 ~ 80,
+    TRUE ~ ef_epi_19)
+    )
+
+```
+
+
+::: {.callout-note collapse="true"}
+## Another 'average' measure, not used in modeling below
+
+The two English prevalence/proficiency measures cover different countries, each with many missing values. As a compromise measure, we averaged these two, taking the nonmissing value of one where the other is missing, a feature we call `english_av`. Where both are missing for a country, we took the average of the above average for the "Cultural Zone" of the country. (Code chunk below).
+
+::: 
 
 ```{r english_av}
 
+  
 eas_by_country_all <- eas_by_country_all %>%
-  left_join(EF_English_Proficiency_Index, by="country") %>%
+  
   mutate(
     english_speakers_pctl = rank(EnglishSpeakers, ties.method = c("average"), na.last="keep")/sum(!is.na(EnglishSpeakers)),
     ef_epi_19_pctl = rank(ef_epi_19, ties.method = c("average"), na.last="keep")/sum(!is.na(ef_epi_19)),
@@ -136,14 +173,29 @@ eas_by_country_all <- eas_by_country_all %>% #impute to regional average where m
 ```
 
 
-What does this feature look like?:
+What does the "English proficiency" feature look like?:
+
 
 ```{r english_shown}
 
 eas_by_country_all %>%
-  select(country, matches("english|English|ef_")) %>%
+  select(country, ef_epi_19_adj) %>%
       mutate(across(is.numeric, round, digits = 2)) %>% 
     datatable(class = 'cell-border stripe')
+
+
+(
+english_plot <- eas_by_country_all %>% 
+  ggplot() +
+  aes(x=EnglishSpeakers, y=ef_epi_19_adj, color=d_uk_english) +
+    geom_point(size=2) + 
+     geom_label_repel(aes(label = country),
+                  box.padding   = 0.3, 
+                  point.padding = 0.4,
+                  segment.color = 'grey50') +
+    ggtitle("English proficiency measure versus 'English Speakers share'") 
+)
+
 
 ```
 
@@ -151,6 +203,16 @@ eas_by_country_all %>%
 ### Other imputation 
 
 We quickly impute all other features (where they are missing) by taking the average for the "Cultural Zone" (relevant for below models: `Emancipative` and `Secular`). The data frame with imputed values is called `eas_by_country_all_i`, the one without imputations is `eas_by_country_all`.^[More careful work could do linear or nearest-neighbor imputation, or a specific model of missingness. We should also check the sensitivity of our results to these imputations.]
+
+
+
+```{r add_labels}
+
+#eas_by_country_all_i <- eas_by_country_all %>% 
+#labelled::set_variable_labels(.labels = as.list(all_char_labels), .strict=FALSE)
+
+```
+
 
 ```{r imputation}
 
@@ -171,11 +233,11 @@ I typically like to define the 'key features' and 'key outcomes' up top. I start
 
 #key features
 
-features_percap <- c("gdppop_3yr_avg", "d_uk_english", "english_av", "Emancipative", "Secular")
+features_percap <- c("gdppop_3yr_avg", "gdppop_3yr_avg_above_med", "d_uk_english", "ef_epi_19_adj", "Emancipative", "Secular")
 
 features <- c("population_3yr_avg", features_percap)
 
-log_features_percap <-  c("log(gdppop_3yr_avg)", "d_uk_english", "english_av",  "Emancipative", "Secular")
+log_features_percap <-  c("log_gdppop_3yr_avg", "d_uk_english", "ef_epi_19_adj",  "Emancipative", "Secular")
 
 log_features <-  c("log(population_3yr_avg)", log_features_percap)
 
@@ -205,13 +267,13 @@ model_linear_i <- eas_by_country_all_i %>%  lm(make_formula("eas_3yr_avg", featu
 
 #model_log_eapercap <- eas_by_country_all %>%  filter(easpercap>0) %>% lm(make_formula("log_easpercap", log_features_percap), .)  model_log_eapercap_i <- eas_by_country_all_i %>%  filter(easpercap>0) %>% lm(make_formula("log_easpercap", log_features_percap), 
 
-model_log_linear_p1 <- eas_by_country_all %>% 
-  lm(make_formula("log_eas_3yr_01", log_features), .) 
-model_log_linear_p1_i <- eas_by_country_all_i %>% lm(make_formula("log_eas_3yr_01", log_features), .) 
-
 model_eapercap <- eas_by_country_all %>% 
   lm(make_formula("easpercap_per100k", features_percap), .)
 model_eapercap_i <- eas_by_country_all_i %>%  lm(make_formula("easpercap_per100k", features_percap), .)
+
+model_log_linear_p1 <- eas_by_country_all %>% 
+  lm(make_formula("log_eas_3yr_01", log_features), .) 
+model_log_linear_p1_i <- eas_by_country_all_i %>% lm(make_formula("log_eas_3yr_01", log_features), .) 
 
 model_ea_psn <- eas_by_country_all %>%  glm(make_formula("eas_3yr_avg", log_features), family=quasipoisson, data =.) 
 model_ea_psn_i <- eas_by_country_all_i %>%  glm(make_formula("eas_3yr_avg", log_features), family=quasipoisson, data =.) 
@@ -228,10 +290,10 @@ ea_by_country_all_models_table <-
 huxreg(
     "Linear" = model_linear, 
   "... imputed" = model_linear_i,
+   "Per `100k` capita" = model_eapercap, 
+  "... imputed" = model_eapercap_i, 
   "log EAs + 0.1" = model_log_linear_p1, 
   "... imputed" =  model_log_linear_p1_i,
-  "Per `100k` capita" = model_eapercap, 
-  "... imputed" = model_eapercap_i, 
   "Quasi-Poisson" = model_ea_psn,
   "... imputed" = model_ea_psn_i) %>% 
   set_number_format(row=-1, col=-1, value="%#.2f") %>%
@@ -311,7 +373,7 @@ ea_dev_linear <- model_linear %>%
     augment(newdata=eas_by_country_all) %>% 
   ggplot() +
     devplotopts +
-  aes(x=.fitted, y=eas_3yr_avg, color=english_av) +
+  aes(x=.fitted, y=eas_3yr_avg, color=ef_epi_19_adj) +
         scale_x_continuous(trans='log10') + scale_y_continuous(trans='log10') +
     ggtitle("EAS per capita (linear model, log scales): Predicted, actual, no imputation") 
 )
@@ -321,7 +383,7 @@ ea_dev_linear_i <- model_linear_i %>%
     augment(newdata=eas_by_country_all_i) %>% 
   ggplot() +
         devplotopts +
-  aes(x=.fitted, y=eas_3yr_avg, color=english_av) + 
+  aes(x=.fitted, y=eas_3yr_avg, color=ef_epi_19_adj) + 
     scale_x_continuous(trans='log10') + scale_y_continuous(trans='log10') + 
     ggtitle("EAS per capita (linear, log scales): Predicted, actual, Imputed where missing") 
 )
@@ -357,7 +419,7 @@ ea_outliers_linear <- model_linear %>%
     augment(newdata=eas_by_country_all) %>% 
     resid_filter(threshold_low, threshold_high) %>% # Keep largest outliers in either direction
     filter(!(eas_3yr_avg < minEA_threshold & .fitted < minEA_threshold)) %>% 
-  ggplot() +  devplotopts + aes(x=.fitted, y=(eas_3yr_avg), color=english_av) +
+  ggplot() +  devplotopts + aes(x=.fitted, y=(eas_3yr_avg), color=ef_epi_19_adj) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
     ggtitle("EAS per capita (linear, log scales): Largest residuals, no imputation") 
@@ -369,7 +431,7 @@ ea_outliers_linear_i <- model_linear_i %>%
     augment(newdata=eas_by_country_all_i) %>% 
     resid_filter(threshold_low, threshold_high) %>% 
     filter(!(eas_3yr_avg < minEA_threshold & .fitted <minEA_threshold)) %>% 
-  ggplot() + aes(x=.fitted, y=eas_3yr_avg, color=english_av) + devplotopts +
+  ggplot() + aes(x=.fitted, y=eas_3yr_avg, color=ef_epi_19_adj) + devplotopts +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
     ggtitle("EAS per capita (linear, log scales): Largest residuals, Imputed where missing") 
@@ -388,7 +450,7 @@ ea_outliers_linear_i <- model_linear_i %>%
 (
 ea_dev_percap <- eas_by_country_all_m %>%  
   ggplot() +
-  aes(x=pred_eapercap, y=easpercap_per100k, color=english_av) +
+  aes(x=pred_eapercap, y=easpercap_per100k, color=ef_epi_19_adj) +
     devplotopts +
     ggtitle("EAs per 100k capita: predicted, actual, no imputation") 
 )
@@ -396,7 +458,7 @@ ea_dev_percap <- eas_by_country_all_m %>%
 (
 ea_dev_percap_i <- eas_by_country_all_m_i %>%  
   ggplot() +
-  aes(x=pred_eapercap_i, y=easpercap_per100k, color=english_av) +
+  aes(x=pred_eapercap_i, y=easpercap_per100k, color=ef_epi_19_adj) +
     devplotopts +
     ggtitle("EAs per 100k capita: predicted, actual, imputed where missings") 
 )
@@ -407,7 +469,7 @@ ea_percap_outliers <- eas_by_country_all_m %>%
     resid_filter(threshold_low, threshold_high) %>% #keep largest outliers in either direction
         filter(!(easpercap_per100k<0.2 & pred_eapercap <0.1)) %>% 
   ggplot() +
-  aes(x=pred_eapercap_i, y=(easpercap_per100k), color=english_av) +
+  aes(x=pred_eapercap_i, y=(easpercap_per100k), color=ef_epi_19_adj) +
    devplotopts +
     ggtitle("EAs per 100k capita: Largest residuals, no imputation") 
 )
@@ -418,7 +480,7 @@ ea_outliers_qp_i <- eas_by_country_all_m_i %>%
     resid_filter(threshold_low, threshold_high) %>% #keep largest outliers in either direction
         filter(!(easpercap_per100k<0.2 & pred_eapercap <0.1)) %>% 
   ggplot() +
-  aes(x=pred_eapercap_i, y=(easpercap_per100k), color=english_av) +
+  aes(x=pred_eapercap_i, y=(easpercap_per100k), color=ef_epi_19_adj) +
    devplotopts +
     ggtitle("EAs per 100k capita: Largest residuals, Imputed where missing") 
 )
@@ -437,7 +499,7 @@ Note that the above results are *per capita*; countries like Norway and  Iceland
 ea_dev_log <- model_log_linear_p1 %>% 
     augment(newdata=eas_by_country_all) %>% 
   ggplot() +
-  aes(x=.fitted, y= log_eas_3yr_01, color=english_av) +
+  aes(x=.fitted, y= log_eas_3yr_01, color=ef_epi_19_adj) +
     devplotopts +
     ggtitle("Log (EAs+0.1): Predicted, actual, no imputation") 
 )
@@ -446,7 +508,7 @@ ea_dev_log <- model_log_linear_p1 %>%
 ea_dev_log_i <- model_log_linear_p1_i %>% 
     augment(newdata=eas_by_country_all_i) %>% 
   ggplot() +
-  aes(x=.fitted, y=log_eas_3yr_01, color=english_av) + 
+  aes(x=.fitted, y=log_eas_3yr_01, color=ef_epi_19_adj) + 
     devplotopts +
     ggtitle("Log (EAs+0.1): Predicted, actual, Imputed where missing") 
 )
@@ -456,7 +518,7 @@ ea_outliers_log <- model_log_linear_p1 %>%
     augment(newdata=eas_by_country_all) %>% 
     resid_filter(threshold_low, threshold_high) %>% # Keep largest outliers in either direction
 filter(!(eas_3yr_avg<minEA_threshold & exp(.fitted) < minEA_threshold)) %>% 
-  ggplot() +aes(x=.fitted, y=(log_eas_3yr_01), color=english_av) +
+  ggplot() +aes(x=.fitted, y=(log_eas_3yr_01), color=ef_epi_19_adj) +
    devplotopts +
     ggtitle("Log (EAs+0.1): Largest residuals, no imputation") 
 )
@@ -466,7 +528,7 @@ ea_outliers_log_i <- model_log_linear_p1_i %>%
     augment(newdata=eas_by_country_all_i) %>% 
     resid_filter(threshold_low, threshold_high) %>% # Keep largest outliers in either direction
 filter(!(eas_3yr_avg<minEA_threshold & exp(.fitted) < minEA_threshold)) %>% 
-  ggplot() + aes(x=.fitted, y=`log_eas_3yr_01`, color=english_av) +
+  ggplot() + aes(x=.fitted, y=`log_eas_3yr_01`, color=ef_epi_19_adj) +
    devplotopts +
     ggtitle("Log (EAs+0.1): Largest residuals, Imputed where missing") 
 )
@@ -485,7 +547,7 @@ Exponential models are similar in interpretation to log-log models but are often
 (
 ea_dev_qp <- eas_by_country_all_m %>%  
   ggplot() +
-  aes(x=pred_psn, y=eas_3yr_avg, color=english_av) +
+  aes(x=pred_psn, y=eas_3yr_avg, color=ef_epi_19_adj) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
     devplotopts +
@@ -495,7 +557,7 @@ ea_dev_qp <- eas_by_country_all_m %>%
 (
 ea_dev_qp_i <- eas_by_country_all_m_i %>% 
   ggplot() +
-  aes(x=pred_psn, y=eas_3yr_avg, color=english_av) +
+  aes(x=pred_psn, y=eas_3yr_avg, color=ef_epi_19_adj) +
         scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
     devplotopts +
@@ -508,7 +570,7 @@ ea_outliers_qp <- eas_by_country_all_m %>%
     resid_filter(threshold_low, threshold_high) %>% #keep largest outliers in either direction
     filter(!(eas_3yr_avg<minEA_threshold & pred_psn <minEA_threshold)) %>% 
   ggplot() +
-  aes(x=pred_psn, y=(eas_3yr_avg), color=english_av) +
+  aes(x=pred_psn, y=(eas_3yr_avg), color=ef_epi_19_adj) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
    devplotopts +
@@ -521,7 +583,7 @@ ea_outliers_qp_i <- eas_by_country_all_m_i %>%
     resid_filter(threshold_low, threshold_high) %>% #keep largest outliers in either direction
     filter(!(eas_3yr_avg<minEA_threshold & pred_psn < minEA_threshold)) %>% 
   ggplot() +
-  aes(x=pred_psn_i, y=(eas_3yr_avg), color=english_av) +
+  aes(x=pred_psn_i, y=(eas_3yr_avg), color=ef_epi_19_adj) +
     scale_x_continuous(trans='log2') +  
     scale_y_continuous(trans='log2') +
    devplotopts +
@@ -546,6 +608,7 @@ eas_by_country_all_m_i %>%
 
 ## Table of residuals
 
+Below, a sortable table of residuals from each of the models, by country. (Along with population, EAs and EAs per million, and predicted EAS-per-capita from thethe per-capita model with imputation.)
 
 ```{r tabresid}
 
@@ -562,7 +625,7 @@ eas_by_country_all_m_i %>%
       resid_psn_i = eas_3yr_avg - pred_psn_i
       ) %>% 
     mutate(across(is.numeric, round, digits = 2)) %>% 
-      select(country, population_3yr_avg, eas_3yr_avg, easpercap_permil, pred_linear, starts_with("resid_")) %>% 
+      select(country, population_3yr_avg, eas_3yr_avg, easpercap_permil, pred_eapercap_i, starts_with("resid_")) %>% 
   datatable(class = 'cell-border stripe')
 )
   
@@ -573,7 +636,6 @@ eas_by_country_all_m_i %>%
 As RData, csv in the Github repo
 
 ```{r saveraw}
-
 
 saveRDS(eas_by_country_all_m, file = here("data", "supplementary", "eas_by_country_features_predictions_no_imputation.RData"))
 
@@ -587,13 +649,14 @@ write_csv2(eas_by_country_all_m_i, file = here("data", "supplementary", "eas_by_
 
 Exporting the data and predictions to the Gsheet [HERE](https://docs.google.com/spreadsheets/d/1OcxxMTjMPT1gg2w47h9ADn_eLDn_QcvCjMKdEBDZKFc/edit#gid=325316997)
 
-Unfortunately, it makes a new sheet each time; need to find a fix. 
+Unfortunately, it makes a new sheet each time; need to find a fix for this!  Thus the code below is set to not be run automatically.
 
 ```{r}
+#! eval: FALSE
 #! results: false
 #! label: export
 
-# Don't need authorisation to access this googlesheets file
+#Need authorisation to write to RP drive
 gs4_auth(scopes = "https://www.googleapis.com/auth/drive",  email = "dreinstein@rethinkpriorities.org")
   
 
