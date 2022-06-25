@@ -306,6 +306,10 @@ huxreg(
 
 ```
 
+^[`gdppop_3yr_avg` the slope in GDP per capita, for countries with below-median GDP per capita.
+`gdppop_3yr_avg_above_med` the adjustment to this slope for countries with above-median GDP per capita
+`gdppop_3yr_avg +gdppop_3yr_avg_above_med`  would thus be the slope in GDP for countries with above-median GDP per capita.]
+
 Next, we add the predicted values to the basic data set (imputed and non), to later make tables of  predictions, and residuals, and share that data 
 
 ```{r eas_by_country_all_m}
@@ -475,7 +479,7 @@ ea_percap_outliers <- eas_by_country_all_m %>%
 )
 
 (
-ea_outliers_qp_i <- eas_by_country_all_m_i %>%
+ea_percap_outliers_i <- eas_by_country_all_m_i %>%
     mutate(.resid =  easpercap_per100k - pred_eapercap_i) %>% 
     resid_filter(threshold_low, threshold_high) %>% #keep largest outliers in either direction
         filter(!(easpercap_per100k<0.2 & pred_eapercap <0.1)) %>% 
@@ -619,8 +623,8 @@ Below, a sortable table of residuals from each of the models, by country. (Along
       resid_linear_i = eas_3yr_avg - pred_linear_i,
       resid_per100k = easpercap_per100k - pred_eapercap,
       resid_per100k_i = easpercap_per100k - pred_eapercap_i,
-      resid_log_exp  = easpercap_per100k - exp(pred_log_ea),
-      resid_log_exp_i  = easpercap_per100k - exp(pred_log_ea_i),
+      resid_log_exp  = eas_3yr_avg - exp(pred_log_ea),
+      resid_log_exp_i  = eas_3yr_avg - exp(pred_log_ea_i),
       resid_psn = eas_3yr_avg - pred_psn,
       resid_psn_i = eas_3yr_avg - pred_psn_i
       ) %>% 
@@ -651,10 +655,7 @@ Exporting the data and predictions to the Gsheet [HERE](https://docs.google.com/
 
 Unfortunately, it makes a new sheet each time; need to find a fix for this!  Thus the code below is set to not be run automatically.
 
-```{r}
-#! eval: FALSE
-#! results: false
-#! label: export
+```{r, eval=FALSE}
 
 #Need authorisation to write to RP drive
 gs4_auth(scopes = "https://www.googleapis.com/auth/drive",  email = "dreinstein@rethinkpriorities.org")
